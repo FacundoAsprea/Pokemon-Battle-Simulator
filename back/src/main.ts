@@ -2,7 +2,12 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  await app.listen(process.env.PORT ?? 3000);
+  if (!process.env.NEST_APP_STARTED) {
+    const app = await NestFactory.create(AppModule);
+    process.env.NEST_APP_STARTED = 'true';
+    console.log('Llamando appListen...');
+    await app.listen(3200);
+    console.log('appListen ejecutado');
+  }
 }
 bootstrap();
