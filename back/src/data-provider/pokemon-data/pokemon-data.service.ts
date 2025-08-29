@@ -25,7 +25,8 @@ export class PokemonDataService {
       excludeExtraneousValues: true,
     });
 
-    //Parsear tipo
+    //Parsear tipo y stats
+    //PASAR A UNA PIPE EN UN FUTURO
     const pokemonData = {
       ...rawData,
       types: rawData.types.map(
