@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { GetTypeDataDTO } from './getTypeDataDTO.dev';
+import { TypeData } from '../pokemon-data/types';
 
 export class GetPokemonDataDTO {
   @Expose()
@@ -26,7 +26,7 @@ export class GetPokemonDataDTO {
 
 export interface PokemonDataParsed {
   stats: { base_stat: number; name: string }[];
-  types: GetTypeDataDTO[];
+  types: TypeData[];
   weight: number;
   name: string;
   id: number;
