@@ -1,9 +1,8 @@
 import { Module } from '@nestjs/common';
-import { DataProviderService } from './data-provider.service';
-import { DataProviderController } from './data-provider.controller';
+import { SpritesModule } from './sprites/sprites.module';
+import { PokemonDataModule } from './pokemon-data/pokemon-data.module';
 
 @Module({
-  controllers: [DataProviderController],
-  providers: [DataProviderService],
+  imports: [SpritesModule, PokemonDataModule],
 })
 export class DataProviderModule {}

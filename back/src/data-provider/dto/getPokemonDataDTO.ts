@@ -1,44 +1,61 @@
-export class Pokemon {
-  constructor(
-    public stats: PokemonStats,
-    public name: string,
-    public moveset: Movement[],
-    public ability: Ability,
-    public cryURL: string,
-    public spriteURL: string,
-    public statusChanges: StatusChange[],
-  ) {}
-}
+import { Expose } from 'class-transformer';
+import { GetTypeDataDTO } from './getTypeDataDTO.dev';
 
-export interface PokemonStats {
-  hp: number;
-  attack: number;
-  specialAttack: number;
-  defense: number;
-  specialDefense: number;
-  speed: number;
-  types: PokemonType[];
+export class GetPokemonDataDTO {
+  @Expose()
+  stats: StatResponse[];
+
+  @Expose()
+  types: TypeResponse[];
+
+  @Expose()
   weight: number;
-}
-export interface PokemonType {
+
+  @Expose()
   name: string;
-}
-export interface Movement {
-  name: string;
-  accuracy: number;
-  damageType: string;
-  attackType: PokemonType;
-  power: number;
-  pp: number;
-  priority: number;
-  critRate: number;
-  flinchChance: number;
+
+  @Expose()
+  id: number;
+
+  @Expose()
+  height: number;
+
+  @Expose()
+  abilities: AbilityResponse[];
 }
 
-export interface Ability {
+export interface PokemonDataParsed {
+  stats: { base_stat: number; name: string }[];
+  types: GetTypeDataDTO[];
+  weight: number;
   name: string;
+  id: number;
+  height: number;
+  abilities: AbilityResponse[];
 }
 
-export interface StatusChange {
-  name: string;
+interface StatResponse {
+  base_stat: number;
+  effort: number;
+  stat: {
+    name: string;
+    url: string;
+  };
+}
+
+interface TypeResponse {
+  slot: number;
+  type: {
+    name: string;
+    url: string;
+  };
+}
+
+interface AbilityResponse {
+  ability: {
+    name: string;
+    url: string;
+  };
+  is_hidden: boolean;
+  slot: number;
 }
