@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { plainToInstance } from 'class-transformer';
 import { getImageDTO } from '../dto/getImage.dto';
 import axios from 'axios';
-import * as sprites from './data.json';
+import sprites from './data.json';
 
 @Injectable()
 export class SpritesService {
