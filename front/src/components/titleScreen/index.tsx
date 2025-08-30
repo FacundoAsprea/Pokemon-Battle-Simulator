@@ -1,26 +1,19 @@
-import { Button } from "../ui/button";
+
 import { Link } from "react-router-dom";
-import title from "../../assets/title.png";
-import screenImage from "../../assets/introImage.jpg";
+import titleScreen from '../../assets/video/TitleScreen.webm'
 
 const TitleScreen = () => {
   return (
     <>
       <div
-        style={{ backgroundImage: `url(${screenImage})` }}
-        className="py-10 h-screen w-screen flex flex-col items-center justify-between bg-no-repeat bg-center bg-contain"
+        className="py-10 h-screen w-screen flex flex-col items-center justify-center"
       >
-        <div className="flex flex-col items-center">
-          <img src={title} className="pt-10 max-h-[250px]" />
-          <p className="text-3xl text-white">Indu Version</p>
-        </div>
-        <Link to="/team-selection">
-          <Button
-            className="bg-transparent text-white w-[30dvw]"
-            variant="outline"
-          >
-            Iniciar
-          </Button>
+        <video autoPlay muted loop className="absolute top-0 left-0 w-full h-full object-fit z-1">
+          <source src={titleScreen} type="video/webm"/>
+        </video>
+        <p className="text-3xl z-2 bg-[#4c483d] text-[#95e444] mt-3 p-1">Facu Edition</p>
+        <Link to="/team-selection" className="z-2 absolute bottom-0 mb-[150px]">
+         <button className="w-[300px] cursor-pointer" />
         </Link>
       </div>
     </>

@@ -3,5 +3,7 @@ export interface SpriteData {
   name: string;
   sprites: {
     front_default: string;
+    back_default: string;
   };
+  types: string[];
 }

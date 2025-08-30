@@ -1,5 +1,10 @@
 import { Expose } from 'class-transformer';
 import { TypeData } from '../pokemon-data/types';
+import type {
+  StatResponse,
+  TypeResponse,
+  AbilityResponse,
+} from '../pokemon-data/types';
 
 export class GetPokemonDataDTO {
   @Expose()
@@ -32,30 +37,4 @@ export interface PokemonDataParsed {
   id: number;
   height: number;
   abilities: AbilityResponse[];
-}
-
-interface StatResponse {
-  base_stat: number;
-  effort: number;
-  stat: {
-    name: string;
-    url: string;
-  };
-}
-
-interface TypeResponse {
-  slot: number;
-  type: {
-    name: string;
-    url: string;
-  };
-}
-
-interface AbilityResponse {
-  ability: {
-    name: string;
-    url: string;
-  };
-  is_hidden: boolean;
-  slot: number;
 }
