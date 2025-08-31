@@ -7,7 +7,6 @@ export class SpritesController {
 
   @Get()
   getAllSprites() {
-    console.log('SpritesController');
     return this.spritesService.getAllSprites();
   }
 

@@ -396,7 +396,7 @@
         "name": "clefairy",
         "id": 35,
         "types": [
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002"
+            "http://localhost:3200/images/Fairy_Type_Sprite.png"
         ]
     },
     {
@@ -407,7 +407,7 @@
         "name": "clefable",
         "id": 36,
         "types": [
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002"
+            "http://localhost:3200/images/Fairy_Type_Sprite.png"
         ]
     },
     {
@@ -441,7 +441,7 @@
         "id": 39,
         "types": [
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iv/platinum/1.png",
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002"
+            "http://localhost:3200/images/Fairy_Type_Sprite.png"
         ]
     },
     {
@@ -453,7 +453,7 @@
         "id": 40,
         "types": [
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iv/platinum/1.png",
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002"
+            "http://localhost:3200/images/Fairy_Type_Sprite.png"
         ]
     },
     {
@@ -1392,7 +1392,7 @@
         "id": 122,
         "types": [
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iv/platinum/14.png",
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002"
+            "http://localhost:3200/images/Fairy_Type_Sprite.png"
         ]
     },
     {
@@ -1975,7 +1975,7 @@
         "name": "cleffa",
         "id": 173,
         "types": [
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002"
+            "http://localhost:3200/images/Fairy_Type_Sprite.png"
         ]
     },
     {
@@ -1987,7 +1987,7 @@
         "id": 174,
         "types": [
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iv/platinum/1.png",
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002"
+            "http://localhost:3200/images/Fairy_Type_Sprite.png"
         ]
     },
     {
@@ -1998,7 +1998,7 @@
         "name": "togepi",
         "id": 175,
         "types": [
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002"
+            "http://localhost:3200/images/Fairy_Type_Sprite.png"
         ]
     },
     {
@@ -2009,7 +2009,7 @@
         "name": "togetic",
         "id": 176,
         "types": [
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002",
+            "http://localhost:3200/images/Fairy_Type_Sprite.png",
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iv/platinum/3.png"
         ]
     },
@@ -2090,7 +2090,7 @@
         "id": 183,
         "types": [
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iv/platinum/11.png",
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002"
+            "http://localhost:3200/images/Fairy_Type_Sprite.png"
         ]
     },
     {
@@ -2102,7 +2102,7 @@
         "id": 184,
         "types": [
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iv/platinum/11.png",
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002"
+            "http://localhost:3200/images/Fairy_Type_Sprite.png"
         ]
     },
     {
@@ -2389,7 +2389,7 @@
         "name": "snubbull",
         "id": 209,
         "types": [
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002"
+            "http://localhost:3200/images/Fairy_Type_Sprite.png"
         ]
     },
     {
@@ -2400,7 +2400,7 @@
         "name": "granbull",
         "id": 210,
         "types": [
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002"
+            "http://localhost:3200/images/Fairy_Type_Sprite.png"
         ]
     },
     {
@@ -3208,7 +3208,7 @@
         "id": 280,
         "types": [
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iv/platinum/14.png",
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002"
+            "http://localhost:3200/images/Fairy_Type_Sprite.png"
         ]
     },
     {
@@ -3220,7 +3220,7 @@
         "id": 281,
         "types": [
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iv/platinum/14.png",
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002"
+            "http://localhost:3200/images/Fairy_Type_Sprite.png"
         ]
     },
     {
@@ -3232,7 +3232,7 @@
         "id": 282,
         "types": [
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iv/platinum/14.png",
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002"
+            "http://localhost:3200/images/Fairy_Type_Sprite.png"
         ]
     },
     {
@@ -3415,7 +3415,7 @@
         "id": 298,
         "types": [
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iv/platinum/1.png",
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002"
+            "http://localhost:3200/images/Fairy_Type_Sprite.png"
         ]
     },
     {
@@ -3472,7 +3472,7 @@
         "id": 303,
         "types": [
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-iv/platinum/9.png",
-            "https://static.wikia.nocookie.net/pokemon-radiance/images/2/29/Fairy_Type_Sprite.png/revision/latest?cb=20191126100002"
+            "http://localhost:3200/images/Fairy_Type_Sprite.png"
         ]
     },
     {
