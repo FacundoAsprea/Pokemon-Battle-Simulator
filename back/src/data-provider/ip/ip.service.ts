@@ -5,7 +5,6 @@ import os from 'os';
 export class IpService {
   getIp(): string | null {
     const nets = os.networkInterfaces();
-    console.log(nets);
 
     for (const name of Object.keys(nets)) {
       for (const net of nets[name] ?? []) {
