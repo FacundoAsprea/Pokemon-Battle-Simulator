@@ -6,12 +6,12 @@ export interface UserBattleState {
 }
 export interface PokemonBattleData {
   stats: {
-    hp: StatsBattleData,
-    defense: StatsBattleData,
-    special_defence: StatsBattleData,
-    attack: StatsBattleData,
-    special_attack: StatsBattleData,
-    speed: StatsBattleData
+    hp: StatBattleData,
+    defense: StatBattleData,
+    special_defence: StatBattleData,
+    attack: StatBattleData,
+    special_attack: StatBattleData,
+    speed: StatBattleData
   };
   types: TypeBattleData[];
   weight: number;
@@ -19,11 +19,11 @@ export interface PokemonBattleData {
   name: string;
   sprites: {
     front_default: string;
-    back_default: string;
+    backs_default: string;
   };
 }
 
-interface StatsBattleData {
+interface StatBattleData {
   base_value: number;
   actual_value: number;
 }

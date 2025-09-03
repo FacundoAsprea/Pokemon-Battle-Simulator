@@ -27,18 +27,30 @@ export class PokemonDataService {
 
     //Parsear tipo y stats
     //PASAR A UNA PIPE EN UN FUTURO
+    const parsedStats = {
+      hp: {},
+      attack: {},
+      defense: {},
+      special_attack: {},
+      special_defense: {},
+      speed: {},
+    };
+    rawData.stats.forEach((stat) => {
+      parsedStats[stat.stat.name] = {
+        base_stat: stat.base_stat,
+        actual_value: stat.base_stat,
+      };
+    });
+    console.log(parsedStats);
     const pokemonData = {
       ...rawData,
       types: rawData.types.map(
         (type) => this.getType(type.type.name) as TypeData,
       ),
-      stats: rawData.stats.map((stat) => ({
-        base_stat: stat.base_stat,
-        name: stat.stat.name,
-      })),
+      stats: parsedStats,
     };
 
-    return pokemonData;
+    return pokemonData as PokemonDataParsed;
   }
 
   getAllTypesData(): TypeData[] {

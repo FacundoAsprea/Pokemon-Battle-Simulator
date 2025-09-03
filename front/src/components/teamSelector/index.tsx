@@ -1,11 +1,18 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { SpritesService } from "@/services/sprite.service";
 import type { SpriteData } from "@/types";
+import type { UserBattleState, PokemonBattleData } from "@/game/types";
+import type { contextType } from "@/contexts/battleContext";
 import PokeCard from "./pokecard";
 import AnimatedBackground from "../animatedBackground";
 import { Link } from "react-router-dom";
+import { BattleContext } from "@/contexts/battleContext";
+import { PokemonDataService } from "@/services/pokemondata.service";
 
 const TeamSelector = () => {
+  const [battleState, setBattleState] = useContext(
+    BattleContext
+  ) as contextType;
   const allSprites = useRef<SpriteData[]>([]);
   const [sprites, setSprites] = useState<SpriteData[]>([]);
   const [selectedTeam, setSelectedTeam] = useState<SpriteData[]>([]);
@@ -43,6 +50,11 @@ const TeamSelector = () => {
     );
   };
 
+  const getPokemonBattleData = async () => {
+   const dataService = new PokemonDataService()
+  await dataService.getPokemonDataFromTeam(selectedTeam)
+  }
+
   return (
     <AnimatedBackground>
       <div className="py-10 flex flex-col items-center justify-start gap-5 h-full w-[70dvw] bg-background z-2">
@@ -53,7 +65,6 @@ const TeamSelector = () => {
         {/* EQUIPO SELECCIONADO */}
         <div
           style={{ scrollbarWidth: "thin" }}
-          // className="py-2 w-full flex items-center justify-center flex-wrap gap-1"
           className="relative grid grid-cols-6 grid-rows-1 gap-x-3"
         >
           {selectedTeam.length == 6 ? (
@@ -61,7 +72,12 @@ const TeamSelector = () => {
               to="/matchmaking"
               className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
             >
-              <button className=" cursor-pointer p-2 text-2xl text-gray-100 bg-[#95e444] hover:bg-[#73c222] border-1 border-white">
+              <button
+                onClick={() => {
+                  // setBattleState({ ...battleState, team: selectedTeam });
+                }}
+                className=" cursor-pointer p-2 text-2xl text-gray-100 bg-[#95e444] hover:bg-[#73c222] border-1 border-white"
+              >
                 Jugar
               </button>
             </Link>
@@ -85,20 +101,31 @@ const TeamSelector = () => {
         <input
           placeholder="Busca un pokemon..."
           className="px-2 text-white text-xl w-1/2 bg-[#404040] rounded-sm ml-2 text-center"
-          onChange={(event) =>
-            event.target.value == ""
-              ? setSprites([...allSprites.current.filter(sprite => !selectedTeam.some(pokemon => pokemon.name == sprite.name))])
-              : setSprites(
-                  allSprites.current.filter((sprite) => {
-                   return sprite.name
-                      .toLowerCase()
-                      .includes(event.target.value.toLowerCase()) &&
+          onChange={(event) => {
+            console.log("TEAM: ", selectedTeam);
+            getPokemonBattleData()
+            return event.target.value == ""
+              ? setSprites([
+                  ...allSprites.current.filter(
+                    (sprite) =>
                       !selectedTeam.some(
                         (pokemon) => pokemon.name == sprite.name
-                      );
+                      )
+                  ),
+                ])
+              : setSprites(
+                  allSprites.current.filter((sprite) => {
+                    return (
+                      sprite.name
+                        .toLowerCase()
+                        .includes(event.target.value.toLowerCase()) &&
+                      !selectedTeam.some(
+                        (pokemon) => pokemon.name == sprite.name
+                      )
+                    );
                   })
-                )
-          }
+                );
+          }}
         />
 
         {/* LISTA DE POKEMONES */}
