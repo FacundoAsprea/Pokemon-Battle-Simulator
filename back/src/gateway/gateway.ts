@@ -19,6 +19,14 @@ export class BattleGateway {
   server: Server;
   private players: PlayerData[] = [];
 
+  @SubscribeMessage('disconnectPlayer')
+  onDisconnect(@MessageBody() disconnectedPlayer: PlayerData) {
+    this.players = this.players.filter(
+      (player) => player.name != disconnectedPlayer.name,
+    );
+    console.log('PLAYER ELIMINADO: ', this.players);
+  }
+
   @SubscribeMessage('test')
   onTest(@MessageBody() body: any) {
     console.log(body);

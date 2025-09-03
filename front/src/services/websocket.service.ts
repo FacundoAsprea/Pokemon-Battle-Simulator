@@ -1,21 +1,32 @@
 import type { PlayerData } from "@/types";
 import { io, Socket } from "socket.io-client";
 
-export class WebSocketService {
-  private webSocketURL = "";
-  private socket: Socket;
-  constructor(private player: PlayerData, ip: string) {
-    this.webSocketURL = `http://${ip}:3100`;
-    this.socket = io(this.webSocketURL);
+class WebSocketService {
+  private socket!: Socket
+  private player!: PlayerData
+  private battleStatus = []
+
+  startConnection(ip: string, player: PlayerData) {
+    this.socket = io(`http://${ip}:3100`)
+    this.player = player
+    console.log("Conexion establecida")
+  }
+
+  disconnect() {
+    this.socket.emit('disconnectPlayer', this.player)
+    this.socket.disconnect()
   }
 
   joinRoom() {
-    this.socket.emit("joinRoom", { name: this.player.name });
+    this.socket.emit("joinRoom", this.player);
   }
 
   waitForBattle() {
-    this.socket.on("startBattle", (res) => {
-      console.log("EMPEZO LA PELEA: ", res);
+    this.socket.on("startBattle", () => {
+      window.location.href = "battle"
+      console.log("LA PELEA PUEDE EMPEZAR: ")
     });
   }
 }
+
+export const webSocket = new WebSocketService()
