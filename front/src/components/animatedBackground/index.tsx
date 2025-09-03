@@ -3,7 +3,7 @@ import titleScreen from "../../assets/video/TitleScreen.webm";
 const AnimatedBackground = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <div className="py-10 h-screen w-screen flex flex-col items-center justify-center">
+      <div className="h-screen w-screen flex flex-col items-center justify-center">
         <video
           autoPlay
           muted

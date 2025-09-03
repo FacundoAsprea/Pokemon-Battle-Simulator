@@ -8,7 +8,6 @@ export interface SpriteData {
   types: string[];
 }
 
-
 export interface PlayerData {
   name: string
 }

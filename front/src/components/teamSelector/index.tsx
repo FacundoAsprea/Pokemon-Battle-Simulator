@@ -45,7 +45,7 @@ const TeamSelector = () => {
 
   return (
     <AnimatedBackground>
-      <div className="flex flex-col items-center justify-start gap-5 h-full w-[70dvw] bg-background z-2">
+      <div className="py-10 flex flex-col items-center justify-start gap-5 h-full w-[70dvw] bg-background z-2">
         <p className="text-white text-xl text-center">
           Forma tu equipo de 6 Pokemones
         </p>
@@ -57,7 +57,10 @@ const TeamSelector = () => {
           className="relative grid grid-cols-6 grid-rows-1 gap-x-3"
         >
           {selectedTeam.length == 6 ? (
-            <Link to='/matchmaking' className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
+            <Link
+              to="/matchmaking"
+              className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
+            >
               <button className=" cursor-pointer p-2 text-2xl text-gray-100 bg-[#95e444] hover:bg-[#73c222] border-1 border-white">
                 Jugar
               </button>
@@ -84,13 +87,16 @@ const TeamSelector = () => {
           className="px-2 text-white text-xl w-1/2 bg-[#404040] rounded-sm ml-2 text-center"
           onChange={(event) =>
             event.target.value == ""
-              ? setSprites([...allSprites.current])
+              ? setSprites([...allSprites.current.filter(sprite => !selectedTeam.some(pokemon => pokemon.name == sprite.name))])
               : setSprites(
-                  allSprites.current.filter((sprites) =>
-                    sprites.name
+                  allSprites.current.filter((sprite) => {
+                   return sprite.name
                       .toLowerCase()
-                      .includes(event.target.value.toLowerCase())
-                  )
+                      .includes(event.target.value.toLowerCase()) &&
+                      !selectedTeam.some(
+                        (pokemon) => pokemon.name == sprite.name
+                      );
+                  })
                 )
           }
         />
