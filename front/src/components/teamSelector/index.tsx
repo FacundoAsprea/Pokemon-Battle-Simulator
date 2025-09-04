@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { SpritesService } from "@/services/sprite.service";
 import type { SpriteData } from "@/types";
-import type { UserBattleState, PokemonBattleData } from "@/game/types";
+import type { PokemonBattleData } from "@/game/types";
 import type { contextType } from "@/contexts/battleContext";
 import PokeCard from "./pokecard";
 import AnimatedBackground from "../animatedBackground";
@@ -74,7 +74,9 @@ const TeamSelector = () => {
             >
               <button
                 onClick={() => {
-                  // setBattleState({ ...battleState, team: selectedTeam });
+                  getPokemonBattleData()
+                  
+
                 }}
                 className=" cursor-pointer p-2 text-2xl text-gray-100 bg-[#95e444] hover:bg-[#73c222] border-1 border-white"
               >
@@ -103,7 +105,6 @@ const TeamSelector = () => {
           className="px-2 text-white text-xl w-1/2 bg-[#404040] rounded-sm ml-2 text-center"
           onChange={(event) => {
             console.log("TEAM: ", selectedTeam);
-            getPokemonBattleData()
             return event.target.value == ""
               ? setSprites([
                   ...allSprites.current.filter(

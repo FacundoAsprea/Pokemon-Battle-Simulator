@@ -15,6 +15,7 @@ export interface PokemonBattleData {
   };
   types: TypeBattleData[];
   weight: number;
+  height: number;
   id: number;
   name: string;
   sprites: {
