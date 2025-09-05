@@ -1,8 +1,6 @@
-import type { GlobalBattleState } from "@/game/types";
 
 interface props {
   view: "player" | "rival";
-  battleState: GlobalBattleState
 }
 const Stage = ({ view }: props) => {
   const viewStyle = {

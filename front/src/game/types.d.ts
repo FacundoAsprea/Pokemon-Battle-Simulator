@@ -20,7 +20,7 @@ export interface PokemonBattleData {
   name: string;
   sprites: {
     front_default: string;
-    backs_default: string;
+    back_default: string;
   };
 }
 

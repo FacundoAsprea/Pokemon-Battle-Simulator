@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { SpritesService } from "@/services/sprite.service";
 import type { SpriteData } from "@/types";
-import type { PokemonBattleData } from "@/game/types";
 import type { contextType } from "@/contexts/battleContext";
 import PokeCard from "./pokecard";
 import AnimatedBackground from "../animatedBackground";
@@ -18,6 +17,11 @@ const TeamSelector = () => {
   const [selectedTeam, setSelectedTeam] = useState<SpriteData[]>([]);
   const SpriteService = new SpritesService();
 
+  const getPokemonBattleData = async () => {
+    const dataService = new PokemonDataService()
+    return await dataService.getPokemonDataFromTeam(selectedTeam)
+  }
+
   useEffect(() => {
     SpriteService.getAllSprites().then((fetchedSprites) => {
       setSprites(fetchedSprites.data);
@@ -25,8 +29,30 @@ const TeamSelector = () => {
     });
   }, []);
 
+  useEffect(() => {
+    console.log("USEEFFECT EJECUTADO")
+    console.log("SELECTEDTEAM LENGTH: ", selectedTeam.length)
+    if (selectedTeam.length == 6) {
+      console.log("SE EJECUTO EL IF")
+      getPokemonBattleData()
+        .then(data => {
+          console.log("SE CAMBIO EL BATTLE STATE: ", {
+            ...battleState,
+            team: data
+          })
+          setBattleState({
+            ...battleState,
+            team: data
+          })
+        })
+    }
+  }, [selectedTeam])
+
+  useEffect(() => {
+    console.log("BATTLE STATUS CAMBIO: ", battleState)
+  }, [battleState])
+
   const addToTeam = (pokemon: SpriteData) => {
-    console.log("length: ", selectedTeam.length);
     if (selectedTeam.length == 6) return;
 
     setSelectedTeam([...selectedTeam, pokemon]);
@@ -50,11 +76,6 @@ const TeamSelector = () => {
     );
   };
 
-  const getPokemonBattleData = async () => {
-   const dataService = new PokemonDataService()
-  await dataService.getPokemonDataFromTeam(selectedTeam)
-  }
-
   return (
     <AnimatedBackground>
       <div className="py-10 flex flex-col items-center justify-start gap-5 h-full w-[70dvw] bg-background z-2">
@@ -73,11 +94,6 @@ const TeamSelector = () => {
               className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
             >
               <button
-                onClick={() => {
-                  getPokemonBattleData()
-                  
-
-                }}
                 className=" cursor-pointer p-2 text-2xl text-gray-100 bg-[#95e444] hover:bg-[#73c222] border-1 border-white"
               >
                 Jugar
@@ -107,25 +123,25 @@ const TeamSelector = () => {
             console.log("TEAM: ", selectedTeam);
             return event.target.value == ""
               ? setSprites([
-                  ...allSprites.current.filter(
-                    (sprite) =>
-                      !selectedTeam.some(
-                        (pokemon) => pokemon.name == sprite.name
-                      )
-                  ),
-                ])
+                ...allSprites.current.filter(
+                  (sprite) =>
+                    !selectedTeam.some(
+                      (pokemon) => pokemon.name == sprite.name
+                    )
+                ),
+              ])
               : setSprites(
-                  allSprites.current.filter((sprite) => {
-                    return (
-                      sprite.name
-                        .toLowerCase()
-                        .includes(event.target.value.toLowerCase()) &&
-                      !selectedTeam.some(
-                        (pokemon) => pokemon.name == sprite.name
-                      )
-                    );
-                  })
-                );
+                allSprites.current.filter((sprite) => {
+                  return (
+                    sprite.name
+                      .toLowerCase()
+                      .includes(event.target.value.toLowerCase()) &&
+                    !selectedTeam.some(
+                      (pokemon) => pokemon.name == sprite.name
+                    )
+                  );
+                })
+              );
           }}
         />
 
