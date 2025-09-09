@@ -9,9 +9,9 @@ import { BattleContext } from "@/contexts/battleContext";
 import { PokemonDataService } from "@/services/pokemondata.service";
 
 const TeamSelector = () => {
-  const [battleState, setBattleState] = useContext(
+  const { battleState, setBattleState } = useContext(
     BattleContext
-  ) as contextType;
+  ) as contextType
   const allSprites = useRef<SpriteData[]>([]);
   const [sprites, setSprites] = useState<SpriteData[]>([]);
   const [selectedTeam, setSelectedTeam] = useState<SpriteData[]>([]);
@@ -30,16 +30,9 @@ const TeamSelector = () => {
   }, []);
 
   useEffect(() => {
-    console.log("USEEFFECT EJECUTADO")
-    console.log("SELECTEDTEAM LENGTH: ", selectedTeam.length)
     if (selectedTeam.length == 6) {
-      console.log("SE EJECUTO EL IF")
       getPokemonBattleData()
         .then(data => {
-          console.log("SE CAMBIO EL BATTLE STATE: ", {
-            ...battleState,
-            team: data
-          })
           setBattleState({
             ...battleState,
             team: data

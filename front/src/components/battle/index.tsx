@@ -4,7 +4,7 @@ import type { contextType } from "@/contexts/battleContext";
 import Stage from "./stage";
 
 const BattleWrapper = () => {
-  const [battleState, setBattleState] = useContext(
+  const {battleState, setBattleState} = useContext(
     BattleContext
   ) as contextType;
   console.log("BATTLESTATE: ", battleState)

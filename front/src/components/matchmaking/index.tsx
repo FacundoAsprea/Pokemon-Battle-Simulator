@@ -1,10 +1,18 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import AnimatedBackground from "../animatedBackground";
 import MatchmakingButton from "./button";
 import { IpService } from "@/services/ip.service";
 import { webSocket } from "@/services/websocket.service";
 
+import { useContext } from "react";
+import { BattleContext, type contextType } from "@/contexts/battleContext";
+
 const MatchmakingInterface = () => {
+  const { battleState, setBattleState } = useContext(BattleContext) as contextType
+
+  useEffect(() => {
+    console.log(battleState)
+  }, [])
   const playerName = useRef("");
   const [ip, setIp] = useState<string>();
   const [joinRoomIp, setJoinRoomIp] = useState<string>("");
@@ -99,8 +107,11 @@ const MatchmakingInterface = () => {
               className="w-1/2 p-3 text-gray-200 bg-[#303030] rounded-sm border-1 border-gray-300"
               onChange={(event) => {
                 event.preventDefault();
-                playerName.current = event.target.value;
-                console.log("NAME: ", playerName.current);
+                playerName.current = event.target.value
+                setBattleState({
+                  ...battleState,
+                  name: playerName.current
+                })
               }}
             ></input>
             <MatchmakingButton

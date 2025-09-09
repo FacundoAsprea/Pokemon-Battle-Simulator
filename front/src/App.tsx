@@ -2,7 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import TeamSelector from "./components/teamSelector";
 import TitleScreen from "./components/titleScreen";
 import MatchmakingInterface from "./components/matchmaking";
-import BattleWrapper from "./components/battle/indext";
+import BattleWrapper from "./components/battle/index";
 import { BattleContextProvider } from "./contexts/battleContext";
 
 const App = () => {
