@@ -1,4 +1,9 @@
-export type GlobalBattleState = [UserBattleState, UserBattleState];
+export interface GlobalBattleState {
+  usersdata: [UserBattleState, UserBattleState]
+  battledata: {
+    turn: string
+  }
+}
 export interface UserBattleState {
   team: PokemonBattleData[];
   name: string;

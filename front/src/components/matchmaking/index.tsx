@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import AnimatedBackground from "../animatedBackground";
 import MatchmakingButton from "./button";
 import { IpService } from "@/services/ip.service";
@@ -8,11 +9,13 @@ import { useContext } from "react";
 import { BattleContext, type contextType } from "@/contexts/battleContext";
 
 const MatchmakingInterface = () => {
+  const navigate = useNavigate()
   const { battleState, setBattleState } = useContext(BattleContext) as contextType
 
+  
   useEffect(() => {
-    console.log(battleState)
-  }, [])
+    console.log("BATTLESTATE CAMBIO: ", battleState)
+  }, [battleState])
   const playerName = useRef("");
   const [ip, setIp] = useState<string>();
   const [joinRoomIp, setJoinRoomIp] = useState<string>("");
@@ -26,15 +29,17 @@ const MatchmakingInterface = () => {
     const { data } = await ipService.getIp();
     setIp(data);
 
-    webSocket.startConnection(data, { name: playerName.current });
-    webSocket.waitForBattle();
+    webSocket.startConnection(data, battleState);
     webSocket.joinRoom();
+    webSocket.waitForBattle()
+    .then(() => navigate("/battle"))
   };
 
   const joinRoom = (ip: string) => {
-    webSocket.startConnection(ip, { name: playerName.current });
-    webSocket.waitForBattle();
+    webSocket.startConnection(ip, battleState);
     webSocket.joinRoom();
+    webSocket.waitForBattle()
+    .then(() => navigate("/battle"))
   };
 
   const disconnect = () => {

@@ -41,10 +41,6 @@ const TeamSelector = () => {
     }
   }, [selectedTeam])
 
-  useEffect(() => {
-    console.log("BATTLE STATUS CAMBIO: ", battleState)
-  }, [battleState])
-
   const addToTeam = (pokemon: SpriteData) => {
     if (selectedTeam.length == 6) return;
 
