@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { SpritesService } from "@/services/sprite.service";
 import type { SpriteData } from "@/types";
-import type { contextType } from "@/contexts/battleContext";
+import type { BattleContextType } from "@/contexts/battleContext";
 import PokeCard from "./pokecard";
 import AnimatedBackground from "../animatedBackground";
 import { Link } from "react-router-dom";
@@ -9,9 +9,9 @@ import { BattleContext } from "@/contexts/battleContext";
 import { PokemonDataService } from "@/services/pokemondata.service";
 
 const TeamSelector = () => {
-  const { battleState, setBattleState } = useContext(
+  const { localBattleState, setLocalBattleState } = useContext(
     BattleContext
-  ) as contextType
+  ) as BattleContextType
   const allSprites = useRef<SpriteData[]>([]);
   const [sprites, setSprites] = useState<SpriteData[]>([]);
   const [selectedTeam, setSelectedTeam] = useState<SpriteData[]>([]);
@@ -33,8 +33,9 @@ const TeamSelector = () => {
     if (selectedTeam.length == 6) {
       getPokemonBattleData()
         .then(data => {
-          setBattleState({
-            ...battleState,
+          data[0].selected = true   //EL PRIMER POKEMON ELEGIDO ES EL PRIMERO EN ENTRAR EN COMBATE
+          setLocalBattleState({
+            ...localBattleState,
             team: data
           })
         })

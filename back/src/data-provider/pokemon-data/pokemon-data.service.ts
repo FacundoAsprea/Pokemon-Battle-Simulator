@@ -48,6 +48,7 @@ export class PokemonDataService {
         (type) => this.getType(type.type.name) as TypeData,
       ),
       stats: parsedStats,
+      selected: false,
     };
 
     return pokemonData as PokemonDataParsed;

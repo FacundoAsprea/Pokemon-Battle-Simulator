@@ -5,7 +5,7 @@ import {
   WebSocketServer,
 } from '@nestjs/websockets';
 import { Server } from 'socket.io';
-import type { PlayerData } from './types';
+import type { UserBattleState, GlobalBattleState, Attack } from './types';
 
 @WebSocketGateway(3100, {
   cors: {
@@ -17,29 +17,64 @@ import type { PlayerData } from './types';
 export class BattleGateway {
   @WebSocketServer()
   server: Server;
-  private players: PlayerData[] = [];
+  private battleStateAux: { usersdata: any[]; battledata: { turn: string } } = {
+    usersdata: [],
+    battledata: { turn: 'test' },
+  };
+  private battleState: GlobalBattleState;
+  private turn: 0 | 1 = 0;
 
-  @SubscribeMessage('disconnectPlayer')
-  onDisconnect(@MessageBody() disconnectedPlayer: PlayerData) {
-    this.players = this.players.filter(
-      (player) => player.name != disconnectedPlayer.name,
+  //FUNCION PARA ALTERNAR EL TURNO
+  turnShift() {
+    if (this.turn == 0) {
+      this.turn = 1;
+      this.battleState.battledata.turn =
+        this.battleState.usersdata[this.turn].uid;
+      return;
+    }
+    this.turn = 0;
+    this.battleState.battledata.turn =
+      this.battleState.usersdata[this.turn].uid;
+  }
+
+  //DESCONEXIONES
+  @SubscribeMessage('leaveQueue')
+  onQueueLeave(@MessageBody() disconnectedPlayer: UserBattleState) {
+    this.battleStateAux.usersdata = this.battleState.usersdata.filter(
+      (player: UserBattleState) => player.uid != disconnectedPlayer.uid,
     );
-    console.log('PLAYER ELIMINADO: ', this.players);
+  }
+  @SubscribeMessage('disconnectPlayer')
+  onDisconnect(@MessageBody() disconnectedPlayer: UserBattleState) {
+    this.battleState.usersdata = this.battleState.usersdata.filter(
+      (player: UserBattleState) => player.uid != disconnectedPlayer.uid,
+    );
+    console.log('PLAYER ELIMINADO: ', this.battleState.usersdata);
   }
 
-  @SubscribeMessage('test')
-  onTest(@MessageBody() body: any) {
-    console.log(body);
-  }
-
+  //INGRESO A LA SALA
   @SubscribeMessage('joinRoom')
-  onJoin(@MessageBody() player: PlayerData) {
-    this.players.push(player);
+  onJoin(@MessageBody() player: UserBattleState) {
+    this.battleStateAux.usersdata.push(player);
     console.log('SE HA AGREGADO UN JUGADOR: ', player);
 
-    if (this.players.length == 2) {
+    if (this.battleStateAux.usersdata.length == 2) {
       console.log('LA PELEA PUEDE EMPEZAR');
-      this.server.emit('startBattle', true);
+      //DEJAR DE USAR EL AUXILIAR
+      this.battleState = { ...this.battleStateAux };
+
+      //EMPIEZA EL CREADOR DE LA SALA
+      this.battleState.battledata.turn =
+        this.battleState.usersdata[this.turn].uid;
+      this.server.emit('startBattle', this.battleState);
     }
+  }
+
+  //ACCIONES
+  @SubscribeMessage('attack')
+  onAttack(@MessageBody() attack: Attack) {
+    console.log('SE REGISTRO UN ATAQUE: ', attack);
+    this.turnShift();
+    this.server.emit('shift', this.battleState);
   }
 }

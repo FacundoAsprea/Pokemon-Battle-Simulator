@@ -1,18 +1,18 @@
 import { useContext, useState } from "react";
 import { webSocket } from "@/services/websocket.service";
 import { BattleContext } from "@/contexts/battleContext";
-import type { contextType } from "@/contexts/battleContext";
+import type { BattleContextType } from "@/contexts/battleContext";
 import Stage from "./stage";
 
 
 import background from "@/assets/images/background.png"
 
 const BattleWrapper = () => {
-  const [selectedPokemon, setSelectedPokemon] = useState()
-  const {battleState, setBattleState} = useContext(
+  const [selectedPokemons, setSelectedPokemons] = useState()
+  const {globalBattleState, setGlobalBattleState} = useContext(
     BattleContext
-  ) as contextType;
-  console.log("BATTLESTATE: ", battleState)
+  ) as BattleContextType;
+  console.log("BATTLESTATE GLOBAL: ", globalBattleState)
   
   return (
     <div className="h-screen w-screen flex items-center justify-center">

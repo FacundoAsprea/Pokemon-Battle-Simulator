@@ -1,3 +1,4 @@
+import type { GlobalBattleState } from "@/game/types";
 import type { PlayerData } from "@/types";
 import { io, Socket } from "socket.io-client";
 
@@ -12,9 +13,9 @@ class WebSocketService {
     console.log("Conexion establecida");
   }
 
-  disconnect() {
+  leaveQueue() {
     console.log("DISCONNECTING PLAYER: ", this.player)
-    this.socket.emit("disconnectPlayer", this.player);
+    this.socket.emit("leaveQueue", this.player);
     this.socket.disconnect();
   }
 
@@ -23,9 +24,9 @@ class WebSocketService {
   }
 
   waitForBattle() {           //777 de iq
-    return new Promise((resolve) => {
-      this.socket.on("startBattle", () => {
-        resolve(true)
+    return new Promise<GlobalBattleState>((resolve) => {
+      this.socket.on("startBattle", (messageBody: GlobalBattleState) => {
+        resolve(messageBody)
       });
     });
   }

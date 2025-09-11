@@ -36,6 +36,7 @@ export interface PokemonDataParsed {
   name: string;
   id: number;
   height: number;
+  selected: boolean;
 }
 
 interface StatBattleData {

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import AnimatedBackground from "../animatedBackground";
 import MatchmakingButton from "./button";
@@ -6,16 +6,12 @@ import { IpService } from "@/services/ip.service";
 import { webSocket } from "@/services/websocket.service";
 
 import { useContext } from "react";
-import { BattleContext, type contextType } from "@/contexts/battleContext";
+import { BattleContext, type BattleContextType } from "@/contexts/battleContext";
 
 const MatchmakingInterface = () => {
   const navigate = useNavigate()
-  const { battleState, setBattleState } = useContext(BattleContext) as contextType
-
+  const { localBattleState, setLocalBattleState, setGlobalBattleState } = useContext(BattleContext) as BattleContextType
   
-  useEffect(() => {
-    console.log("BATTLESTATE CAMBIO: ", battleState)
-  }, [battleState])
   const playerName = useRef("");
   const [ip, setIp] = useState<string>();
   const [joinRoomIp, setJoinRoomIp] = useState<string>("");
@@ -29,22 +25,28 @@ const MatchmakingInterface = () => {
     const { data } = await ipService.getIp();
     setIp(data);
 
-    webSocket.startConnection(data, battleState);
+    webSocket.startConnection(data, localBattleState);
     webSocket.joinRoom();
     webSocket.waitForBattle()
-    .then(() => navigate("/battle"))
+    .then((initialGlobalBattleState) => {
+      setGlobalBattleState(initialGlobalBattleState)
+      navigate('/battle')
+    })
   };
 
   const joinRoom = (ip: string) => {
-    webSocket.startConnection(ip, battleState);
+    webSocket.startConnection(ip, localBattleState);
     webSocket.joinRoom();
     webSocket.waitForBattle()
-    .then(() => navigate("/battle"))
+    .then((initialGlobalBattleState) => {
+      setGlobalBattleState(initialGlobalBattleState)
+      navigate('/battle')
+    })
   };
 
   const disconnect = () => {
     console.log("DESCONECTANDO DEL WEBS...");
-    webSocket.disconnect();
+    webSocket.leaveQueue();
   };
 
   return (
@@ -113,8 +115,8 @@ const MatchmakingInterface = () => {
               onChange={(event) => {
                 event.preventDefault();
                 playerName.current = event.target.value
-                setBattleState({
-                  ...battleState,
+                setLocalBattleState({
+                  ...localBattleState,
                   name: playerName.current
                 })
               }}

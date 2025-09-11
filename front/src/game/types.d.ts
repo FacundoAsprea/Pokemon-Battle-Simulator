@@ -27,6 +27,7 @@ export interface PokemonBattleData {
     front_default: string;
     back_default: string;
   };
+  selected: boolean
 }
 
 interface StatBattleData {
