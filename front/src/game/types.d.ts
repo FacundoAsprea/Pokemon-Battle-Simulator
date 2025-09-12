@@ -26,6 +26,8 @@ export interface PokemonBattleData {
   sprites: {
     front_default: string;
     back_default: string;
+    gif_default: string;
+    gif_back: string;
   };
   selected: boolean
 }

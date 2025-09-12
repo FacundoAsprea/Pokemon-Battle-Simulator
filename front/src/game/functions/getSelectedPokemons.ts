@@ -8,10 +8,10 @@ export const getSelectedPokemon = (user: "player" | "rival", globalBattleState: 
     if (user == "player") {
         const player = globalBattleState.usersdata.find(user => user.uid == uid)
         const selectedPokemon = player!.team.find(pokemon => pokemon.selected == true)
-        return selectedPokemon!.sprites.back_default
+        return selectedPokemon!.sprites.gif_back
     }
 
     const rival = globalBattleState.usersdata.find(user => user.uid != uid)
     const selectedPokemon = rival!.team.find(pokemon => pokemon.selected == true)
-    return selectedPokemon!.sprites.front_default
+    return selectedPokemon!.sprites.gif_default
 }

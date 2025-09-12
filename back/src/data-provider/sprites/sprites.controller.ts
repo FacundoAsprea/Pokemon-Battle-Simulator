@@ -14,4 +14,9 @@ export class SpritesController {
   getSprite(@Param('id') id: string) {
     return this.spritesService.getSprite(id);
   }
+
+  @Get('/gif/:id')
+  getGif(@Param('id') id: string) {
+    return this.spritesService.getGif(id);
+  }
 }

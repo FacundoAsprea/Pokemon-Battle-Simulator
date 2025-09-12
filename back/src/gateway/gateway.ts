@@ -70,7 +70,7 @@ export class BattleGateway {
     }
   }
 
-  //ACCIONES
+  //ACCIONES asd
   @SubscribeMessage('attack')
   onAttack(@MessageBody() attack: Attack) {
     console.log('SE REGISTRO UN ATAQUE: ', attack);

@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import sprites from './data.json';
+import gifs from './gifs.json';
 
 @Injectable()
 export class SpritesService {
@@ -11,5 +12,9 @@ export class SpritesService {
 
   getAllSprites() {
     return sprites;
+  }
+
+  getGif(id: string) {
+    return gifs.find((gif) => gif.id.toString() == id);
   }
 }
