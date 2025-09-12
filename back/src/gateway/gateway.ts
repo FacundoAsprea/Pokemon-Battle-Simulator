@@ -5,7 +5,7 @@ import {
   WebSocketServer,
 } from '@nestjs/websockets';
 import { Server } from 'socket.io';
-import type { UserBattleState, GlobalBattleState, Attack } from './types';
+import type { UserBattleState, GlobalBattleState, Attack, Swap } from './types';
 
 @WebSocketGateway(3100, {
   cors: {
@@ -24,6 +24,9 @@ export class BattleGateway {
   private battleState: GlobalBattleState;
   private turn: 0 | 1 = 0;
 
+  getUserFromAction = (action: Attack | Swap) => {
+    return this.battleState.usersdata.find((user) => user.uid == action.origin) as UserBattleState
+  };
   //FUNCION PARA ALTERNAR EL TURNO
   turnShift() {
     if (this.turn == 0) {
@@ -70,11 +73,19 @@ export class BattleGateway {
     }
   }
 
-  //ACCIONES asd
+  //ACCIONES
+  //ATAQUE
   @SubscribeMessage('attack')
   onAttack(@MessageBody() attack: Attack) {
     console.log('SE REGISTRO UN ATAQUE: ', attack);
     this.turnShift();
     this.server.emit('shift', this.battleState);
+  }
+
+  //CAMBIO
+  @SubscribeMessage('swap')
+  onSwap(@MessageBody() swap: Swap) {
+    console.log('SE REGISTRO UN CAMBIO: ', swap);
+    const userModified = this.getUserFromAction(swap)
   }
 }

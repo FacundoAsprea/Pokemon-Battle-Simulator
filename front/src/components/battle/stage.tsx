@@ -12,25 +12,25 @@ const Stage = ({ view }: props) => {
     player: {
       align: "end",
       tile: playerTile,
-      margin: "0px",
+      margin: "30px",
       pokemonSprite: getSelectedPokemon("player", globalBattleState!)
     },
     rival: {
       align: "start",
       tile: rivalTile,
-      margin: "0px",
+      margin: "40px",
       pokemonSprite: getSelectedPokemon("rival", globalBattleState!)
     }
   };
   return (
     <div
-      className="flex flex-col items-center justify-end h-[60%] w-[40%] relative border-1 border-orange-400"
+      className="flex flex-col items-center justify-end h-[60%] w-[40%] relative"
       style={{ alignSelf: viewStyle[view].align }}
     >
       <div className="h-min w-full absolute bottom-0">
         <img src={viewStyle[view].tile} className="w-full"></img>
       </div>
-        <img style={{marginBottom: viewStyle[view].margin}} className="h-full z-10 h-min scale-150" src={viewStyle[view].pokemonSprite}/>
+        <img style={{marginBottom: viewStyle[view].margin}} className="z-2 h-min scale-150" src={viewStyle[view].pokemonSprite}/>
     </div>
   );
 };

@@ -11,13 +11,20 @@ export interface UserBattleState {
 }
 
 export interface Attack {
-  origin: string;
+  origin: userUID;
   message: string;
   damage: number;
-  objective: string;
+  objective: pokemonName;
 }
 
-//datos
+export interface Swap {
+  origin: userUID;
+  message: string;
+  from: pokemonName;
+  to: pokemonName;
+}
+
+//datosS
 export interface PokemonBattleData {
   stats: {
     hp: StatBattleData;
@@ -58,3 +65,6 @@ export interface DamageRelations {
   no_damage_from: string[];
   no_damage_to: string[];
 }
+
+type userUID = string;
+type pokemonName = string;
