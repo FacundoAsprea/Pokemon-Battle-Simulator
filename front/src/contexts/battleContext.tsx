@@ -5,7 +5,7 @@ interface props {
 }
 
 export interface GlobalBattleStateType {
-  globalBattleState: GlobalBattleState | undefined;
+  globalBattleState: GlobalBattleState;
   setGlobalBattleState: React.Dispatch<
     React.SetStateAction<GlobalBattleState | undefined>
   >;
@@ -30,13 +30,14 @@ const BattleContextProvider = ({ children }: props) => {
   });
   localStorage.removeItem("uid")
   localStorage.setItem("uid", localBattleState.uid)
+  console.log("SE CREO LA UID: ", localBattleState.uid)
 
   return (
     <BattleContext.Provider
       value={{
         localBattleState: localBattleState,
         setLocalBattleState: setLocalBattleState,
-        globalBattleState: globalBattleState,
+        globalBattleState: globalBattleState!,
         setGlobalBattleState: setGlobalBattleState
       }}
     >

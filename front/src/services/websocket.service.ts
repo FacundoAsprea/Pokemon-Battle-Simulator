@@ -14,7 +14,7 @@ class WebSocketService {
   }
 
   leaveQueue() {
-    console.log("DISCONNECTING PLAYER: ", this.player)
+    console.log("DISCONNECTING PLAYER: ", this.player);
     this.socket.emit("leaveQueue", this.player);
     this.socket.disconnect();
   }
@@ -23,10 +23,19 @@ class WebSocketService {
     this.socket.emit("joinRoom", this.player);
   }
 
-  waitForBattle() {           //777 de iq
+  waitForBattle() {
+    //777 de iq
     return new Promise<GlobalBattleState>((resolve) => {
       this.socket.on("startBattle", (messageBody: GlobalBattleState) => {
-        resolve(messageBody)
+        resolve(messageBody);
+      });
+    });
+  }
+
+  waitForShift() {
+    return new Promise<GlobalBattleState>((resolve) => {
+      this.socket.on("shift", (messageBody: GlobalBattleState) => {
+        resolve(messageBody);
       });
     });
   }

@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AnimatedBackground from "../animatedBackground";
 import MatchmakingButton from "./button";
@@ -10,7 +10,7 @@ import { BattleContext, type BattleContextType } from "@/contexts/battleContext"
 
 const MatchmakingInterface = () => {
   const navigate = useNavigate()
-  const { localBattleState, setLocalBattleState, setGlobalBattleState } = useContext(BattleContext) as BattleContextType
+  const { localBattleState, setLocalBattleState, setGlobalBattleState, globalBattleState } = useContext(BattleContext) as BattleContextType
   
   const playerName = useRef("");
   const [ip, setIp] = useState<string>();
@@ -30,7 +30,6 @@ const MatchmakingInterface = () => {
     webSocket.waitForBattle()
     .then((initialGlobalBattleState) => {
       setGlobalBattleState(initialGlobalBattleState)
-      navigate('/battle')
     })
   };
 
@@ -40,7 +39,6 @@ const MatchmakingInterface = () => {
     webSocket.waitForBattle()
     .then((initialGlobalBattleState) => {
       setGlobalBattleState(initialGlobalBattleState)
-      navigate('/battle')
     })
   };
 
@@ -48,6 +46,10 @@ const MatchmakingInterface = () => {
     console.log("DESCONECTANDO DEL WEBS...");
     webSocket.leaveQueue();
   };
+
+  useEffect(() => {
+    if (globalBattleState) navigate('/battle')
+  }, [globalBattleState])
 
   return (
     <AnimatedBackground>

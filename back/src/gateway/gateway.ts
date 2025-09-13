@@ -25,8 +25,13 @@ export class BattleGateway {
   private turn: 0 | 1 = 0;
 
   getUserFromAction = (action: Attack | Swap) => {
-    return this.battleState.usersdata.find((user) => user.uid == action.origin) as UserBattleState
+    return this.battleState.usersdata.find((user) => user.uid == action.origin);
   };
+
+  getPokemonFromName = (name: string, userRef: UserBattleState) => {
+    return userRef.team.find((pokemon) => pokemon.name == name);
+  };
+
   //FUNCION PARA ALTERNAR EL TURNO
   turnShift() {
     if (this.turn == 0) {
@@ -73,7 +78,7 @@ export class BattleGateway {
     }
   }
 
-  //ACCIONES
+  //ACCIONESasd
   //ATAQUE
   @SubscribeMessage('attack')
   onAttack(@MessageBody() attack: Attack) {
@@ -86,6 +91,18 @@ export class BattleGateway {
   @SubscribeMessage('swap')
   onSwap(@MessageBody() swap: Swap) {
     console.log('SE REGISTRO UN CAMBIO: ', swap);
-    const userModified = this.getUserFromAction(swap)
+    console.log('BATTLESTATE ANTES DEL CAMBIO: ', this.battleState);
+    const user = this.getUserFromAction(swap);
+    if (!user) return console.log('User es undefined');
+
+    const from = this.getPokemonFromName(swap.from, user);
+    const to = this.getPokemonFromName(swap.to, user);
+    if (!from || !to) return console.log('From o To es undefined');
+
+    from.selected = false;
+    to.selected = true;
+    this.turnShift();
+    console.log('BATTLESTATE DESPUES DEL CAMBIO: ', this.battleState);
+    this.server.emit('shift', this.battleState);
   }
 }

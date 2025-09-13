@@ -1,7 +1,10 @@
-const ActionsMenu = () => {
+interface props {
+  text: string
+}
+const ActionsMenu = ({ text }: props) => {
   return (
     <div className="bg-[#181818] w-full flex flex-col h-[40%] z-3">
-        <div className="text-white text-md h-[35%]">test</div>
+        <div className="text-white text-md h-[35%]">{text}</div>
       <div className="flex h-[65%]">
         <button className="w-full h-full border-1 border-[#202020] text-xl text-center text-white cursor-pointer hover:bg-[#303030]">
           ATACAR
