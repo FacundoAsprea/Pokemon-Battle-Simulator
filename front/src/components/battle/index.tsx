@@ -4,7 +4,7 @@ import { BattleContext } from "@/contexts/battleContext";
 import type { GlobalBattleStateType } from "@/contexts/battleContext";
 import Stage from "./stage";
 import Minicard from "./minicard";
-import ActionsMenu from "./actions";
+import ActionsMenu from "./actions/actions";
 
 import background from "@/assets/images/background.png";
 import type { UserBattleState } from "@/game/types";
@@ -21,11 +21,11 @@ const BattleWrapper = () => {
   console.log("BATTLESTATE GLOBAL: ", globalBattleState);
   console.log("PLAYER: ", playerData)
   console.log("RIVAL: ", rivalData)
-  const battleText = useRef("a")
+  const [battleText, setBattleText] = useState('')
 
   useEffect(() => {
-    battleText.current = isPlayersTurn(globalBattleState) ? "Es tu turno" : "Esperando al rival"
-  }, [])
+    setBattleText(isPlayersTurn(globalBattleState) ? "Es tu turno" : "Esperando al rival")
+  }, [globalBattleState])
   
 
   return (
@@ -43,7 +43,7 @@ const BattleWrapper = () => {
           <Stage view="player" />
           <Stage view="rival" />
         </div>
-        <ActionsMenu text={battleText.current}/>
+        <ActionsMenu text={battleText} isPlayersTurn={isPlayersTurn(globalBattleState)}/>
       </main>
       <nav className="h-screen w-[15%] flex flex-col items-center justify-center gap-2 p-2">
         {rivalData!.team.map((pokemon) => (

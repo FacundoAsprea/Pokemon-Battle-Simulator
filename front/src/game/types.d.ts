@@ -33,7 +33,7 @@ export interface PokemonBattleData {
 }
 
 interface StatBattleData {
-  base_value: number;
+  base_stat: number;
   actual_value: number;
 }
 

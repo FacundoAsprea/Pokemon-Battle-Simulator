@@ -78,7 +78,7 @@ export class BattleGateway {
     }
   }
 
-  //ACCIONESasd
+  //ACCIONESasdsa
   //ATAQUE
   @SubscribeMessage('attack')
   onAttack(@MessageBody() attack: Attack) {
