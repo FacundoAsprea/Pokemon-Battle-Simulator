@@ -1,4 +1,4 @@
-import type { GlobalBattleState } from "@/game/types";
+import type { Action, GlobalBattleState } from "@/game/types";
 import type { PlayerData } from "@/types";
 import { io, Socket } from "socket.io-client";
 
@@ -16,25 +16,19 @@ class WebSocketService {
   leaveQueue() {
     console.log("DISCONNECTING PLAYER: ", this.player);
     this.socket.emit("leaveQueue", this.player);
-    this.socket.disconnect();
   }
 
   joinRoom() {
     this.socket.emit("joinRoom", this.player);
   }
 
-  waitForBattle() {
-    //777 de iq
-    return new Promise<GlobalBattleState>((resolve) => {
-      this.socket.on("startBattle", (messageBody: GlobalBattleState) => {
-        resolve(messageBody);
-      });
-    });
+  sendAction(action: Action) {
+    this.socket.emit("action", action)
   }
 
-  waitForShift() {
+  waitFor(message: "startBattle" | "turn") {
     return new Promise<GlobalBattleState>((resolve) => {
-      this.socket.on("shift", (messageBody: GlobalBattleState) => {
+      this.socket.once(message, (messageBody: GlobalBattleState) => {
         resolve(messageBody);
       });
     });

@@ -5,7 +5,7 @@ import {
   WebSocketServer,
 } from '@nestjs/websockets';
 import { Server } from 'socket.io';
-import type { UserBattleState, GlobalBattleState, Attack, Swap } from './types';
+import type { UserBattleState, GlobalBattleState, Action } from './types';
 
 @WebSocketGateway(3100, {
   cors: {
@@ -22,38 +22,61 @@ export class BattleGateway {
     battledata: { turn: 'test' },
   };
   private battleState: GlobalBattleState;
-  private turn: 0 | 1 = 0;
+  private movesThisTurn: 0 | 1 | 2 = 0;
+  private queuedActions: Action[] = [];
 
-  getUserFromAction = (action: Attack | Swap) => {
-    return this.battleState.usersdata.find((user) => user.uid == action.origin);
+  checkForMoves = () => {
+    console.log('MOVIMIENTOS EN ESTE TURNO: ', this.movesThisTurn);
+    if (this.movesThisTurn == 2) {
+      this.movesThisTurn = 0;
+      this.server.emit('turn', this.battleState);
+      this.queuedActions = [];
+      return;
+    }
+  };
+
+  getUserFromAction = (action: Action): UserBattleState => {
+    return this.battleState.usersdata.find(
+      (user) => user.uid == action.origin,
+    ) as UserBattleState;
   };
 
   getPokemonFromName = (name: string, userRef: UserBattleState) => {
-    return userRef.team.find((pokemon) => pokemon.name == name);
+    const pokemon = userRef.team.find((pokemon) => pokemon.name == name);
+    return pokemon ? pokemon : null;
   };
 
-  //FUNCION PARA ALTERNAR EL TURNO
-  turnShift() {
-    if (this.turn == 0) {
-      this.turn = 1;
-      this.battleState.battledata.turn =
-        this.battleState.usersdata[this.turn].uid;
-      return;
+  //FUNCION PARA APLICAR LA ACCION DEL JUGADORasdda
+  handleAction(action: Action) {
+    const player = this.getUserFromAction(action);
+    this.queuedActions.push(action);
+
+    if (action.type == 'swap') {
+      const selected = this.getPokemonFromName(action.from, player);
+      const swapped = this.getPokemonFromName(action.to, player);
+
+      if (!selected || !swapped)
+        return new Error('Error al obtener datos de un pokemon');
+
+      selected.selected = false;
+      swapped.selected = true;
+
+      this.movesThisTurn += 1;
+      this.checkForMoves();
     }
-    this.turn = 0;
-    this.battleState.battledata.turn =
-      this.battleState.usersdata[this.turn].uid;
+    // haceElCambio
   }
 
   //DESCONEXIONES
   @SubscribeMessage('leaveQueue')
   onQueueLeave(@MessageBody() disconnectedPlayer: UserBattleState) {
-    this.battleStateAux.usersdata = this.battleState.usersdata.filter(
+    this.battleStateAux.usersdata = this.battleStateAux.usersdata.filter(
       (player: UserBattleState) => player.uid != disconnectedPlayer.uid,
     );
   }
   @SubscribeMessage('disconnectPlayer')
   onDisconnect(@MessageBody() disconnectedPlayer: UserBattleState) {
+    console.log('AUX: ', this.battleStateAux);
     this.battleState.usersdata = this.battleState.usersdata.filter(
       (player: UserBattleState) => player.uid != disconnectedPlayer.uid,
     );
@@ -71,38 +94,14 @@ export class BattleGateway {
       //DEJAR DE USAR EL AUXILIAR
       this.battleState = { ...this.battleStateAux };
 
-      //EMPIEZA EL CREADOR DE LA SALA
-      this.battleState.battledata.turn =
-        this.battleState.usersdata[this.turn].uid;
       this.server.emit('startBattle', this.battleState);
     }
   }
 
-  //ACCIONESasdsa
-  //ATAQUE
-  @SubscribeMessage('attack')
-  onAttack(@MessageBody() attack: Attack) {
-    console.log('SE REGISTRO UN ATAQUE: ', attack);
-    this.turnShift();
-    this.server.emit('shift', this.battleState);
-  }
-
-  //CAMBIO
-  @SubscribeMessage('swap')
-  onSwap(@MessageBody() swap: Swap) {
-    console.log('SE REGISTRO UN CAMBIO: ', swap);
-    console.log('BATTLESTATE ANTES DEL CAMBIO: ', this.battleState);
-    const user = this.getUserFromAction(swap);
-    if (!user) return console.log('User es undefined');
-
-    const from = this.getPokemonFromName(swap.from, user);
-    const to = this.getPokemonFromName(swap.to, user);
-    if (!from || !to) return console.log('From o To es undefined');
-
-    from.selected = false;
-    to.selected = true;
-    this.turnShift();
-    console.log('BATTLESTATE DESPUES DEL CAMBIO: ', this.battleState);
-    this.server.emit('shift', this.battleState);
+  //ACCIONES
+  @SubscribeMessage('action')
+  onAction(@MessageBody() action: Action) {
+    console.log('SE REGISTRO UNA ACCION', action);
+    this.handleAction(action);
   }
 }

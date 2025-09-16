@@ -32,6 +32,24 @@ export interface PokemonBattleData {
   selected: boolean
 }
 
+//ACCIONES
+export type Action = Attack | Swap;
+export interface Attack {
+  type: 'attack';
+  origin: string;
+  message: string;
+  damage: number;
+  objective: string;
+}
+
+export interface Swap {
+  type: 'swap';
+  origin: string;
+  message: string;
+  from: string;
+  to: string;
+}
+
 interface StatBattleData {
   base_stat: number;
   actual_value: number;

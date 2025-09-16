@@ -15,10 +15,16 @@ import {
 } from "@/components/ui/drawer";
 import { getPlayerData } from "@/game/functions/getters";
 import Selector from "./selector";
+import { swapPokemon } from "@/game/logic/swapPokemon";
 interface props {
+  text: [
+    battleText: string,
+    setBattleText: React.Dispatch<React.SetStateAction<string>>
+  ];
   variant: "ATACAR" | "CAMBIAR";
 }
-const ActionsButton = ({ variant }: props) => {
+const ActionsButton = ({ text, variant }: props) => {
+  const [setBattleText] = text
   const { globalBattleState, setGlobalBattleState } = useContext(
     BattleContext
   ) as BattleContextType;
@@ -57,7 +63,7 @@ const ActionsButton = ({ variant }: props) => {
           <DrawerContent>
             <div className="h-[60dvh] grid grid-cols-3 grid-rows-2 gap-2 p-2">
               {playerData.team.map((pokemon) => (
-                <Selector pokemon={pokemon} />
+                <Selector pokemon={pokemon} onClickHandler={() => swapPokemon(pokemon.name, globalBattleState)}/>
               ))}
             </div>
           </DrawerContent>

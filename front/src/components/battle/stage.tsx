@@ -2,7 +2,7 @@ import { useContext } from "react";
 import playerTile from "@/assets/images/player_tile.png"
 import rivalTile from "@/assets/images/rival_tile.png"
 import { BattleContext, type BattleContextType } from "@/contexts/battleContext";
-import { getSelectedPokemon } from "@/game/functions/getSelectedPokemons";
+import { getSelectedPokemonSprites } from "@/game/functions/getSelectedPokemons";
 interface props {
   view: "player" | "rival";
 }
@@ -13,13 +13,13 @@ const Stage = ({ view }: props) => {
       align: "end",
       tile: playerTile,
       margin: "30px",
-      pokemonSprite: getSelectedPokemon("player", globalBattleState!)
+      pokemonSprite: getSelectedPokemonSprites("player", globalBattleState!)
     },
     rival: {
       align: "start",
       tile: rivalTile,
       margin: "40px",
-      pokemonSprite: getSelectedPokemon("rival", globalBattleState!)
+      pokemonSprite: getSelectedPokemonSprites("rival", globalBattleState!)
     }
   };
   return (

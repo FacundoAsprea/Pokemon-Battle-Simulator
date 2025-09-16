@@ -1,6 +1,6 @@
 import type { GlobalBattleState } from "../types";
 
-export const getSelectedPokemon = (
+export const getSelectedPokemonSprites = (
   user: "player" | "rival",
   globalBattleState: GlobalBattleState
 ) => {

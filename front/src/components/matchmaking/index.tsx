@@ -27,7 +27,7 @@ const MatchmakingInterface = () => {
 
     webSocket.startConnection(data, localBattleState);
     webSocket.joinRoom();
-    webSocket.waitForBattle()
+    webSocket.waitFor("startBattle")
     .then((initialGlobalBattleState) => {
       setGlobalBattleState(initialGlobalBattleState)
     })
@@ -36,7 +36,7 @@ const MatchmakingInterface = () => {
   const joinRoom = (ip: string) => {
     webSocket.startConnection(ip, localBattleState);
     webSocket.joinRoom();
-    webSocket.waitForBattle()
+    webSocket.waitFor("startBattle")
     .then((initialGlobalBattleState) => {
       setGlobalBattleState(initialGlobalBattleState)
     })
@@ -45,6 +45,7 @@ const MatchmakingInterface = () => {
   const disconnect = () => {
     console.log("DESCONECTANDO DEL WEBS...");
     webSocket.leaveQueue();
+    setClicked(false)
   };
 
   useEffect(() => {
@@ -61,7 +62,6 @@ const MatchmakingInterface = () => {
                 <a
                   className="bg-[#404040] px-3 py-1 text-white rounded-sm absolute top-1/8 left-1/8 cursor-pointer"
                   onClick={disconnect}
-                  href="matchmaking"
                 >
                   {"<"}
                 </a>
@@ -73,7 +73,6 @@ const MatchmakingInterface = () => {
                 <a
                   className="bg-[#404040] px-3 py-1 text-white rounded-sm absolute top-1/8 left-1/8 cursor-pointer"
                   onClick={disconnect}
-                  href="matchmaking"
                 >
                   {"<"}
                 </a>
@@ -103,7 +102,7 @@ const MatchmakingInterface = () => {
               <p className="text-red-500">Ingresa un nombre de usuario</p>
               <a
                 className="bg-[#404040] px-3 py-1 text-white rounded-sm cursor-pointer"
-                href="matchmaking"
+                onClick={() => setClicked(false)}
               >
                 {"<"}
               </a>

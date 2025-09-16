@@ -8,9 +8,12 @@ export interface UserBattleState {
   team: PokemonBattleData[];
   name: string;
   uid: string;
+  hasPlayed: false;
 }
 
+export type Action = Attack | Swap;
 export interface Attack {
+  type: 'attack';
   origin: userUID;
   message: string;
   damage: number;
@@ -18,6 +21,7 @@ export interface Attack {
 }
 
 export interface Swap {
+  type: 'swap';
   origin: userUID;
   message: string;
   from: pokemonName;

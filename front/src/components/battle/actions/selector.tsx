@@ -3,13 +3,14 @@ import type { PokemonBattleData } from "@/game/types";
 import { capitalize } from "@/utils/functions";
 interface props {
   pokemon: PokemonBattleData;
+  onClickHandler: () => void
 }
 
-const Selector = ({ pokemon }: props) => {
+const Selector = ({ pokemon, onClickHandler }: props) => {
   const healthPercentage =
     (pokemon.stats.hp.actual_value / pokemon.stats.hp.base_stat) * 100;
   return (
-    <div className="flex flex-row border-1 border-gray-500 rounded-sm px-5 hover:bg-[#303030] cursor-pointer">
+    <div onClick={onClickHandler} className="flex flex-row border-1 border-gray-500 rounded-sm px-5 hover:bg-[#303030] cursor-pointer">
       <div className="h-full w-1/2 flex justify-center">
         <img
           className="object-cover h-full"
