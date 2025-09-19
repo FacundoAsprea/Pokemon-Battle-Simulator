@@ -13,14 +13,15 @@ export interface UserBattleState {
 
 export type Action = Attack | Swap;
 export interface Attack {
+  priority: number;
   type: 'attack';
   origin: userUID;
   message: string;
-  damage: number;
-  objective: pokemonName;
+  move: MoveData;
 }
 
 export interface Swap {
+  priority: 999;
   type: 'swap';
   origin: userUID;
   message: string;
@@ -28,6 +29,15 @@ export interface Swap {
   to: pokemonName;
 }
 
+interface MoveData {
+  name: string;
+  power: number;
+  pp: number;
+  priority: number;
+  accuracy: number;
+  damage_class: 'physical' | 'status' | 'special';
+  type: string;
+}
 //datosS
 export interface PokemonBattleData {
   stats: {
