@@ -1,28 +1,50 @@
-import type { GlobalBattleState, UserBattleState } from "../types";
+import type {
+  PokemonBattleData,
+  UserBattleState,
+} from "../types";
+import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 
-export const getPlayerData = (globalBattleState: GlobalBattleState) => {
+export const getUserById = (id: string) => {
+  const { globalBattleState } = useGlobalBattleState.getState();
+  return globalBattleState.usersdata.find(
+    (user) => user.uid == id
+  ) as UserBattleState;
+};
+
+export const getSelectedPokemonByUserId = (id: string) => {
+  return getUserById(id).team.find(
+    (pokemon) => pokemon.selected == true
+  ) as PokemonBattleData;
+};
+
+export const getPokemonByName = (
+  userRef: UserBattleState,
+  pokemonName: string
+) => {
+  return userRef.team.find(
+    (pokemon) => pokemon.name == pokemonName
+  ) as PokemonBattleData;
+};
+
+export const getPlayerData = () => {
+  const { globalBattleState } = useGlobalBattleState.getState();
   const playerUID = localStorage.getItem("uid");
-  console.log("EJECUTANDO GETPLAYERDATA CON LA UID: ", playerUID);
   return globalBattleState.usersdata.find(
     (user) => user.uid == playerUID
   ) as UserBattleState;
 };
 
-export const getRivalData = (globalBattleState: GlobalBattleState) => {
+export const getRivalData = () => {
+  const { globalBattleState } = useGlobalBattleState.getState();
   const playerUID = localStorage.getItem("uid");
-  console.log("EJECUTANDO GETRIVALDATA CON LA UID: ", playerUID);
   return globalBattleState.usersdata.find(
     (user) => user.uid != playerUID
   ) as UserBattleState;
 };
 
-export const getSelectedPokemon = (
-  user: "player" | "rival",
-  globalBattleState: GlobalBattleState
-) => {
+export const getSelectedPokemon = (user: "player" | "rival") => {
+  const { globalBattleState } = useGlobalBattleState.getState();
   const uid = localStorage.getItem("uid");
-  console.log("LA UID ES: ", uid);
-  console.log("EL ESTADO GLOBAL: ", globalBattleState);
 
   if (user == "player") {
     const player = globalBattleState.usersdata.find((user) => user.uid == uid);

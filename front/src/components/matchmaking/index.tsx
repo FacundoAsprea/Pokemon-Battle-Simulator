@@ -5,13 +5,14 @@ import MatchmakingButton from "./button";
 import { IpService } from "@/services/ip.service";
 import { webSocket } from "@/services/websocket.service";
 
-import { useContext } from "react";
-import { BattleContext, type BattleContextType } from "@/contexts/battleContext";
+import { useLocalBattleState } from "@/states/battleContext/localBattleState";
+import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 
 const MatchmakingInterface = () => {
-  const navigate = useNavigate()
-  const { localBattleState, setLocalBattleState, setGlobalBattleState, globalBattleState } = useContext(BattleContext) as BattleContextType
-  
+  const navigate = useNavigate();
+  const { localBattleState, setLocalBattleState } = useLocalBattleState();
+  const { globalBattleState, setGlobalBattleState } = useGlobalBattleState();
+
   const playerName = useRef("");
   const [ip, setIp] = useState<string>();
   const [joinRoomIp, setJoinRoomIp] = useState<string>("");
@@ -19,7 +20,7 @@ const MatchmakingInterface = () => {
 
   const createRoom = async () => {
     setClicked(true);
-    if (!playerName.current) return
+    if (!playerName.current) return;
     const ipService = new IpService();
 
     const { data } = await ipService.getIp();
@@ -27,30 +28,32 @@ const MatchmakingInterface = () => {
 
     webSocket.startConnection(data, localBattleState);
     webSocket.joinRoom();
-    webSocket.waitFor("startBattle")
-    .then((initialGlobalBattleState) => {
-      setGlobalBattleState(initialGlobalBattleState)
-    })
+    webSocket.waitForGameStart().then((initialGlobalBattleState) => {
+      setGlobalBattleState(initialGlobalBattleState);
+    });
   };
 
   const joinRoom = (ip: string) => {
     webSocket.startConnection(ip, localBattleState);
     webSocket.joinRoom();
-    webSocket.waitFor("startBattle")
-    .then((initialGlobalBattleState) => {
-      setGlobalBattleState(initialGlobalBattleState)
-    })
+    webSocket.waitForGameStart().then((initialGlobalBattleState) => {
+      setGlobalBattleState(initialGlobalBattleState);
+    });
   };
 
   const disconnect = () => {
     console.log("DESCONECTANDO DEL WEBS...");
     webSocket.leaveQueue();
-    setClicked(false)
+    setClicked(false);
   };
 
   useEffect(() => {
-    if (globalBattleState) navigate('/battle')
-  }, [globalBattleState])
+    if (
+      globalBattleState.usersdata[0].team.length == 6 &&
+      globalBattleState.usersdata[1].team.length == 6
+    )
+      navigate("/battle");
+  }, [globalBattleState]);
 
   return (
     <AnimatedBackground>
@@ -115,11 +118,11 @@ const MatchmakingInterface = () => {
               className="w-1/2 p-3 text-gray-200 bg-[#303030] rounded-sm border-1 border-gray-300"
               onChange={(event) => {
                 event.preventDefault();
-                playerName.current = event.target.value
+                playerName.current = event.target.value;
                 setLocalBattleState({
                   ...localBattleState,
-                  name: playerName.current
-                })
+                  name: playerName.current,
+                });
               }}
             ></input>
             <MatchmakingButton

@@ -1,17 +1,14 @@
-import { useState, useEffect, useRef, useContext } from "react";
+import { useState, useEffect, useRef } from "react";
 import { SpritesService } from "@/services/sprite.service";
 import type { SpriteData } from "@/types";
-import type { BattleContextType } from "@/contexts/battleContext";
 import PokeCard from "./pokecard";
 import AnimatedBackground from "../animatedBackground";
+import { useLocalBattleState } from "@/states/battleContext/localBattleState";
 import { Link } from "react-router-dom";
-import { BattleContext } from "@/contexts/battleContext";
 import { PokemonDataService } from "@/services/pokemondata.service";
 
 const TeamSelector = () => {
-  const { localBattleState, setLocalBattleState } = useContext(
-    BattleContext
-  ) as BattleContextType
+  const { localBattleState, setLocalBattleState } = useLocalBattleState()
   const allSprites = useRef<SpriteData[]>([]);
   const [sprites, setSprites] = useState<SpriteData[]>([]);
   const [selectedTeam, setSelectedTeam] = useState<SpriteData[]>([]);
@@ -78,7 +75,7 @@ const TeamSelector = () => {
           style={{ scrollbarWidth: "thin" }}
           className="relative grid grid-cols-6 grid-rows-1 gap-x-3"
         >
-          {selectedTeam.length == 6 ? (
+          {localBattleState.team.length == 6 ? (
             <Link
               to="/matchmaking"
               className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"

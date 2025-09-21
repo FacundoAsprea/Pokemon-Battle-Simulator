@@ -1,8 +1,6 @@
-import { useContext } from "react";
-import {
-  BattleContext,
-  type BattleContextType,
-} from "@/contexts/battleContext";
+import { useState } from "react";
+
+//ui
 import {
   Drawer,
   DrawerTrigger,
@@ -13,31 +11,46 @@ import {
   DrawerDescription,
   DrawerClose,
 } from "@/components/ui/drawer";
-import { getPlayerData } from "@/game/functions/getters";
 import Selector from "./selector";
+
+//funcs
+import { getPlayerData } from "@/game/functions/getters";
 import { swapPokemon } from "@/game/logic/swapPokemon";
+import type { PokemonBattleData } from "@/game/types";
+import { useBattleText } from "@/states/battleTextContext/battleTextContext";
+
 interface props {
-  text: [
-    battleText: string,
-    setBattleText: React.Dispatch<React.SetStateAction<string>>
+  userHasPlayedState: [
+    userHasPlayed: boolean,
+    setUserHasPlayed: React.Dispatch<React.SetStateAction<boolean>>
   ];
   variant: "ATACAR" | "CAMBIAR";
 }
-const ActionsButton = ({ text, variant }: props) => {
-  const [setBattleText] = text
-  const { globalBattleState, setGlobalBattleState } = useContext(
-    BattleContext
-  ) as BattleContextType;
+const ActionsButton = ({variant, userHasPlayedState }: props) => {
+  const [open, setOpen] = useState(false);
+  const [userHasPlayed, setUserHasPlayed] = userHasPlayedState;
+  const {setBattleText} = useBattleText();
 
-  const playerData = getPlayerData(globalBattleState);
+  const playerData = getPlayerData();
   if (!playerData) return "ERROR AL OBTENER PLAYERDATA";
 
+  const handleSwap = (pokemon: PokemonBattleData) => {
+    if (swapPokemon(pokemon.name)) {
+      setUserHasPlayed(true);
+      setOpen(false);
+      setBattleText("Esperando al rival...")
+    }
+  };
+
   return (
-    <Drawer>
+    <Drawer open={open} onOpenChange={setOpen}>
       {variant == "ATACAR" ? (
         <>
           <DrawerTrigger asChild>
-            <button className="w-full h-full border-1 border-[#202020] text-xl text-center text-white cursor-pointer hover:bg-[#303030]">
+            <button
+              disabled={userHasPlayed}
+              className="w-full h-full border-1 border-[#202020] text-xl text-center text-white cursor-pointer hover:bg-[#303030]"
+            >
               ATACAR
             </button>
           </DrawerTrigger>
@@ -56,14 +69,20 @@ const ActionsButton = ({ text, variant }: props) => {
       ) : (
         <>
           <DrawerTrigger asChild>
-            <button className="w-full h-full border-1 border-[#202020] text-xl text-center text-white cursor-pointer hover:bg-[#303030]">
+            <button
+              disabled={userHasPlayed}
+              className="w-full h-full border-1 border-[#202020] text-xl text-center text-white cursor-pointer hover:bg-[#303030]"
+            >
               CAMBIAR
             </button>
           </DrawerTrigger>
           <DrawerContent>
             <div className="h-[60dvh] grid grid-cols-3 grid-rows-2 gap-2 p-2">
               {playerData.team.map((pokemon) => (
-                <Selector pokemon={pokemon} onClickHandler={() => swapPokemon(pokemon.name, globalBattleState)}/>
+                <Selector
+                  pokemon={pokemon}
+                  onClickHandler={() => handleSwap(pokemon)}
+                />
               ))}
             </div>
           </DrawerContent>

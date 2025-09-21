@@ -73,7 +73,10 @@ export class BattleGateway {
 
     const actionsWereExecuted = this.battleService.handleAction(action);
     if (actionsWereExecuted) {
-      this.server.emit('turn', this.battleStateService.getState());
+      this.server.emit('turn', {
+        uiUpdate: this.battleService.uiUpdate,
+        newBattleState: this.battleStateService.getState(),
+      });
     }
   }
 }

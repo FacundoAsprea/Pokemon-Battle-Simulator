@@ -1,11 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { BattleStateService } from './battleState.service';
-import type { Action, UserBattleState } from './types';
+import type { Action, uiUpdates, UserBattleState } from './types';
 
 @Injectable()
 export class BattleService {
   movesThisTurn: 0 | 1 | 2 = 0;
   movesQueue: Action[] = [];
+  uiUpdate: uiUpdates[] = [];
 
   constructor(private battleStateService: BattleStateService) {}
 
@@ -20,7 +21,7 @@ export class BattleService {
     return pokemon ? pokemon : null;
   };
 
-  //FUNCION PARA APLICAR LA ACCION DEL JUGADORasdda
+  //MANEJO DE ACCIONES
   handleAction(action: Action) {
     this.movesQueue.push(action);
 
@@ -40,20 +41,27 @@ export class BattleService {
   }
 
   executeAction(action: Action) {
-    console.log('SE ESTA EJECUTANDO LA SIGUIENTE ACCION');
+    console.log('SE ESTA EJECUTANDO LA SIGUIENTE ACCION: ', action);
     const player = this.getUserFromAction(action);
 
     if (action.type == 'swap') {
       const selected = this.getPokemonFromName(action.from, player);
       const swapped = this.getPokemonFromName(action.to, player);
 
-      if (!selected || !swapped)
+      if (!selected || !swapped) {
         return new Error('Error al obtener datos de un pokemon');
+      }
 
       selected.selected = false;
       swapped.selected = true;
 
       this.movesThisTurn += 1;
+      this.uiUpdate.push({
+        user: player.uid,
+        message: action.message,
+        type: 'swap',
+        newSelected: action.to,
+      });
     }
   }
 }

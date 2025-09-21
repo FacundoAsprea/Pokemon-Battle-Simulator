@@ -1,13 +1,14 @@
-import { useContext } from "react";
 import playerTile from "@/assets/images/player_tile.png"
 import rivalTile from "@/assets/images/rival_tile.png"
-import { BattleContext, type BattleContextType } from "@/contexts/battleContext";
+
+import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 import { getSelectedPokemonSprites } from "@/game/functions/getSelectedPokemons";
+
 interface props {
   view: "player" | "rival";
 }
 const Stage = ({ view }: props) => {
-  const { globalBattleState } = useContext(BattleContext) as BattleContextType
+  const { globalBattleState } = useGlobalBattleState()
   const viewStyle = {
     player: {
       align: "end",

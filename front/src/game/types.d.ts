@@ -1,5 +1,5 @@
 export interface GlobalBattleState {
-  usersdata: [UserBattleState, UserBattleState]
+  usersdata: UserBattleState[]
   battledata: {
     turn: string
   }

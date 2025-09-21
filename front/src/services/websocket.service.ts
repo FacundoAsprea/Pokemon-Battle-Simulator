@@ -1,5 +1,5 @@
 import type { Action, GlobalBattleState } from "@/game/types";
-import type { PlayerData } from "@/types";
+import type { PlayerData, TurnResponse } from "@/types";
 import { io, Socket } from "socket.io-client";
 
 class WebSocketService {
@@ -23,12 +23,23 @@ class WebSocketService {
   }
 
   sendAction(action: Action) {
-    this.socket.emit("action", action)
+    this.socket.emit("action", action);
   }
 
-  waitFor(message: "startBattle" | "turn") {
+  waitForGameStart() {
     return new Promise<GlobalBattleState>((resolve) => {
-      this.socket.once(message, (messageBody: GlobalBattleState) => {
+      return this.socket.once(
+        "startBattle",
+        (messageBody: GlobalBattleState) => {
+          resolve(messageBody);
+        }
+      );
+    });
+  }
+
+  waitForTurn() {
+    return new Promise<TurnResponse>((resolve) => {
+      return this.socket.once("turn", (messageBody: TurnResponse) => {
         resolve(messageBody);
       });
     });

@@ -11,6 +11,20 @@ export interface UserBattleState {
   hasPlayed: false;
 }
 
+export type uiUpdates = swapUiUpdate | attackUiUpdate;
+interface uiUpdate {
+  user: string;
+  message: string;
+  type: 'swap' | 'attack' | 'status';
+}
+export interface swapUiUpdate extends uiUpdate {
+  newSelected: string;
+}
+export interface attackUiUpdate extends uiUpdate {
+  objective: string;
+}
+
+//Movimientos
 export type Action = Attack | Swap;
 export interface Attack {
   priority: number;
@@ -38,7 +52,8 @@ interface MoveData {
   damage_class: 'physical' | 'status' | 'special';
   type: string;
 }
-//datosS
+
+//datos
 export interface PokemonBattleData {
   stats: {
     hp: StatBattleData;
