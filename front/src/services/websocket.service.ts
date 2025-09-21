@@ -40,6 +40,7 @@ class WebSocketService {
   waitForTurn() {
     return new Promise<TurnResponse>((resolve) => {
       return this.socket.once("turn", (messageBody: TurnResponse) => {
+        console.log("EL WEBSOCKET ENVIO UN TURN: ", messageBody)
         resolve(messageBody);
       });
     });

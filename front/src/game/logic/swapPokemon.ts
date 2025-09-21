@@ -3,11 +3,12 @@ import type { Swap } from "../types";
 import { getPlayerData } from "../functions/getters";
 import { getSelectedPokemon } from "../functions/getters";
 import { capitalize } from "@/utils/functions";
+import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 
 export const swapPokemon = (
   pokemonName: string,
 ) => {
-  const player = getPlayerData();
+  const player = getPlayerData(useGlobalBattleState.getState().globalBattleState)
   const selectedPokemon = getSelectedPokemon("player");
 
   if (selectedPokemon.name == pokemonName) return false

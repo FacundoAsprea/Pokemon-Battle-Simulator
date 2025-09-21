@@ -7,6 +7,7 @@ import {
   getSelectedPokemonByUserId,
   getUserById,
 } from "../functions/getters";
+import { useUserHasPlayed } from "@/states/userHasPlayed/userHasPlayedState";
 
 class Game {
   async runGame() {
@@ -24,8 +25,8 @@ class Game {
     return new Promise((resolve) => {
       setTimeout(() => {
         if (update.type === "swap") {
-          const user = getUserById(update.user);
-          const selectedPokemon = getSelectedPokemonByUserId(user.uid);
+          const user = getUserById(update.user, useGlobalBattleState.getState().globalBattleState);
+          const selectedPokemon = getSelectedPokemonByUserId(user.uid, useGlobalBattleState.getState().globalBattleState);
           const newSelectedPokemon = getPokemonByName(
             user,
             (update as swapUiUpdate).newSelected
@@ -42,6 +43,7 @@ class Game {
             }
             return pokemon;
           });
+          console.log("NUEVA VERSION DEL EQUIPO: ", newTeam)
 
           //Aplico los cambios al estado
           useGlobalBattleState.setState((state) => ({
@@ -54,6 +56,8 @@ class Game {
               ),
             },
           }));
+          
+          useUserHasPlayed.setState({ userHasPlayed: false })
 
           resolve(true);
         }

@@ -18,20 +18,18 @@ import { getPlayerData } from "@/game/functions/getters";
 import { swapPokemon } from "@/game/logic/swapPokemon";
 import type { PokemonBattleData } from "@/game/types";
 import { useBattleText } from "@/states/battleTextContext/battleTextContext";
+import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
+import { useUserHasPlayed } from "@/states/userHasPlayed/userHasPlayedState";
 
 interface props {
-  userHasPlayedState: [
-    userHasPlayed: boolean,
-    setUserHasPlayed: React.Dispatch<React.SetStateAction<boolean>>
-  ];
   variant: "ATACAR" | "CAMBIAR";
 }
-const ActionsButton = ({variant, userHasPlayedState }: props) => {
+const ActionsButton = ({variant }: props) => {
   const [open, setOpen] = useState(false);
-  const [userHasPlayed, setUserHasPlayed] = userHasPlayedState;
+  const { userHasPlayed, setUserHasPlayed } = useUserHasPlayed()
   const {setBattleText} = useBattleText();
 
-  const playerData = getPlayerData();
+  const playerData = useGlobalBattleState(state => getPlayerData(state.globalBattleState))
   if (!playerData) return "ERROR AL OBTENER PLAYERDATA";
 
   const handleSwap = (pokemon: PokemonBattleData) => {

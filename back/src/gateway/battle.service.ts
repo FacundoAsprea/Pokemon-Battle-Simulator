@@ -24,6 +24,7 @@ export class BattleService {
   //MANEJO DE ACCIONES
   handleAction(action: Action) {
     this.movesQueue.push(action);
+    console.log('MOVESQUEUE: ', this.movesQueue);
 
     if (this.movesQueue.length == 2) {
       this.executeAllActions();

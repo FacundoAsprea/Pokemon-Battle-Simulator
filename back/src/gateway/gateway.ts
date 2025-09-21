@@ -66,17 +66,21 @@ export class BattleGateway {
     }
   }
 
-  //ACCIONES
+  //ACCIONESasdasdasd
   @SubscribeMessage('action')
   onAction(@MessageBody() action: Action) {
     console.log('SE REGISTRO UNA ACCION', action);
 
     const actionsWereExecuted = this.battleService.handleAction(action);
     if (actionsWereExecuted) {
+      console.log('EMITIENDO UN TURN');
       this.server.emit('turn', {
         uiUpdate: this.battleService.uiUpdate,
         newBattleState: this.battleStateService.getState(),
       });
+
+      this.battleService.movesQueue = [];
+      this.battleService.uiUpdate = [];
     }
   }
 }

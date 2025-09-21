@@ -1,26 +1,24 @@
 import playerTile from "@/assets/images/player_tile.png"
 import rivalTile from "@/assets/images/rival_tile.png"
 
-import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 import { getSelectedPokemonSprites } from "@/game/functions/getSelectedPokemons";
 
 interface props {
   view: "player" | "rival";
 }
 const Stage = ({ view }: props) => {
-  const { globalBattleState } = useGlobalBattleState()
   const viewStyle = {
     player: {
       align: "end",
       tile: playerTile,
       margin: "30px",
-      pokemonSprite: getSelectedPokemonSprites("player", globalBattleState!)
+      pokemonSprite: getSelectedPokemonSprites("player")
     },
     rival: {
       align: "start",
       tile: rivalTile,
       margin: "40px",
-      pokemonSprite: getSelectedPokemonSprites("rival", globalBattleState!)
+      pokemonSprite: getSelectedPokemonSprites("rival")
     }
   };
   return (

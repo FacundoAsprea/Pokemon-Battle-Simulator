@@ -1,3 +1,4 @@
+import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 import Stage from "./stage";
 import Minicard from "./minicard";
 import ActionsMenu from "./actions/actions";
@@ -7,11 +8,8 @@ import { getPlayerData, getRivalData } from "@/game/functions/getters";
 import game from "@/game/logic/gameEngine";
 
 const BattleWrapper = () => {
-  const playerData = getPlayerData();
-  const rivalData = getRivalData();
-
-  console.log("JUGADOR: ", playerData)
-  console.log("RIVAL :", rivalData)
+  const playerData = useGlobalBattleState((state) => getPlayerData(state.globalBattleState))
+  const rivalData = useGlobalBattleState(state => getRivalData(state.globalBattleState));
 
   game.runGame();
 
