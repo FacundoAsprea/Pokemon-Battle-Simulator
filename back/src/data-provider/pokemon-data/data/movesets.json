@@ -1,0 +1,1632 @@
+{
+  "venusaur": [
+    "hiddenpowergrass",
+    "leechseed",
+    "sleeppowder",
+    "sludgebomb",
+    "substitute"
+  ],
+  "charizard": [
+    "dragondance",
+    "earthquake",
+    "fireblast",
+    "hiddenpowerflying",
+    "rockslide"
+  ],
+  "blastoise": [
+    "icebeam",
+    "rest",
+    "sleeptalk",
+    "surf",
+    "toxic"
+  ],
+  "butterfree": [
+    "hiddenpowerfire",
+    "morningsun",
+    "psychic",
+    "sleeppowder",
+    "stunspore",
+    "toxic"
+  ],
+  "beedrill": [
+    "brickbreak",
+    "endure",
+    "hiddenpowerbug",
+    "sludgebomb",
+    "swordsdance"
+  ],
+  "pidgeot": [
+    "aerialace",
+    "doubleedge",
+    "hiddenpowerground",
+    "quickattack",
+    "return",
+    "toxic"
+  ],
+  "raticate": [
+    "doubleedge",
+    "hiddenpowerground",
+    "quickattack",
+    "return",
+    "shadowball"
+  ],
+  "fearow": [
+    "doubleedge",
+    "drillpeck",
+    "hiddenpowerground",
+    "quickattack",
+    "return"
+  ],
+  "arbok": [
+    "earthquake",
+    "hiddenpowerghost",
+    "rest",
+    "rockslide",
+    "sleeptalk",
+    "sludgebomb"
+  ],
+  "pikachu": [
+    "encore",
+    "hiddenpowerice",
+    "substitute",
+    "surf",
+    "thunderbolt"
+  ],
+  "raichu": [
+    "encore",
+    "hiddenpowerice",
+    "surf",
+    "thunderbolt",
+    "thunderwave",
+    "toxic"
+  ],
+  "sandslash": [
+    "earthquake",
+    "hiddenpowerbug",
+    "rapidspin",
+    "rockslide",
+    "swordsdance",
+    "toxic"
+  ],
+  "nidoqueen": [
+    "earthquake",
+    "fireblast",
+    "icebeam",
+    "shadowball",
+    "sludgebomb",
+    "substitute",
+    "thunderbolt"
+  ],
+  "nidoking": [
+    "earthquake",
+    "fireblast",
+    "icebeam",
+    "megahorn",
+    "shadowball",
+    "sludgebomb",
+    "substitute",
+    "thunderbolt"
+  ],
+  "clefable": [
+    "fireblast",
+    "return",
+    "shadowball",
+    "softboiled",
+    "thunderwave",
+    "toxic"
+  ],
+  "ninetales": [
+    "fireblast",
+    "flamethrower",
+    "hiddenpowergrass",
+    "hypnosis",
+    "substitute",
+    "toxic",
+    "willowisp"
+  ],
+  "wigglytuff": [
+    "bodyslam",
+    "fireblast",
+    "protect",
+    "wish"
+  ],
+  "vileplume": [
+    "aromatherapy",
+    "hiddenpowerfire",
+    "hiddenpowergrass",
+    "sleeppowder",
+    "sludgebomb",
+    "synthesis"
+  ],
+  "parasect": [
+    "aromatherapy",
+    "gigadrain",
+    "hiddenpowerbug",
+    "return",
+    "spore",
+    "stunspore"
+  ],
+  "venomoth": [
+    "batonpass",
+    "hiddenpowerfire",
+    "psychic",
+    "signalbeam",
+    "sleeppowder",
+    "sludgebomb",
+    "substitute"
+  ],
+  "dugtrio": [
+    "earthquake",
+    "hiddenpowerbug",
+    "rockslide",
+    "sludgebomb"
+  ],
+  "persian": [
+    "hiddenpowerground",
+    "irontail",
+    "return",
+    "shadowball",
+    "substitute"
+  ],
+  "golduck": [
+    "calmmind",
+    "hiddenpowerelectric",
+    "hiddenpowergrass",
+    "hydropump",
+    "hypnosis",
+    "icebeam",
+    "substitute",
+    "surf"
+  ],
+  "primeape": [
+    "bulkup",
+    "crosschop",
+    "earthquake",
+    "hiddenpowerghost",
+    "rockslide"
+  ],
+  "arcanine": [
+    "flamethrower",
+    "hiddenpowergrass",
+    "rest",
+    "sleeptalk",
+    "toxic"
+  ],
+  "poliwrath": [
+    "brickbreak",
+    "bulkup",
+    "earthquake",
+    "hiddenpowerghost",
+    "hydropump",
+    "hypnosis",
+    "substitute"
+  ],
+  "alakazam": [
+    "calmmind",
+    "encore",
+    "firepunch",
+    "icepunch",
+    "psychic",
+    "recover",
+    "substitute",
+    "thunderpunch"
+  ],
+  "machamp": [
+    "bulkup",
+    "crosschop",
+    "earthquake",
+    "hiddenpowerghost",
+    "rockslide"
+  ],
+  "victreebel": [
+    "hiddenpowerfire",
+    "sludgebomb",
+    "solarbeam",
+    "sunnyday"
+  ],
+  "tentacruel": [
+    "hydropump",
+    "icebeam",
+    "rapidspin",
+    "sludgebomb",
+    "surf",
+    "toxic"
+  ],
+  "golem": [
+    "earthquake",
+    "protect",
+    "rockslide",
+    "toxic"
+  ],
+  "rapidash": [
+    "fireblast",
+    "hiddenpowergrass",
+    "hiddenpowerrock",
+    "substitute",
+    "toxic"
+  ],
+  "slowbro": [
+    "fireblast",
+    "icebeam",
+    "psychic",
+    "rest",
+    "sleeptalk",
+    "surf",
+    "thunderwave",
+    "toxic"
+  ],
+  "magneton": [
+    "hiddenpowerice",
+    "protect",
+    "thunderbolt",
+    "toxic"
+  ],
+  "farfetchd": [
+    "agility",
+    "batonpass",
+    "return",
+    "swordsdance"
+  ],
+  "dodrio": [
+    "doubleedge",
+    "drillpeck",
+    "hiddenpowerground",
+    "quickattack",
+    "return"
+  ],
+  "dewgong": [
+    "icebeam",
+    "protect",
+    "surf",
+    "toxic"
+  ],
+  "muk": [
+    "explosion",
+    "fireblast",
+    "hiddenpowerground",
+    "rest",
+    "sludgebomb",
+    "toxic"
+  ],
+  "cloyster": [
+    "explosion",
+    "icebeam",
+    "rapidspin",
+    "spikes",
+    "surf",
+    "toxic"
+  ],
+  "gengar": [
+    "destinybond",
+    "explosion",
+    "firepunch",
+    "icepunch",
+    "substitute",
+    "thunderbolt",
+    "willowisp"
+  ],
+  "hypno": [
+    "batonpass",
+    "calmmind",
+    "firepunch",
+    "psychic"
+  ],
+  "kingler": [
+    "doubleedge",
+    "hiddenpowerghost",
+    "hiddenpowerground",
+    "surf",
+    "swordsdance"
+  ],
+  "electrode": [
+    "explosion",
+    "hiddenpowerice",
+    "substitute",
+    "thunderbolt",
+    "toxic"
+  ],
+  "exeggutor": [
+    "gigadrain",
+    "hiddenpowerfire",
+    "psychic",
+    "sleeppowder",
+    "stunspore",
+    "synthesis"
+  ],
+  "marowak": [
+    "doubleedge",
+    "earthquake",
+    "rockslide",
+    "swordsdance"
+  ],
+  "hitmonlee": [
+    "brickbreak",
+    "bulkup",
+    "earthquake",
+    "hiddenpowerghost",
+    "machpunch",
+    "rockslide"
+  ],
+  "hitmonchan": [
+    "bulkup",
+    "earthquake",
+    "hiddenpowerghost",
+    "machpunch",
+    "rapidspin",
+    "rockslide",
+    "skyuppercut",
+    "toxic"
+  ],
+  "lickitung": [
+    "bodyslam",
+    "earthquake",
+    "protect",
+    "wish"
+  ],
+  "weezing": [
+    "explosion",
+    "fireblast",
+    "haze",
+    "painsplit",
+    "sludgebomb",
+    "toxic",
+    "willowisp"
+  ],
+  "rhydon": [
+    "earthquake",
+    "megahorn",
+    "rockslide",
+    "substitute",
+    "swordsdance"
+  ],
+  "tangela": [
+    "hiddenpowergrass",
+    "leechseed",
+    "morningsun",
+    "sleeppowder",
+    "stunspore",
+    "toxic"
+  ],
+  "kangaskhan": [
+    "doubleedge",
+    "earthquake",
+    "rest",
+    "return",
+    "shadowball",
+    "toxic"
+  ],
+  "seaking": [
+    "hiddenpowerelectric",
+    "hiddenpowergrass",
+    "hydropump",
+    "icebeam",
+    "megahorn",
+    "raindance"
+  ],
+  "starmie": [
+    "hydropump",
+    "icebeam",
+    "psychic",
+    "recover",
+    "surf",
+    "thunderbolt"
+  ],
+  "mrmime": [
+    "batonpass",
+    "calmmind",
+    "encore",
+    "firepunch",
+    "hypnosis",
+    "psychic",
+    "substitute",
+    "thunderbolt"
+  ],
+  "scyther": [
+    "aerialace",
+    "batonpass",
+    "hiddenpowerground",
+    "silverwind",
+    "swordsdance"
+  ],
+  "jynx": [
+    "calmmind",
+    "hiddenpowerfire",
+    "icebeam",
+    "lovelykiss",
+    "psychic",
+    "substitute"
+  ],
+  "electabuzz": [
+    "crosschop",
+    "firepunch",
+    "focuspunch",
+    "hiddenpowergrass",
+    "icepunch",
+    "substitute",
+    "thunderbolt"
+  ],
+  "magmar": [
+    "crosschop",
+    "fireblast",
+    "flamethrower",
+    "focuspunch",
+    "hiddenpowergrass",
+    "hiddenpowerice",
+    "substitute",
+    "thunderpunch",
+    "toxic"
+  ],
+  "pinsir": [
+    "earthquake",
+    "hiddenpowerbug",
+    "rockslide",
+    "swordsdance"
+  ],
+  "tauros": [
+    "doubleedge",
+    "earthquake",
+    "hiddenpowerghost",
+    "return"
+  ],
+  "gyarados": [
+    "doubleedge",
+    "dragondance",
+    "earthquake",
+    "hiddenpowerflying",
+    "hydropump"
+  ],
+  "lapras": [
+    "healbell",
+    "icebeam",
+    "rest",
+    "sleeptalk",
+    "surf",
+    "thunderbolt",
+    "toxic"
+  ],
+  "ditto": [
+    "transform"
+  ],
+  "vaporeon": [
+    "icebeam",
+    "protect",
+    "surf",
+    "toxic",
+    "wish"
+  ],
+  "jolteon": [
+    "hiddenpowerice",
+    "protect",
+    "thunderbolt",
+    "toxic"
+  ],
+  "flareon": [
+    "flamethrower",
+    "hiddenpowergrass",
+    "protect",
+    "toxic",
+    "wish"
+  ],
+  "omastar": [
+    "hiddenpowergrass",
+    "hydropump",
+    "icebeam",
+    "spikes",
+    "surf"
+  ],
+  "kabutops": [
+    "brickbreak",
+    "hiddenpowerflying",
+    "rockslide",
+    "surf",
+    "swordsdance"
+  ],
+  "aerodactyl": [
+    "doubleedge",
+    "earthquake",
+    "hiddenpowerflying",
+    "rockslide"
+  ],
+  "snorlax": [
+    "bodyslam",
+    "curse",
+    "earthquake",
+    "selfdestruct",
+    "shadowball"
+  ],
+  "articuno": [
+    "healbell",
+    "hiddenpowerfire",
+    "icebeam",
+    "protect",
+    "toxic"
+  ],
+  "zapdos": [
+    "hiddenpowerice",
+    "protect",
+    "thunderbolt",
+    "toxic"
+  ],
+  "moltres": [
+    "fireblast",
+    "flamethrower",
+    "hiddenpowergrass",
+    "morningsun",
+    "substitute",
+    "toxic",
+    "willowisp"
+  ],
+  "dragonite": [
+    "doubleedge",
+    "dragondance",
+    "earthquake",
+    "healbell",
+    "hiddenpowerflying",
+    "rest",
+    "substitute"
+  ],
+  "mewtwo": [
+    "calmmind",
+    "flamethrower",
+    "psychic",
+    "recover"
+  ],
+  "mew": [
+    "explosion",
+    "flamethrower",
+    "psychic",
+    "softboiled",
+    "thunderwave",
+    "transform"
+  ],
+  "meganium": [
+    "bodyslam",
+    "earthquake",
+    "hiddenpowergrass",
+    "leechseed",
+    "synthesis",
+    "toxic"
+  ],
+  "typhlosion": [
+    "fireblast",
+    "flamethrower",
+    "hiddenpowerice",
+    "substitute",
+    "thunderpunch"
+  ],
+  "feraligatr": [
+    "earthquake",
+    "hiddenpowerflying",
+    "hydropump",
+    "rockslide",
+    "swordsdance"
+  ],
+  "furret": [
+    "brickbreak",
+    "doubleedge",
+    "quickattack",
+    "return",
+    "shadowball"
+  ],
+  "noctowl": [
+    "hiddenpowerfire",
+    "hypnosis",
+    "return",
+    "toxic",
+    "whirlwind"
+  ],
+  "ledian": [
+    "agility",
+    "batonpass",
+    "silverwind",
+    "swordsdance"
+  ],
+  "ariados": [
+    "agility",
+    "batonpass",
+    "signalbeam",
+    "sludgebomb"
+  ],
+  "crobat": [
+    "aerialace",
+    "haze",
+    "hiddenpowerground",
+    "shadowball",
+    "sludgebomb",
+    "toxic"
+  ],
+  "lanturn": [
+    "icebeam",
+    "rest",
+    "sleeptalk",
+    "surf",
+    "thunderbolt",
+    "toxic"
+  ],
+  "togetic": [
+    "charm",
+    "encore",
+    "flamethrower",
+    "seismictoss",
+    "softboiled",
+    "thunderwave",
+    "toxic"
+  ],
+  "xatu": [
+    "calmmind",
+    "hiddenpowerfire",
+    "psychic",
+    "rest"
+  ],
+  "ampharos": [
+    "firepunch",
+    "healbell",
+    "hiddenpowerice",
+    "thunderbolt",
+    "toxic"
+  ],
+  "bellossom": [
+    "hiddenpowerfire",
+    "leechseed",
+    "magicalleaf",
+    "moonlight",
+    "sleeppowder",
+    "stunspore"
+  ],
+  "azumarill": [
+    "brickbreak",
+    "doubleedge",
+    "hiddenpowerghost",
+    "hydropump",
+    "rest",
+    "return",
+    "sleeptalk"
+  ],
+  "sudowoodo": [
+    "doubleedge",
+    "earthquake",
+    "explosion",
+    "rockslide",
+    "toxic"
+  ],
+  "politoed": [
+    "hiddenpowergrass",
+    "hypnosis",
+    "icebeam",
+    "rest",
+    "surf",
+    "toxic"
+  ],
+  "jumpluff": [
+    "encore",
+    "hiddenpowerflying",
+    "sleeppowder",
+    "synthesis",
+    "toxic"
+  ],
+  "aipom": [
+    "brickbreak",
+    "focuspunch",
+    "return",
+    "shadowball",
+    "substitute",
+    "thunderwave",
+    "toxic"
+  ],
+  "sunflora": [
+    "hiddenpowerfire",
+    "leechseed",
+    "razorleaf",
+    "synthesis",
+    "toxic"
+  ],
+  "yanma": [
+    "hiddenpowerflying",
+    "hypnosis",
+    "reversal",
+    "shadowball",
+    "substitute"
+  ],
+  "quagsire": [
+    "earthquake",
+    "icebeam",
+    "protect",
+    "toxic"
+  ],
+  "espeon": [
+    "batonpass",
+    "calmmind",
+    "hiddenpowerfire",
+    "morningsun",
+    "psychic",
+    "substitute"
+  ],
+  "umbreon": [
+    "hiddenpowerfire",
+    "hiddenpowerground",
+    "protect",
+    "toxic",
+    "wish"
+  ],
+  "murkrow": [
+    "doubleedge",
+    "drillpeck",
+    "hiddenpowerfighting",
+    "hiddenpowerground",
+    "shadowball"
+  ],
+  "slowking": [
+    "fireblast",
+    "icebeam",
+    "psychic",
+    "rest",
+    "sleeptalk",
+    "surf",
+    "thunderwave",
+    "toxic"
+  ],
+  "misdreavus": [
+    "hiddenpowerice",
+    "painsplit",
+    "shadowball",
+    "thunderbolt",
+    "thunderwave",
+    "toxic"
+  ],
+  "unown": [
+    "hiddenpowerpsychic"
+  ],
+  "wobbuffet": [
+    "counter",
+    "destinybond",
+    "encore",
+    "mirrorcoat"
+  ],
+  "girafarig": [
+    "batonpass",
+    "calmmind",
+    "hiddenpowerfire",
+    "psychic",
+    "rest",
+    "substitute",
+    "thunderbolt"
+  ],
+  "forretress": [
+    "earthquake",
+    "explosion",
+    "hiddenpowerbug",
+    "hiddenpowersteel",
+    "rapidspin",
+    "spikes",
+    "toxic"
+  ],
+  "dunsparce": [
+    "bodyslam",
+    "curse",
+    "earthquake",
+    "rest",
+    "shadowball"
+  ],
+  "gligar": [
+    "earthquake",
+    "hiddenpowerflying",
+    "quickattack",
+    "rockslide",
+    "substitute",
+    "swordsdance"
+  ],
+  "steelix": [
+    "doubleedge",
+    "earthquake",
+    "explosion",
+    "hiddenpowerrock",
+    "irontail",
+    "rest",
+    "roar",
+    "toxic"
+  ],
+  "granbull": [
+    "doubleedge",
+    "earthquake",
+    "rest",
+    "return",
+    "sleeptalk"
+  ],
+  "qwilfish": [
+    "hydropump",
+    "selfdestruct",
+    "shadowball",
+    "sludgebomb",
+    "swordsdance"
+  ],
+  "scizor": [
+    "batonpass",
+    "hiddenpowerground",
+    "morningsun",
+    "silverwind",
+    "steelwing",
+    "swordsdance"
+  ],
+  "shuckle": [
+    "encore",
+    "rest",
+    "toxic",
+    "wrap"
+  ],
+  "heracross": [
+    "brickbreak",
+    "earthquake",
+    "hiddenpowerghost",
+    "megahorn",
+    "rockslide"
+  ],
+  "sneasel": [
+    "brickbreak",
+    "hiddenpowerflying",
+    "shadowball",
+    "substitute",
+    "swordsdance"
+  ],
+  "ursaring": [
+    "earthquake",
+    "focuspunch",
+    "hiddenpowerghost",
+    "return"
+  ],
+  "magcargo": [
+    "fireblast",
+    "flamethrower",
+    "hiddenpowergrass",
+    "rest",
+    "sleeptalk",
+    "toxic"
+  ],
+  "piloswine": [
+    "earthquake",
+    "icebeam",
+    "protect",
+    "toxic"
+  ],
+  "corsola": [
+    "calmmind",
+    "icebeam",
+    "recover",
+    "surf",
+    "toxic"
+  ],
+  "octillery": [
+    "fireblast",
+    "hiddenpowerelectric",
+    "hiddenpowergrass",
+    "icebeam",
+    "surf",
+    "thunderwave"
+  ],
+  "delibird": [
+    "aerialace",
+    "doubleedge",
+    "focuspunch",
+    "hiddenpowerground",
+    "icebeam",
+    "quickattack"
+  ],
+  "mantine": [
+    "hiddenpowergrass",
+    "icebeam",
+    "rest",
+    "sleeptalk",
+    "surf",
+    "toxic"
+  ],
+  "skarmory": [
+    "drillpeck",
+    "protect",
+    "spikes",
+    "toxic"
+  ],
+  "houndoom": [
+    "crunch",
+    "fireblast",
+    "hiddenpowergrass",
+    "substitute"
+  ],
+  "kingdra": [
+    "hiddenpowerelectric",
+    "hiddenpowergrass",
+    "hydropump",
+    "icebeam",
+    "raindance",
+    "substitute",
+    "surf"
+  ],
+  "donphan": [
+    "earthquake",
+    "rapidspin",
+    "rest",
+    "rockslide",
+    "sleeptalk",
+    "toxic"
+  ],
+  "porygon2": [
+    "icebeam",
+    "recover",
+    "return",
+    "thunderbolt",
+    "thunderwave",
+    "toxic"
+  ],
+  "stantler": [
+    "earthquake",
+    "hypnosis",
+    "return",
+    "shadowball",
+    "thunderbolt",
+    "thunderwave"
+  ],
+  "smeargle": [
+    "encore",
+    "explosion",
+    "spikes",
+    "spore"
+  ],
+  "hitmontop": [
+    "brickbreak",
+    "bulkup",
+    "earthquake",
+    "hiddenpowerghost",
+    "machpunch",
+    "rapidspin",
+    "rockslide",
+    "toxic"
+  ],
+  "miltank": [
+    "bodyslam",
+    "curse",
+    "earthquake",
+    "healbell",
+    "milkdrink",
+    "toxic"
+  ],
+  "blissey": [
+    "aromatherapy",
+    "seismictoss",
+    "softboiled",
+    "thunderwave",
+    "toxic"
+  ],
+  "raikou": [
+    "calmmind",
+    "crunch",
+    "hiddenpowerice",
+    "substitute",
+    "thunderbolt"
+  ],
+  "entei": [
+    "flamethrower",
+    "rest",
+    "sleeptalk",
+    "toxic"
+  ],
+  "suicune": [
+    "calmmind",
+    "rest",
+    "sleeptalk",
+    "surf"
+  ],
+  "tyranitar": [
+    "dragondance",
+    "earthquake",
+    "fireblast",
+    "hiddenpowerflying",
+    "rockslide"
+  ],
+  "lugia": [
+    "earthquake",
+    "psychic",
+    "recover",
+    "substitute",
+    "toxic"
+  ],
+  "hooh": [
+    "earthquake",
+    "recover",
+    "sacredfire",
+    "substitute",
+    "thunderbolt",
+    "toxic"
+  ],
+  "celebi": [
+    "batonpass",
+    "calmmind",
+    "hiddenpowerfire",
+    "hiddenpowergrass",
+    "psychic",
+    "recover"
+  ],
+  "sceptile": [
+    "hiddenpowerfire",
+    "hiddenpowerice",
+    "leafblade",
+    "leechseed",
+    "substitute"
+  ],
+  "blaziken": [
+    "earthquake",
+    "fireblast",
+    "hiddenpowerice",
+    "rockslide",
+    "skyuppercut",
+    "thunderpunch"
+  ],
+  "swampert": [
+    "earthquake",
+    "hydropump",
+    "protect",
+    "surf",
+    "toxic"
+  ],
+  "mightyena": [
+    "crunch",
+    "doubleedge",
+    "healbell",
+    "hiddenpowerfighting",
+    "shadowball",
+    "toxic"
+  ],
+  "linoone": [
+    "bellydrum",
+    "extremespeed",
+    "hiddenpowerground",
+    "shadowball"
+  ],
+  "beautifly": [
+    "hiddenpowerfire",
+    "morningsun",
+    "psychic",
+    "toxic"
+  ],
+  "dustox": [
+    "hiddenpowerground",
+    "moonlight",
+    "sludgebomb",
+    "toxic",
+    "whirlwind"
+  ],
+  "ludicolo": [
+    "hiddenpowergrass",
+    "hydropump",
+    "icebeam",
+    "raindance",
+    "surf"
+  ],
+  "shiftry": [
+    "brickbreak",
+    "explosion",
+    "shadowball",
+    "swordsdance"
+  ],
+  "swellow": [
+    "aerialace",
+    "doubleedge",
+    "hiddenpowerground",
+    "quickattack",
+    "return"
+  ],
+  "pelipper": [
+    "icebeam",
+    "rest",
+    "sleeptalk",
+    "surf",
+    "toxic"
+  ],
+  "gardevoir": [
+    "calmmind",
+    "firepunch",
+    "hypnosis",
+    "icepunch",
+    "psychic",
+    "substitute",
+    "thunderbolt"
+  ],
+  "masquerain": [
+    "hydropump",
+    "icebeam",
+    "stunspore",
+    "substitute",
+    "toxic"
+  ],
+  "breloom": [
+    "hiddenpowerghost",
+    "hiddenpowerrock",
+    "machpunch",
+    "skyuppercut",
+    "spore",
+    "substitute",
+    "swordsdance"
+  ],
+  "vigoroth": [
+    "bodyslam",
+    "bulkup",
+    "earthquake",
+    "return",
+    "shadowball",
+    "slackoff"
+  ],
+  "slaking": [
+    "doubleedge",
+    "earthquake",
+    "hyperbeam",
+    "return",
+    "shadowball"
+  ],
+  "ninjask": [
+    "batonpass",
+    "hiddenpowerflying",
+    "substitute",
+    "swordsdance"
+  ],
+  "shedinja": [
+    "agility",
+    "batonpass",
+    "hiddenpowerfighting",
+    "shadowball",
+    "silverwind",
+    "toxic"
+  ],
+  "exploud": [
+    "doubleedge",
+    "earthquake",
+    "overheat",
+    "return",
+    "shadowball"
+  ],
+  "hariyama": [
+    "bulkup",
+    "crosschop",
+    "earthquake",
+    "hiddenpowerghost",
+    "knockoff",
+    "rockslide"
+  ],
+  "nosepass": [
+    "earthquake",
+    "explosion",
+    "rockslide",
+    "thunderwave",
+    "toxic"
+  ],
+  "delcatty": [
+    "doubleedge",
+    "protect",
+    "thunderwave",
+    "toxic",
+    "wish"
+  ],
+  "sableye": [
+    "knockoff",
+    "recover",
+    "seismictoss",
+    "toxic"
+  ],
+  "mawile": [
+    "batonpass",
+    "brickbreak",
+    "hiddenpowersteel",
+    "rockslide",
+    "substitute",
+    "swordsdance"
+  ],
+  "aggron": [
+    "doubleedge",
+    "earthquake",
+    "irontail",
+    "rockslide",
+    "thunderwave",
+    "toxic"
+  ],
+  "medicham": [
+    "brickbreak",
+    "bulkup",
+    "recover",
+    "rockslide",
+    "shadowball",
+    "substitute"
+  ],
+  "manectric": [
+    "crunch",
+    "hiddenpowerice",
+    "substitute",
+    "thunderbolt"
+  ],
+  "plusle": [
+    "batonpass",
+    "encore",
+    "hiddenpowerice",
+    "substitute",
+    "thunderbolt",
+    "toxic"
+  ],
+  "minun": [
+    "batonpass",
+    "encore",
+    "hiddenpowerice",
+    "substitute",
+    "thunderbolt",
+    "toxic"
+  ],
+  "volbeat": [
+    "batonpass",
+    "icepunch",
+    "tailglow",
+    "thunderbolt"
+  ],
+  "illumise": [
+    "encore",
+    "moonlight",
+    "seismictoss",
+    "thunderwave",
+    "toxic"
+  ],
+  "roselia": [
+    "hiddenpowerfire",
+    "magicalleaf",
+    "spikes",
+    "synthesis"
+  ],
+  "swalot": [
+    "encore",
+    "explosion",
+    "hiddenpowerground",
+    "icebeam",
+    "painsplit",
+    "shadowball",
+    "sludgebomb",
+    "toxic",
+    "yawn"
+  ],
+  "sharpedo": [
+    "doubleedge",
+    "earthquake",
+    "hiddenpowerflying",
+    "hydropump"
+  ],
+  "wailord": [
+    "icebeam",
+    "rest",
+    "sleeptalk",
+    "surf",
+    "toxic"
+  ],
+  "camerupt": [
+    "earthquake",
+    "explosion",
+    "fireblast",
+    "rest",
+    "rockslide",
+    "sleeptalk",
+    "toxic"
+  ],
+  "torkoal": [
+    "explosion",
+    "fireblast",
+    "flamethrower",
+    "hiddenpowergrass",
+    "rest",
+    "toxic"
+  ],
+  "grumpig": [
+    "calmmind",
+    "firepunch",
+    "psychic",
+    "substitute",
+    "thunderpunch"
+  ],
+  "spinda": [
+    "encore",
+    "protect",
+    "seismictoss",
+    "shadowball",
+    "substitute",
+    "toxic"
+  ],
+  "flygon": [
+    "earthquake",
+    "hiddenpowerbug",
+    "quickattack",
+    "rockslide"
+  ],
+  "cacturne": [
+    "focuspunch",
+    "hiddenpowerdark",
+    "leechseed",
+    "substitute"
+  ],
+  "altaria": [
+    "dragonclaw",
+    "earthquake",
+    "flamethrower",
+    "haze",
+    "healbell",
+    "rest",
+    "toxic"
+  ],
+  "zangoose": [
+    "brickbreak",
+    "quickattack",
+    "return",
+    "shadowball",
+    "swordsdance"
+  ],
+  "seviper": [
+    "crunch",
+    "earthquake",
+    "flamethrower",
+    "hiddenpowergrass",
+    "sludgebomb"
+  ],
+  "lunatone": [
+    "batonpass",
+    "calmmind",
+    "hiddenpowerfire",
+    "hypnosis",
+    "icebeam",
+    "psychic"
+  ],
+  "solrock": [
+    "earthquake",
+    "protect",
+    "rockslide",
+    "toxic"
+  ],
+  "whiscash": [
+    "earthquake",
+    "icebeam",
+    "rest",
+    "sleeptalk",
+    "surf",
+    "toxic"
+  ],
+  "crawdaunt": [
+    "brickbreak",
+    "crunch",
+    "doubleedge",
+    "hiddenpowerelectric",
+    "hiddenpowergrass",
+    "icebeam",
+    "surf"
+  ],
+  "claydol": [
+    "earthquake",
+    "explosion",
+    "icebeam",
+    "psychic",
+    "rapidspin",
+    "toxic"
+  ],
+  "cradily": [
+    "earthquake",
+    "hiddenpowergrass",
+    "recover",
+    "rockslide",
+    "toxic"
+  ],
+  "armaldo": [
+    "doubleedge",
+    "earthquake",
+    "hiddenpowerbug",
+    "rapidspin",
+    "rockslide",
+    "swordsdance"
+  ],
+  "milotic": [
+    "icebeam",
+    "recover",
+    "refresh",
+    "surf",
+    "toxic"
+  ],
+  "castform": [
+    "fireblast",
+    "icebeam",
+    "return",
+    "thunderbolt",
+    "thunderwave"
+  ],
+  "kecleon": [
+    "brickbreak",
+    "return",
+    "shadowball",
+    "thunderwave",
+    "trick"
+  ],
+  "banette": [
+    "destinybond",
+    "endure",
+    "hiddenpowerfighting",
+    "shadowball"
+  ],
+  "dusclops": [
+    "rest",
+    "seismictoss",
+    "sleeptalk",
+    "willowisp"
+  ],
+  "tropius": [
+    "earthquake",
+    "hiddenpowerflying",
+    "swordsdance",
+    "synthesis"
+  ],
+  "chimecho": [
+    "calmmind",
+    "healbell",
+    "hiddenpowerfire",
+    "psychic",
+    "toxic"
+  ],
+  "absol": [
+    "batonpass",
+    "doubleedge",
+    "hiddenpowerfighting",
+    "quickattack",
+    "shadowball",
+    "swordsdance"
+  ],
+  "glalie": [
+    "earthquake",
+    "explosion",
+    "icebeam",
+    "spikes",
+    "toxic"
+  ],
+  "walrein": [
+    "icebeam",
+    "protect",
+    "surf",
+    "toxic"
+  ],
+  "huntail": [
+    "doubleedge",
+    "hiddenpowerelectric",
+    "hiddenpowergrass",
+    "hydropump",
+    "icebeam",
+    "raindance",
+    "surf"
+  ],
+  "gorebyss": [
+    "hiddenpowerelectric",
+    "hiddenpowergrass",
+    "hydropump",
+    "icebeam",
+    "raindance",
+    "surf"
+  ],
+  "relicanth": [
+    "doubleedge",
+    "earthquake",
+    "hiddenpowerflying",
+    "rest",
+    "rockslide",
+    "sleeptalk",
+    "toxic"
+  ],
+  "luvdisc": [
+    "icebeam",
+    "protect",
+    "substitute",
+    "surf",
+    "toxic"
+  ],
+  "salamence": [
+    "dragondance",
+    "earthquake",
+    "fireblast",
+    "hiddenpowerflying",
+    "rockslide"
+  ],
+  "metagross": [
+    "earthquake",
+    "explosion",
+    "meteormash",
+    "rockslide"
+  ],
+  "regirock": [
+    "curse",
+    "earthquake",
+    "explosion",
+    "rest",
+    "rockslide",
+    "superpower"
+  ],
+  "regice": [
+    "explosion",
+    "icebeam",
+    "rest",
+    "sleeptalk",
+    "thunderbolt",
+    "thunderwave"
+  ],
+  "registeel": [
+    "rest",
+    "seismictoss",
+    "sleeptalk",
+    "toxic"
+  ],
+  "latias": [
+    "calmmind",
+    "dragonclaw",
+    "hiddenpowerfire",
+    "psychic",
+    "recover"
+  ],
+  "latios": [
+    "calmmind",
+    "dragonclaw",
+    "hiddenpowerfire",
+    "psychic",
+    "recover"
+  ],
+  "kyogre": [
+    "calmmind",
+    "icebeam",
+    "rest",
+    "sleeptalk",
+    "surf",
+    "thunder"
+  ],
+  "groudon": [
+    "earthquake",
+    "hiddenpowerbug",
+    "overheat",
+    "rockslide",
+    "substitute",
+    "swordsdance",
+    "thunderwave"
+  ],
+  "rayquaza": [
+    "dragondance",
+    "earthquake",
+    "hiddenpowerflying",
+    "overheat",
+    "rockslide"
+  ],
+  "jirachi": [
+    "bodyslam",
+    "firepunch",
+    "protect",
+    "psychic",
+    "toxic",
+    "wish"
+  ],
+  "deoxys": [
+    "extremespeed",
+    "firepunch",
+    "icebeam",
+    "psychoboost",
+    "shadowball",
+    "superpower"
+  ],
+  "deoxysattack": [
+    "extremespeed",
+    "firepunch",
+    "icebeam",
+    "psychoboost",
+    "shadowball",
+    "superpower"
+  ],
+  "deoxysdefense": [
+    "recover",
+    "seismictoss",
+    "spikes",
+    "toxic"
+  ],
+  "deoxysspeed": [
+    "calmmind",
+    "firepunch",
+    "icebeam",
+    "psychic",
+    "recover",
+    "substitute"
+  ]
+}

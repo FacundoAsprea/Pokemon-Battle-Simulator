@@ -1,0 +1,8743 @@
+{
+  "absorb": {
+    "num": 71,
+    "accuracy": 100,
+    "basePower": 20,
+    "category": "Special",
+    "name": "Absorb",
+    "pp": 25,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "heal": 1,
+      "metronome": 1
+    },
+    "drain": [
+      1,
+      2
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Grass",
+    "contestType": "Clever"
+  },
+  "acid": {
+    "num": 51,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Special",
+    "name": "Acid",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "boosts": {
+        "spd": -1
+      }
+    },
+    "target": "allAdjacentFoes",
+    "type": "Poison",
+    "contestType": "Clever"
+  },
+  "acidarmor": {
+    "num": 151,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Acid Armor",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "def": 2
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Poison",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Tough"
+  },
+  "aerialace": {
+    "num": 332,
+    "accuracy": true,
+    "basePower": 60,
+    "category": "Physical",
+    "name": "Aerial Ace",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "distance": 1,
+      "metronome": 1,
+      "slicing": 1
+    },
+    "secondary": null,
+    "target": "any",
+    "type": "Flying",
+    "contestType": "Cool"
+  },
+  "aeroblast": {
+    "num": 177,
+    "accuracy": 95,
+    "basePower": 100,
+    "category": "Special",
+    "name": "Aeroblast",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "distance": 1,
+      "metronome": 1,
+      "wind": 1
+    },
+    "critRatio": 2,
+    "secondary": null,
+    "target": "any",
+    "type": "Flying",
+    "contestType": "Cool"
+  },
+  "agility": {
+    "num": 97,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Agility",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "spe": 2
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Psychic",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Cool"
+  },
+  "aircutter": {
+    "num": 314,
+    "accuracy": 95,
+    "basePower": 60,
+    "category": "Special",
+    "name": "Air Cutter",
+    "pp": 25,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "slicing": 1,
+      "wind": 1
+    },
+    "critRatio": 2,
+    "secondary": null,
+    "target": "allAdjacentFoes",
+    "type": "Flying",
+    "contestType": "Cool"
+  },
+  "amnesia": {
+    "num": 133,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Amnesia",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "spd": 2
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Psychic",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Cute"
+  },
+  "ancientpower": {
+    "num": 246,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "name": "Ancient Power",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "self": {
+        "boosts": {
+          "atk": 1,
+          "def": 1,
+          "spa": 1,
+          "spd": 1,
+          "spe": 1
+        }
+      }
+    },
+    "target": "normal",
+    "type": "Rock",
+    "contestType": "Tough"
+  },
+  "armthrust": {
+    "num": 292,
+    "accuracy": 100,
+    "basePower": 15,
+    "category": "Physical",
+    "name": "Arm Thrust",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "multihit": [
+      2,
+      5
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "contestType": "Tough"
+  },
+  "aromatherapy": {
+    "num": 312,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Aromatherapy",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "distance": 1,
+      "metronome": 1
+    },
+    "target": "allyTeam",
+    "type": "Grass",
+    "zMove": {
+      "effect": "heal"
+    },
+    "contestType": "Clever"
+  },
+  "assist": {
+    "num": 274,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Assist",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "failencore": 1,
+      "nosleeptalk": 1,
+      "noassist": 1,
+      "failcopycat": 1,
+      "failmimic": 1,
+      "failinstruct": 1
+    },
+    "callsMove": true,
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "contestType": "Cute"
+  },
+  "astonish": {
+    "num": 310,
+    "accuracy": 100,
+    "basePower": 30,
+    "category": "Physical",
+    "name": "Astonish",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "volatileStatus": "flinch"
+    },
+    "target": "normal",
+    "type": "Ghost",
+    "contestType": "Cute"
+  },
+  "attract": {
+    "num": 213,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Attract",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "bypasssub": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "attract",
+    "condition": {
+      "noCopy": true,
+      "onBeforeMovePriority": 2
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Cute"
+  },
+  "aurorabeam": {
+    "num": 62,
+    "accuracy": 100,
+    "basePower": 65,
+    "category": "Special",
+    "name": "Aurora Beam",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "boosts": {
+        "atk": -1
+      }
+    },
+    "target": "normal",
+    "type": "Ice",
+    "contestType": "Beautiful"
+  },
+  "barrage": {
+    "num": 140,
+    "accuracy": 85,
+    "basePower": 15,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Barrage",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "bullet": 1
+    },
+    "multihit": [
+      2,
+      5
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cute"
+  },
+  "barrier": {
+    "num": 112,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Barrier",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "def": 2
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Psychic",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Cool"
+  },
+  "batonpass": {
+    "num": 226,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Baton Pass",
+    "pp": 40,
+    "priority": 0,
+    "flags": {
+      "metronome": 1
+    },
+    "self": {},
+    "selfSwitch": "copyvolatile",
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Cute"
+  },
+  "beatup": {
+    "num": 251,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Physical",
+    "name": "Beat Up",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "allyanim": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Dark",
+    "contestType": "Clever"
+  },
+  "bellydrum": {
+    "num": 187,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Belly Drum",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "heal"
+    },
+    "contestType": "Cute"
+  },
+  "bide": {
+    "num": 117,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Bide",
+    "pp": 10,
+    "priority": 1,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "metronome": 1,
+      "nosleeptalk": 1,
+      "failinstruct": 1
+    },
+    "volatileStatus": "bide",
+    "ignoreImmunity": true,
+    "condition": {
+      "duration": 3,
+      "onLockMove": "bide",
+      "onDamagePriority": -101
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "bind": {
+    "num": 20,
+    "accuracy": 85,
+    "basePower": 15,
+    "category": "Physical",
+    "name": "Bind",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "partiallytrapped",
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "bite": {
+    "num": 44,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Physical",
+    "name": "Bite",
+    "pp": 25,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "bite": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "volatileStatus": "flinch"
+    },
+    "target": "normal",
+    "type": "Dark",
+    "contestType": "Tough"
+  },
+  "blastburn": {
+    "num": 307,
+    "accuracy": 90,
+    "basePower": 150,
+    "category": "Special",
+    "name": "Blast Burn",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "recharge": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "self": {
+      "volatileStatus": "mustrecharge"
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Fire",
+    "contestType": "Beautiful"
+  },
+  "blazekick": {
+    "num": 299,
+    "accuracy": 90,
+    "basePower": 85,
+    "category": "Physical",
+    "name": "Blaze Kick",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "critRatio": 2,
+    "secondary": {
+      "chance": 10,
+      "status": "brn"
+    },
+    "target": "normal",
+    "type": "Fire",
+    "contestType": "Cool"
+  },
+  "blizzard": {
+    "num": 59,
+    "accuracy": 70,
+    "basePower": 110,
+    "category": "Special",
+    "name": "Blizzard",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "wind": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "status": "frz"
+    },
+    "target": "allAdjacentFoes",
+    "type": "Ice",
+    "contestType": "Beautiful"
+  },
+  "block": {
+    "num": 335,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Block",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "def": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "bodyslam": {
+    "num": 34,
+    "accuracy": 100,
+    "basePower": 85,
+    "category": "Physical",
+    "name": "Body Slam",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "nonsky": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "status": "par"
+    },
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "boneclub": {
+    "num": 125,
+    "accuracy": 85,
+    "basePower": 65,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Bone Club",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "volatileStatus": "flinch"
+    },
+    "target": "normal",
+    "type": "Ground",
+    "contestType": "Tough"
+  },
+  "bonemerang": {
+    "num": 155,
+    "accuracy": 90,
+    "basePower": 50,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Bonemerang",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "multihit": 2,
+    "secondary": null,
+    "target": "normal",
+    "type": "Ground",
+    "maxMove": {
+      "basePower": 130
+    },
+    "contestType": "Tough"
+  },
+  "bonerush": {
+    "num": 198,
+    "accuracy": 90,
+    "basePower": 25,
+    "category": "Physical",
+    "name": "Bone Rush",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "multihit": [
+      2,
+      5
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Ground",
+    "zMove": {
+      "basePower": 140
+    },
+    "maxMove": {
+      "basePower": 130
+    },
+    "contestType": "Tough"
+  },
+  "bounce": {
+    "num": 340,
+    "accuracy": 85,
+    "basePower": 85,
+    "category": "Physical",
+    "name": "Bounce",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "charge": 1,
+      "protect": 1,
+      "mirror": 1,
+      "gravity": 1,
+      "distance": 1,
+      "metronome": 1,
+      "nosleeptalk": 1,
+      "noassist": 1,
+      "failinstruct": 1
+    },
+    "condition": {
+      "duration": 2
+    },
+    "secondary": {
+      "chance": 30,
+      "status": "par"
+    },
+    "target": "any",
+    "type": "Flying",
+    "contestType": "Cute"
+  },
+  "brickbreak": {
+    "num": 280,
+    "accuracy": 100,
+    "basePower": 75,
+    "category": "Physical",
+    "name": "Brick Break",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "contestType": "Cool"
+  },
+  "bubble": {
+    "num": 145,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Special",
+    "isNonstandard": "Past",
+    "name": "Bubble",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "boosts": {
+        "spe": -1
+      }
+    },
+    "target": "allAdjacentFoes",
+    "type": "Water",
+    "contestType": "Cute"
+  },
+  "bubblebeam": {
+    "num": 61,
+    "accuracy": 100,
+    "basePower": 65,
+    "category": "Special",
+    "name": "Bubble Beam",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "boosts": {
+        "spe": -1
+      }
+    },
+    "target": "normal",
+    "type": "Water",
+    "contestType": "Beautiful"
+  },
+  "bulkup": {
+    "num": 339,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Bulk Up",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "atk": 1,
+      "def": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Fighting",
+    "zMove": {
+      "boost": {
+        "atk": 1
+      }
+    },
+    "contestType": "Cool"
+  },
+  "bulletseed": {
+    "num": 331,
+    "accuracy": 100,
+    "basePower": 25,
+    "category": "Physical",
+    "name": "Bullet Seed",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "bullet": 1
+    },
+    "multihit": [
+      2,
+      5
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Grass",
+    "zMove": {
+      "basePower": 140
+    },
+    "maxMove": {
+      "basePower": 130
+    },
+    "contestType": "Cool"
+  },
+  "calmmind": {
+    "num": 347,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Calm Mind",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "spa": 1,
+      "spd": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Psychic",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Clever"
+  },
+  "camouflage": {
+    "num": 293,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Camouflage",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "evasion": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "charge": {
+    "num": 268,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Charge",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "charge",
+    "condition": {
+      "onBasePowerPriority": 9
+    },
+    "boosts": {
+      "spd": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Electric",
+    "zMove": {
+      "boost": {
+        "spd": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "charm": {
+    "num": 204,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Charm",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "allyanim": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "atk": -2
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Fairy",
+    "zMove": {
+      "boost": {
+        "def": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "clamp": {
+    "num": 128,
+    "accuracy": 85,
+    "basePower": 35,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Clamp",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "partiallytrapped",
+    "secondary": null,
+    "target": "normal",
+    "type": "Water",
+    "contestType": "Tough"
+  },
+  "cometpunch": {
+    "num": 4,
+    "accuracy": 85,
+    "basePower": 18,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Comet Punch",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "punch": 1,
+      "metronome": 1
+    },
+    "multihit": [
+      2,
+      5
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "maxMove": {
+      "basePower": 100
+    },
+    "contestType": "Tough"
+  },
+  "confuseray": {
+    "num": 109,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Confuse Ray",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "confusion",
+    "secondary": null,
+    "target": "normal",
+    "type": "Ghost",
+    "zMove": {
+      "boost": {
+        "spa": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "confusion": {
+    "num": 93,
+    "accuracy": 100,
+    "basePower": 50,
+    "category": "Special",
+    "name": "Confusion",
+    "pp": 25,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "volatileStatus": "confusion"
+    },
+    "target": "normal",
+    "type": "Psychic",
+    "contestType": "Clever"
+  },
+  "constrict": {
+    "num": 132,
+    "accuracy": 100,
+    "basePower": 10,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Constrict",
+    "pp": 35,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "boosts": {
+        "spe": -1
+      }
+    },
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "conversion": {
+    "num": 160,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Conversion",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "atk": 1,
+        "def": 1,
+        "spa": 1,
+        "spd": 1,
+        "spe": 1
+      }
+    },
+    "contestType": "Beautiful"
+  },
+  "conversion2": {
+    "num": 176,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Conversion 2",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "bypasssub": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "effect": "heal"
+    },
+    "contestType": "Beautiful"
+  },
+  "cosmicpower": {
+    "num": 322,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Cosmic Power",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "def": 1,
+      "spd": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Psychic",
+    "zMove": {
+      "boost": {
+        "spd": 1
+      }
+    },
+    "contestType": "Beautiful"
+  },
+  "cottonspore": {
+    "num": 178,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Cotton Spore",
+    "pp": 40,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "powder": 1
+    },
+    "boosts": {
+      "spe": -2
+    },
+    "secondary": null,
+    "target": "allAdjacentFoes",
+    "type": "Grass",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Beautiful"
+  },
+  "counter": {
+    "num": 68,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Physical",
+    "name": "Counter",
+    "pp": 20,
+    "priority": -5,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "failmefirst": 1,
+      "noassist": 1,
+      "failcopycat": 1
+    },
+    "condition": {
+      "duration": 1,
+      "noCopy": true,
+      "onRedirectTargetPriority": -1
+    },
+    "secondary": null,
+    "target": "scripted",
+    "type": "Fighting",
+    "maxMove": {
+      "basePower": 75
+    },
+    "contestType": "Tough"
+  },
+  "covet": {
+    "num": 343,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Physical",
+    "name": "Covet",
+    "pp": 25,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "failmefirst": 1,
+      "noassist": 1,
+      "failcopycat": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cute"
+  },
+  "crabhammer": {
+    "num": 152,
+    "accuracy": 90,
+    "basePower": 100,
+    "category": "Physical",
+    "name": "Crabhammer",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "critRatio": 2,
+    "secondary": null,
+    "target": "normal",
+    "type": "Water",
+    "contestType": "Tough"
+  },
+  "crosschop": {
+    "num": 238,
+    "accuracy": 80,
+    "basePower": 100,
+    "category": "Physical",
+    "name": "Cross Chop",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "critRatio": 2,
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "contestType": "Cool"
+  },
+  "crunch": {
+    "num": 242,
+    "accuracy": 100,
+    "basePower": 80,
+    "category": "Physical",
+    "name": "Crunch",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "bite": 1
+    },
+    "secondary": {
+      "chance": 20,
+      "boosts": {
+        "def": -1
+      }
+    },
+    "target": "normal",
+    "type": "Dark",
+    "contestType": "Tough"
+  },
+  "crushclaw": {
+    "num": 306,
+    "accuracy": 95,
+    "basePower": 75,
+    "category": "Physical",
+    "name": "Crush Claw",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 50,
+      "boosts": {
+        "def": -1
+      }
+    },
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cool"
+  },
+  "curse": {
+    "num": 174,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Curse",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "bypasssub": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "curse",
+    "condition": {
+      "onResidualOrder": 12
+    },
+    "secondary": null,
+    "target": "normal",
+    "nonGhostTarget": "self",
+    "type": "Ghost",
+    "zMove": {
+      "effect": "curse"
+    },
+    "contestType": "Tough"
+  },
+  "cut": {
+    "num": 15,
+    "accuracy": 95,
+    "basePower": 50,
+    "category": "Physical",
+    "isNonstandard": "Unobtainable",
+    "name": "Cut",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "slicing": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cool"
+  },
+  "defensecurl": {
+    "num": 111,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Defense Curl",
+    "pp": 40,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "def": 1
+    },
+    "volatileStatus": "defensecurl",
+    "condition": {
+      "noCopy": true
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "accuracy": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "destinybond": {
+    "num": 194,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Destiny Bond",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "bypasssub": 1,
+      "noassist": 1,
+      "failcopycat": 1
+    },
+    "volatileStatus": "destinybond",
+    "condition": {
+      "noCopy": true,
+      "onBeforeMovePriority": -1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Ghost",
+    "zMove": {
+      "effect": "redirect"
+    },
+    "contestType": "Clever"
+  },
+  "detect": {
+    "num": 197,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Detect",
+    "pp": 5,
+    "priority": 4,
+    "flags": {
+      "noassist": 1,
+      "failcopycat": 1
+    },
+    "stallingMove": true,
+    "volatileStatus": "protect",
+    "secondary": null,
+    "target": "self",
+    "type": "Fighting",
+    "zMove": {
+      "boost": {
+        "evasion": 1
+      }
+    },
+    "contestType": "Cool"
+  },
+  "dig": {
+    "num": 91,
+    "accuracy": 100,
+    "basePower": 80,
+    "category": "Physical",
+    "name": "Dig",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "charge": 1,
+      "protect": 1,
+      "mirror": 1,
+      "nonsky": 1,
+      "metronome": 1,
+      "nosleeptalk": 1,
+      "noassist": 1,
+      "failinstruct": 1
+    },
+    "condition": {
+      "duration": 2
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Ground",
+    "contestType": "Tough"
+  },
+  "disable": {
+    "num": 50,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Disable",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "bypasssub": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "disable",
+    "condition": {
+      "duration": 5,
+      "noCopy": true,
+      "onResidualOrder": 17,
+      "onBeforeMovePriority": 7
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Clever"
+  },
+  "dive": {
+    "num": 291,
+    "accuracy": 100,
+    "basePower": 80,
+    "category": "Physical",
+    "name": "Dive",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "charge": 1,
+      "protect": 1,
+      "mirror": 1,
+      "nonsky": 1,
+      "allyanim": 1,
+      "metronome": 1,
+      "nosleeptalk": 1,
+      "noassist": 1,
+      "failinstruct": 1
+    },
+    "condition": {
+      "duration": 2
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Water",
+    "contestType": "Beautiful"
+  },
+  "dizzypunch": {
+    "num": 146,
+    "accuracy": 100,
+    "basePower": 70,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Dizzy Punch",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "punch": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 20,
+      "volatileStatus": "confusion"
+    },
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cute"
+  },
+  "doomdesire": {
+    "num": 353,
+    "accuracy": 100,
+    "basePower": 140,
+    "category": "Special",
+    "name": "Doom Desire",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "metronome": 1,
+      "futuremove": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Steel",
+    "contestType": "Beautiful"
+  },
+  "doubleedge": {
+    "num": 38,
+    "accuracy": 100,
+    "basePower": 120,
+    "category": "Physical",
+    "name": "Double-Edge",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "recoil": [
+      33,
+      100
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "doublekick": {
+    "num": 24,
+    "accuracy": 100,
+    "basePower": 30,
+    "category": "Physical",
+    "name": "Double Kick",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "multihit": 2,
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "maxMove": {
+      "basePower": 80
+    },
+    "contestType": "Cool"
+  },
+  "doubleslap": {
+    "num": 3,
+    "accuracy": 85,
+    "basePower": 15,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Double Slap",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "multihit": [
+      2,
+      5
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cute"
+  },
+  "doubleteam": {
+    "num": 104,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Double Team",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "evasion": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Cool"
+  },
+  "dragonbreath": {
+    "num": 225,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "name": "Dragon Breath",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "status": "par"
+    },
+    "target": "normal",
+    "type": "Dragon",
+    "contestType": "Cool"
+  },
+  "dragonclaw": {
+    "num": 337,
+    "accuracy": 100,
+    "basePower": 80,
+    "category": "Physical",
+    "name": "Dragon Claw",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Dragon",
+    "contestType": "Cool"
+  },
+  "dragondance": {
+    "num": 349,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Dragon Dance",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "dance": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "atk": 1,
+      "spe": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Dragon",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Cool"
+  },
+  "dragonrage": {
+    "num": 82,
+    "accuracy": 100,
+    "basePower": 0,
+    "damage": 40,
+    "category": "Special",
+    "isNonstandard": "Past",
+    "name": "Dragon Rage",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Dragon",
+    "contestType": "Cool"
+  },
+  "dreameater": {
+    "num": 138,
+    "accuracy": 100,
+    "basePower": 100,
+    "category": "Special",
+    "name": "Dream Eater",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "heal": 1,
+      "metronome": 1
+    },
+    "drain": [
+      1,
+      2
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Psychic",
+    "contestType": "Clever"
+  },
+  "drillpeck": {
+    "num": 65,
+    "accuracy": 100,
+    "basePower": 80,
+    "category": "Physical",
+    "name": "Drill Peck",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "distance": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "any",
+    "type": "Flying",
+    "contestType": "Cool"
+  },
+  "dynamicpunch": {
+    "num": 223,
+    "accuracy": 50,
+    "basePower": 100,
+    "category": "Physical",
+    "name": "Dynamic Punch",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "punch": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 100,
+      "volatileStatus": "confusion"
+    },
+    "target": "normal",
+    "type": "Fighting",
+    "contestType": "Cool"
+  },
+  "earthquake": {
+    "num": 89,
+    "accuracy": 100,
+    "basePower": 100,
+    "category": "Physical",
+    "name": "Earthquake",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "nonsky": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "allAdjacent",
+    "type": "Ground",
+    "contestType": "Tough"
+  },
+  "eggbomb": {
+    "num": 121,
+    "accuracy": 75,
+    "basePower": 100,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Egg Bomb",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "bullet": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cute"
+  },
+  "ember": {
+    "num": 52,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Special",
+    "name": "Ember",
+    "pp": 25,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "status": "brn"
+    },
+    "target": "normal",
+    "type": "Fire",
+    "contestType": "Cute"
+  },
+  "encore": {
+    "num": 227,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Encore",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "bypasssub": 1,
+      "metronome": 1,
+      "failencore": 1
+    },
+    "volatileStatus": "encore",
+    "condition": {
+      "duration": 3,
+      "noCopy": true,
+      "onResidualOrder": 16
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "endeavor": {
+    "num": 283,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Physical",
+    "name": "Endeavor",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "noparentalbond": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "basePower": 160
+    },
+    "maxMove": {
+      "basePower": 130
+    },
+    "contestType": "Tough"
+  },
+  "endure": {
+    "num": 203,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Endure",
+    "pp": 10,
+    "priority": 4,
+    "flags": {
+      "noassist": 1,
+      "failcopycat": 1
+    },
+    "stallingMove": true,
+    "volatileStatus": "endure",
+    "condition": {
+      "duration": 1,
+      "onDamagePriority": -10
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Tough"
+  },
+  "eruption": {
+    "num": 284,
+    "accuracy": 100,
+    "basePower": 150,
+    "category": "Special",
+    "name": "Eruption",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "allAdjacentFoes",
+    "type": "Fire",
+    "contestType": "Beautiful"
+  },
+  "explosion": {
+    "num": 153,
+    "accuracy": 100,
+    "basePower": 250,
+    "category": "Physical",
+    "name": "Explosion",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "noparentalbond": 1
+    },
+    "selfdestruct": "always",
+    "secondary": null,
+    "target": "allAdjacent",
+    "type": "Normal",
+    "contestType": "Beautiful"
+  },
+  "extrasensory": {
+    "num": 326,
+    "accuracy": 100,
+    "basePower": 80,
+    "category": "Special",
+    "name": "Extrasensory",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "volatileStatus": "flinch"
+    },
+    "target": "normal",
+    "type": "Psychic",
+    "contestType": "Cool"
+  },
+  "extremespeed": {
+    "num": 245,
+    "accuracy": 100,
+    "basePower": 80,
+    "category": "Physical",
+    "name": "Extreme Speed",
+    "pp": 5,
+    "priority": 2,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cool"
+  },
+  "facade": {
+    "num": 263,
+    "accuracy": 100,
+    "basePower": 70,
+    "category": "Physical",
+    "name": "Facade",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cute"
+  },
+  "fakeout": {
+    "num": 252,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Physical",
+    "name": "Fake Out",
+    "pp": 10,
+    "priority": 3,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 100,
+      "volatileStatus": "flinch"
+    },
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cute"
+  },
+  "faketears": {
+    "num": 313,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Fake Tears",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "allyanim": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "spd": -2
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Dark",
+    "zMove": {
+      "boost": {
+        "spa": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "falseswipe": {
+    "num": 206,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Physical",
+    "name": "False Swipe",
+    "pp": 40,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "onDamagePriority": -20,
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cool"
+  },
+  "featherdance": {
+    "num": 297,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Feather Dance",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "dance": 1,
+      "allyanim": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "atk": -2
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Flying",
+    "zMove": {
+      "boost": {
+        "def": 1
+      }
+    },
+    "contestType": "Beautiful"
+  },
+  "feintattack": {
+    "num": 185,
+    "accuracy": true,
+    "basePower": 60,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Feint Attack",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Dark",
+    "contestType": "Clever"
+  },
+  "fireblast": {
+    "num": 126,
+    "accuracy": 85,
+    "basePower": 110,
+    "category": "Special",
+    "name": "Fire Blast",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "status": "brn"
+    },
+    "target": "normal",
+    "type": "Fire",
+    "contestType": "Beautiful"
+  },
+  "firepunch": {
+    "num": 7,
+    "accuracy": 100,
+    "basePower": 75,
+    "category": "Physical",
+    "name": "Fire Punch",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "punch": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "status": "brn"
+    },
+    "target": "normal",
+    "type": "Fire",
+    "contestType": "Tough"
+  },
+  "firespin": {
+    "num": 83,
+    "accuracy": 85,
+    "basePower": 35,
+    "category": "Special",
+    "name": "Fire Spin",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "partiallytrapped",
+    "secondary": null,
+    "target": "normal",
+    "type": "Fire",
+    "contestType": "Beautiful"
+  },
+  "fissure": {
+    "num": 90,
+    "accuracy": 30,
+    "basePower": 0,
+    "category": "Physical",
+    "name": "Fissure",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "nonsky": 1,
+      "metronome": 1
+    },
+    "ohko": true,
+    "secondary": null,
+    "target": "normal",
+    "type": "Ground",
+    "zMove": {
+      "basePower": 180
+    },
+    "maxMove": {
+      "basePower": 130
+    },
+    "contestType": "Tough"
+  },
+  "flail": {
+    "num": 175,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Physical",
+    "name": "Flail",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "basePower": 160
+    },
+    "maxMove": {
+      "basePower": 130
+    },
+    "contestType": "Cute"
+  },
+  "flamewheel": {
+    "num": 172,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Physical",
+    "name": "Flame Wheel",
+    "pp": 25,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "defrost": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "status": "brn"
+    },
+    "target": "normal",
+    "type": "Fire",
+    "contestType": "Beautiful"
+  },
+  "flamethrower": {
+    "num": 53,
+    "accuracy": 100,
+    "basePower": 90,
+    "category": "Special",
+    "name": "Flamethrower",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "status": "brn"
+    },
+    "target": "normal",
+    "type": "Fire",
+    "contestType": "Beautiful"
+  },
+  "flash": {
+    "num": 148,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Flash",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "accuracy": -1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "evasion": 1
+      }
+    },
+    "contestType": "Beautiful"
+  },
+  "flatter": {
+    "num": 260,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Flatter",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "allyanim": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "confusion",
+    "boosts": {
+      "spa": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Dark",
+    "zMove": {
+      "boost": {
+        "spd": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "fly": {
+    "num": 19,
+    "accuracy": 95,
+    "basePower": 90,
+    "category": "Physical",
+    "name": "Fly",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "charge": 1,
+      "protect": 1,
+      "mirror": 1,
+      "gravity": 1,
+      "distance": 1,
+      "metronome": 1,
+      "nosleeptalk": 1,
+      "noassist": 1,
+      "failinstruct": 1
+    },
+    "condition": {
+      "duration": 2
+    },
+    "secondary": null,
+    "target": "any",
+    "type": "Flying",
+    "contestType": "Clever"
+  },
+  "focusenergy": {
+    "num": 116,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Focus Energy",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "focusenergy",
+    "condition": {},
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "accuracy": 1
+      }
+    },
+    "contestType": "Cool"
+  },
+  "focuspunch": {
+    "num": 264,
+    "accuracy": 100,
+    "basePower": 150,
+    "category": "Physical",
+    "name": "Focus Punch",
+    "pp": 20,
+    "priority": -3,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "punch": 1,
+      "failmefirst": 1,
+      "nosleeptalk": 1,
+      "noassist": 1,
+      "failcopycat": 1,
+      "failinstruct": 1
+    },
+    "condition": {
+      "duration": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "contestType": "Tough"
+  },
+  "followme": {
+    "num": 266,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Follow Me",
+    "pp": 20,
+    "priority": 2,
+    "flags": {
+      "noassist": 1,
+      "failcopycat": 1
+    },
+    "volatileStatus": "followme",
+    "condition": {
+      "duration": 1,
+      "onFoeRedirectTargetPriority": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Cute"
+  },
+  "foresight": {
+    "num": 193,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Foresight",
+    "pp": 40,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "bypasssub": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "foresight",
+    "condition": {
+      "noCopy": true
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "effect": "crit2"
+    },
+    "contestType": "Clever"
+  },
+  "frenzyplant": {
+    "num": 338,
+    "accuracy": 90,
+    "basePower": 150,
+    "category": "Special",
+    "name": "Frenzy Plant",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "recharge": 1,
+      "protect": 1,
+      "mirror": 1,
+      "nonsky": 1,
+      "metronome": 1
+    },
+    "self": {
+      "volatileStatus": "mustrecharge"
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Grass",
+    "contestType": "Cool"
+  },
+  "frustration": {
+    "num": 218,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Frustration",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "basePower": 160
+    },
+    "maxMove": {
+      "basePower": 130
+    },
+    "contestType": "Cute"
+  },
+  "furyattack": {
+    "num": 31,
+    "accuracy": 85,
+    "basePower": 15,
+    "category": "Physical",
+    "name": "Fury Attack",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "multihit": [
+      2,
+      5
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cool"
+  },
+  "furycutter": {
+    "num": 210,
+    "accuracy": 95,
+    "basePower": 40,
+    "category": "Physical",
+    "name": "Fury Cutter",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "slicing": 1
+    },
+    "condition": {
+      "duration": 2
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Bug",
+    "contestType": "Cool"
+  },
+  "furyswipes": {
+    "num": 154,
+    "accuracy": 80,
+    "basePower": 18,
+    "category": "Physical",
+    "name": "Fury Swipes",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "multihit": [
+      2,
+      5
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "maxMove": {
+      "basePower": 100
+    },
+    "contestType": "Tough"
+  },
+  "futuresight": {
+    "num": 248,
+    "accuracy": 100,
+    "basePower": 120,
+    "category": "Special",
+    "name": "Future Sight",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "allyanim": 1,
+      "metronome": 1,
+      "futuremove": 1
+    },
+    "ignoreImmunity": true,
+    "secondary": null,
+    "target": "normal",
+    "type": "Psychic",
+    "contestType": "Clever"
+  },
+  "gigadrain": {
+    "num": 202,
+    "accuracy": 100,
+    "basePower": 75,
+    "category": "Special",
+    "name": "Giga Drain",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "heal": 1,
+      "metronome": 1
+    },
+    "drain": [
+      1,
+      2
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Grass",
+    "contestType": "Clever"
+  },
+  "glare": {
+    "num": 137,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Glare",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "status": "par",
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "spd": 1
+      }
+    },
+    "contestType": "Tough"
+  },
+  "grasswhistle": {
+    "num": 320,
+    "accuracy": 55,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Grass Whistle",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "sound": 1,
+      "bypasssub": 1,
+      "metronome": 1
+    },
+    "status": "slp",
+    "secondary": null,
+    "target": "normal",
+    "type": "Grass",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "growl": {
+    "num": 45,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Growl",
+    "pp": 40,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "sound": 1,
+      "bypasssub": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "atk": -1
+    },
+    "secondary": null,
+    "target": "allAdjacentFoes",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "def": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "growth": {
+    "num": 74,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Growth",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "atk": 1,
+      "spa": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "spa": 1
+      }
+    },
+    "contestType": "Beautiful"
+  },
+  "grudge": {
+    "num": 288,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Grudge",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "bypasssub": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "grudge",
+    "condition": {
+      "onBeforeMovePriority": 100
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Ghost",
+    "zMove": {
+      "effect": "redirect"
+    },
+    "contestType": "Tough"
+  },
+  "guillotine": {
+    "num": 12,
+    "accuracy": 30,
+    "basePower": 0,
+    "category": "Physical",
+    "name": "Guillotine",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "ohko": true,
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "basePower": 180
+    },
+    "maxMove": {
+      "basePower": 130
+    },
+    "contestType": "Cool"
+  },
+  "gust": {
+    "num": 16,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Special",
+    "name": "Gust",
+    "pp": 35,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "distance": 1,
+      "metronome": 1,
+      "wind": 1
+    },
+    "secondary": null,
+    "target": "any",
+    "type": "Flying",
+    "contestType": "Clever"
+  },
+  "hail": {
+    "num": 258,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Hail",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "metronome": 1
+    },
+    "weather": "hail",
+    "secondary": null,
+    "target": "all",
+    "type": "Ice",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Beautiful"
+  },
+  "harden": {
+    "num": 106,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Harden",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "def": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "def": 1
+      }
+    },
+    "contestType": "Tough"
+  },
+  "haze": {
+    "num": 114,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Haze",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "bypasssub": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "all",
+    "type": "Ice",
+    "zMove": {
+      "effect": "heal"
+    },
+    "contestType": "Beautiful"
+  },
+  "headbutt": {
+    "num": 29,
+    "accuracy": 100,
+    "basePower": 70,
+    "category": "Physical",
+    "name": "Headbutt",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "volatileStatus": "flinch"
+    },
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "healbell": {
+    "num": 215,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Heal Bell",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "sound": 1,
+      "distance": 1,
+      "bypasssub": 1,
+      "metronome": 1
+    },
+    "target": "allyTeam",
+    "type": "Normal",
+    "zMove": {
+      "effect": "heal"
+    },
+    "contestType": "Beautiful"
+  },
+  "heatwave": {
+    "num": 257,
+    "accuracy": 90,
+    "basePower": 95,
+    "category": "Special",
+    "name": "Heat Wave",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "wind": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "status": "brn"
+    },
+    "target": "allAdjacentFoes",
+    "type": "Fire",
+    "contestType": "Beautiful"
+  },
+  "helpinghand": {
+    "num": 270,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Helping Hand",
+    "pp": 20,
+    "priority": 5,
+    "flags": {
+      "bypasssub": 1,
+      "noassist": 1,
+      "failcopycat": 1
+    },
+    "volatileStatus": "helpinghand",
+    "condition": {
+      "duration": 1,
+      "onBasePowerPriority": 10
+    },
+    "secondary": null,
+    "target": "adjacentAlly",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Clever"
+  },
+  "hiddenpower": {
+    "num": 237,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "isNonstandard": "Past",
+    "name": "Hidden Power",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Clever"
+  },
+  "hiddenpowerbug": {
+    "num": 237,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "realMove": "Hidden Power",
+    "isNonstandard": "Past",
+    "name": "Hidden Power Bug",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Bug",
+    "contestType": "Clever"
+  },
+  "hiddenpowerdark": {
+    "num": 237,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "realMove": "Hidden Power",
+    "isNonstandard": "Past",
+    "name": "Hidden Power Dark",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Dark",
+    "contestType": "Clever"
+  },
+  "hiddenpowerdragon": {
+    "num": 237,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "realMove": "Hidden Power",
+    "isNonstandard": "Past",
+    "name": "Hidden Power Dragon",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Dragon",
+    "contestType": "Clever"
+  },
+  "hiddenpowerelectric": {
+    "num": 237,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "realMove": "Hidden Power",
+    "isNonstandard": "Past",
+    "name": "Hidden Power Electric",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Electric",
+    "contestType": "Clever"
+  },
+  "hiddenpowerfighting": {
+    "num": 237,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "realMove": "Hidden Power",
+    "isNonstandard": "Past",
+    "name": "Hidden Power Fighting",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "contestType": "Clever"
+  },
+  "hiddenpowerfire": {
+    "num": 237,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "realMove": "Hidden Power",
+    "isNonstandard": "Past",
+    "name": "Hidden Power Fire",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Fire",
+    "contestType": "Clever"
+  },
+  "hiddenpowerflying": {
+    "num": 237,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "realMove": "Hidden Power",
+    "isNonstandard": "Past",
+    "name": "Hidden Power Flying",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Flying",
+    "contestType": "Clever"
+  },
+  "hiddenpowerghost": {
+    "num": 237,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "realMove": "Hidden Power",
+    "isNonstandard": "Past",
+    "name": "Hidden Power Ghost",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Ghost",
+    "contestType": "Clever"
+  },
+  "hiddenpowergrass": {
+    "num": 237,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "realMove": "Hidden Power",
+    "isNonstandard": "Past",
+    "name": "Hidden Power Grass",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Grass",
+    "contestType": "Clever"
+  },
+  "hiddenpowerground": {
+    "num": 237,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "realMove": "Hidden Power",
+    "isNonstandard": "Past",
+    "name": "Hidden Power Ground",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Ground",
+    "contestType": "Clever"
+  },
+  "hiddenpowerice": {
+    "num": 237,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "realMove": "Hidden Power",
+    "isNonstandard": "Past",
+    "name": "Hidden Power Ice",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Ice",
+    "contestType": "Clever"
+  },
+  "hiddenpowerpoison": {
+    "num": 237,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "realMove": "Hidden Power",
+    "isNonstandard": "Past",
+    "name": "Hidden Power Poison",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Poison",
+    "contestType": "Clever"
+  },
+  "hiddenpowerpsychic": {
+    "num": 237,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "realMove": "Hidden Power",
+    "isNonstandard": "Past",
+    "name": "Hidden Power Psychic",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Psychic",
+    "contestType": "Clever"
+  },
+  "hiddenpowerrock": {
+    "num": 237,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "realMove": "Hidden Power",
+    "isNonstandard": "Past",
+    "name": "Hidden Power Rock",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Rock",
+    "contestType": "Clever"
+  },
+  "hiddenpowersteel": {
+    "num": 237,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "realMove": "Hidden Power",
+    "isNonstandard": "Past",
+    "name": "Hidden Power Steel",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Steel",
+    "contestType": "Clever"
+  },
+  "hiddenpowerwater": {
+    "num": 237,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "realMove": "Hidden Power",
+    "isNonstandard": "Past",
+    "name": "Hidden Power Water",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Water",
+    "contestType": "Clever"
+  },
+  "highjumpkick": {
+    "num": 136,
+    "accuracy": 90,
+    "basePower": 130,
+    "category": "Physical",
+    "name": "High Jump Kick",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "gravity": 1,
+      "metronome": 1
+    },
+    "hasCrashDamage": true,
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "contestType": "Cool"
+  },
+  "hornattack": {
+    "num": 30,
+    "accuracy": 100,
+    "basePower": 65,
+    "category": "Physical",
+    "name": "Horn Attack",
+    "pp": 25,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cool"
+  },
+  "horndrill": {
+    "num": 32,
+    "accuracy": 30,
+    "basePower": 0,
+    "category": "Physical",
+    "name": "Horn Drill",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "ohko": true,
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "basePower": 180
+    },
+    "maxMove": {
+      "basePower": 130
+    },
+    "contestType": "Cool"
+  },
+  "howl": {
+    "num": 336,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Howl",
+    "pp": 40,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "sound": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "atk": 1
+    },
+    "secondary": null,
+    "target": "allies",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "atk": 1
+      }
+    },
+    "contestType": "Cool"
+  },
+  "hydrocannon": {
+    "num": 308,
+    "accuracy": 90,
+    "basePower": 150,
+    "category": "Special",
+    "name": "Hydro Cannon",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "recharge": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "self": {
+      "volatileStatus": "mustrecharge"
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Water",
+    "contestType": "Beautiful"
+  },
+  "hydropump": {
+    "num": 56,
+    "accuracy": 80,
+    "basePower": 110,
+    "category": "Special",
+    "name": "Hydro Pump",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Water",
+    "contestType": "Beautiful"
+  },
+  "hyperbeam": {
+    "num": 63,
+    "accuracy": 90,
+    "basePower": 150,
+    "category": "Special",
+    "name": "Hyper Beam",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "recharge": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "self": {
+      "volatileStatus": "mustrecharge"
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cool"
+  },
+  "hyperfang": {
+    "num": 158,
+    "accuracy": 90,
+    "basePower": 80,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Hyper Fang",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "bite": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "volatileStatus": "flinch"
+    },
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cool"
+  },
+  "hypervoice": {
+    "num": 304,
+    "accuracy": 100,
+    "basePower": 90,
+    "category": "Special",
+    "name": "Hyper Voice",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "sound": 1,
+      "bypasssub": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "allAdjacentFoes",
+    "type": "Normal",
+    "contestType": "Cool"
+  },
+  "hypnosis": {
+    "num": 95,
+    "accuracy": 60,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Hypnosis",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "status": "slp",
+    "secondary": null,
+    "target": "normal",
+    "type": "Psychic",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "iceball": {
+    "num": 301,
+    "accuracy": 90,
+    "basePower": 30,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Ice Ball",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "failinstruct": 1,
+      "bullet": 1,
+      "noparentalbond": 1
+    },
+    "condition": {
+      "duration": 1,
+      "onLockMove": "iceball"
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Ice",
+    "contestType": "Beautiful"
+  },
+  "icebeam": {
+    "num": 58,
+    "accuracy": 100,
+    "basePower": 90,
+    "category": "Special",
+    "name": "Ice Beam",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "status": "frz"
+    },
+    "target": "normal",
+    "type": "Ice",
+    "contestType": "Beautiful"
+  },
+  "icepunch": {
+    "num": 8,
+    "accuracy": 100,
+    "basePower": 75,
+    "category": "Physical",
+    "name": "Ice Punch",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "punch": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "status": "frz"
+    },
+    "target": "normal",
+    "type": "Ice",
+    "contestType": "Beautiful"
+  },
+  "iciclespear": {
+    "num": 333,
+    "accuracy": 100,
+    "basePower": 25,
+    "category": "Physical",
+    "name": "Icicle Spear",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "multihit": [
+      2,
+      5
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Ice",
+    "zMove": {
+      "basePower": 140
+    },
+    "maxMove": {
+      "basePower": 130
+    },
+    "contestType": "Beautiful"
+  },
+  "icywind": {
+    "num": 196,
+    "accuracy": 95,
+    "basePower": 55,
+    "category": "Special",
+    "name": "Icy Wind",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "wind": 1
+    },
+    "secondary": {
+      "chance": 100,
+      "boosts": {
+        "spe": -1
+      }
+    },
+    "target": "allAdjacentFoes",
+    "type": "Ice",
+    "contestType": "Beautiful"
+  },
+  "imprison": {
+    "num": 286,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Imprison",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "bypasssub": 1,
+      "metronome": 1,
+      "mustpressure": 1
+    },
+    "volatileStatus": "imprison",
+    "condition": {
+      "noCopy": true,
+      "onFoeBeforeMovePriority": 4
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Psychic",
+    "zMove": {
+      "boost": {
+        "spd": 2
+      }
+    },
+    "contestType": "Clever"
+  },
+  "ingrain": {
+    "num": 275,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Ingrain",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "nonsky": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "ingrain",
+    "condition": {
+      "onResidualOrder": 7
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Grass",
+    "zMove": {
+      "boost": {
+        "spd": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "irondefense": {
+    "num": 334,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Iron Defense",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "def": 2
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Steel",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Tough"
+  },
+  "irontail": {
+    "num": 231,
+    "accuracy": 75,
+    "basePower": 100,
+    "category": "Physical",
+    "name": "Iron Tail",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "boosts": {
+        "def": -1
+      }
+    },
+    "target": "normal",
+    "type": "Steel",
+    "contestType": "Cool"
+  },
+  "jumpkick": {
+    "num": 26,
+    "accuracy": 95,
+    "basePower": 100,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Jump Kick",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "gravity": 1,
+      "metronome": 1
+    },
+    "hasCrashDamage": true,
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "contestType": "Cool"
+  },
+  "karatechop": {
+    "num": 2,
+    "accuracy": 100,
+    "basePower": 50,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Karate Chop",
+    "pp": 25,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "critRatio": 2,
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "contestType": "Tough"
+  },
+  "kinesis": {
+    "num": 134,
+    "accuracy": 80,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Kinesis",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "accuracy": -1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Psychic",
+    "zMove": {
+      "boost": {
+        "evasion": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "knockoff": {
+    "num": 282,
+    "accuracy": 100,
+    "basePower": 65,
+    "category": "Physical",
+    "name": "Knock Off",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Dark",
+    "contestType": "Clever"
+  },
+  "leafblade": {
+    "num": 348,
+    "accuracy": 100,
+    "basePower": 90,
+    "category": "Physical",
+    "name": "Leaf Blade",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "slicing": 1
+    },
+    "critRatio": 2,
+    "secondary": null,
+    "target": "normal",
+    "type": "Grass",
+    "contestType": "Cool"
+  },
+  "leechlife": {
+    "num": 141,
+    "accuracy": 100,
+    "basePower": 80,
+    "category": "Physical",
+    "name": "Leech Life",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "heal": 1,
+      "metronome": 1
+    },
+    "drain": [
+      1,
+      2
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Bug",
+    "contestType": "Clever"
+  },
+  "leechseed": {
+    "num": 73,
+    "accuracy": 90,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Leech Seed",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "leechseed",
+    "condition": {
+      "onResidualOrder": 8
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Grass",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Clever"
+  },
+  "leer": {
+    "num": 43,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Leer",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "def": -1
+    },
+    "secondary": null,
+    "target": "allAdjacentFoes",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "atk": 1
+      }
+    },
+    "contestType": "Cool"
+  },
+  "lick": {
+    "num": 122,
+    "accuracy": 100,
+    "basePower": 30,
+    "category": "Physical",
+    "name": "Lick",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "status": "par"
+    },
+    "target": "normal",
+    "type": "Ghost",
+    "contestType": "Cute"
+  },
+  "lightscreen": {
+    "num": 113,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Light Screen",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "sideCondition": "lightscreen",
+    "condition": {
+      "duration": 5,
+      "onSideResidualOrder": 26,
+      "onSideResidualSubOrder": 2
+    },
+    "secondary": null,
+    "target": "allySide",
+    "type": "Psychic",
+    "zMove": {
+      "boost": {
+        "spd": 1
+      }
+    },
+    "contestType": "Beautiful"
+  },
+  "lockon": {
+    "num": 199,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Lock-On",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "condition": {
+      "noCopy": true,
+      "duration": 2,
+      "onSourceInvulnerabilityPriority": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "lovelykiss": {
+    "num": 142,
+    "accuracy": 75,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Lovely Kiss",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "status": "slp",
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Beautiful"
+  },
+  "lowkick": {
+    "num": 67,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Physical",
+    "name": "Low Kick",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "zMove": {
+      "basePower": 160
+    },
+    "contestType": "Tough"
+  },
+  "lusterpurge": {
+    "num": 295,
+    "accuracy": 100,
+    "basePower": 95,
+    "category": "Special",
+    "name": "Luster Purge",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 50,
+      "boosts": {
+        "spd": -1
+      }
+    },
+    "target": "normal",
+    "type": "Psychic",
+    "contestType": "Clever"
+  },
+  "machpunch": {
+    "num": 183,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Physical",
+    "name": "Mach Punch",
+    "pp": 30,
+    "priority": 1,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "punch": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "contestType": "Cool"
+  },
+  "magicalleaf": {
+    "num": 345,
+    "accuracy": true,
+    "basePower": 60,
+    "category": "Special",
+    "name": "Magical Leaf",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Grass",
+    "contestType": "Beautiful"
+  },
+  "magiccoat": {
+    "num": 277,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Magic Coat",
+    "pp": 15,
+    "priority": 4,
+    "flags": {
+      "metronome": 1
+    },
+    "volatileStatus": "magiccoat",
+    "condition": {
+      "duration": 1,
+      "onTryHitPriority": 2
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Psychic",
+    "zMove": {
+      "boost": {
+        "spd": 2
+      }
+    },
+    "contestType": "Beautiful"
+  },
+  "magnitude": {
+    "num": 222,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Magnitude",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "nonsky": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "allAdjacent",
+    "type": "Ground",
+    "zMove": {
+      "basePower": 140
+    },
+    "maxMove": {
+      "basePower": 140
+    },
+    "contestType": "Tough"
+  },
+  "meanlook": {
+    "num": 212,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Mean Look",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "spd": 1
+      }
+    },
+    "contestType": "Beautiful"
+  },
+  "meditate": {
+    "num": 96,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Meditate",
+    "pp": 40,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "atk": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Psychic",
+    "zMove": {
+      "boost": {
+        "atk": 1
+      }
+    },
+    "contestType": "Beautiful"
+  },
+  "megadrain": {
+    "num": 72,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Special",
+    "name": "Mega Drain",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "heal": 1,
+      "metronome": 1
+    },
+    "drain": [
+      1,
+      2
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Grass",
+    "zMove": {
+      "basePower": 120
+    },
+    "contestType": "Clever"
+  },
+  "megahorn": {
+    "num": 224,
+    "accuracy": 85,
+    "basePower": 120,
+    "category": "Physical",
+    "name": "Megahorn",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Bug",
+    "contestType": "Cool"
+  },
+  "megakick": {
+    "num": 25,
+    "accuracy": 75,
+    "basePower": 120,
+    "category": "Physical",
+    "name": "Mega Kick",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cool"
+  },
+  "megapunch": {
+    "num": 5,
+    "accuracy": 85,
+    "basePower": 80,
+    "category": "Physical",
+    "name": "Mega Punch",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "punch": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "memento": {
+    "num": 262,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Memento",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "atk": -2,
+      "spa": -2
+    },
+    "selfdestruct": "ifHit",
+    "secondary": null,
+    "target": "normal",
+    "type": "Dark",
+    "zMove": {
+      "effect": "healreplacement"
+    },
+    "contestType": "Tough"
+  },
+  "metalclaw": {
+    "num": 232,
+    "accuracy": 95,
+    "basePower": 50,
+    "category": "Physical",
+    "name": "Metal Claw",
+    "pp": 35,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "self": {
+        "boosts": {
+          "atk": 1
+        }
+      }
+    },
+    "target": "normal",
+    "type": "Steel",
+    "contestType": "Cool"
+  },
+  "metalsound": {
+    "num": 319,
+    "accuracy": 85,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Metal Sound",
+    "pp": 40,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "sound": 1,
+      "bypasssub": 1,
+      "allyanim": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "spd": -2
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Steel",
+    "zMove": {
+      "boost": {
+        "spa": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "meteormash": {
+    "num": 309,
+    "accuracy": 90,
+    "basePower": 90,
+    "category": "Physical",
+    "name": "Meteor Mash",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "punch": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 20,
+      "self": {
+        "boosts": {
+          "atk": 1
+        }
+      }
+    },
+    "target": "normal",
+    "type": "Steel",
+    "contestType": "Cool"
+  },
+  "metronome": {
+    "num": 118,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Metronome",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "failencore": 1,
+      "nosleeptalk": 1,
+      "noassist": 1,
+      "failcopycat": 1,
+      "failmimic": 1,
+      "failinstruct": 1
+    },
+    "callsMove": true,
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "contestType": "Cute"
+  },
+  "milkdrink": {
+    "num": 208,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Milk Drink",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "heal": 1,
+      "metronome": 1
+    },
+    "heal": [
+      1,
+      2
+    ],
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Cute"
+  },
+  "mimic": {
+    "num": 102,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Mimic",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "bypasssub": 1,
+      "allyanim": 1,
+      "failencore": 1,
+      "nosleeptalk": 1,
+      "noassist": 1,
+      "failcopycat": 1,
+      "failmimic": 1,
+      "failinstruct": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "accuracy": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "mindreader": {
+    "num": 170,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Mind Reader",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "spa": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "minimize": {
+    "num": 107,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Minimize",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "minimize",
+    "condition": {
+      "noCopy": true
+    },
+    "boosts": {
+      "evasion": 2
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Cute"
+  },
+  "mirrorcoat": {
+    "num": 243,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Special",
+    "name": "Mirror Coat",
+    "pp": 20,
+    "priority": -5,
+    "flags": {
+      "protect": 1,
+      "failmefirst": 1,
+      "noassist": 1
+    },
+    "condition": {
+      "duration": 1,
+      "noCopy": true,
+      "onRedirectTargetPriority": -1
+    },
+    "secondary": null,
+    "target": "scripted",
+    "type": "Psychic",
+    "contestType": "Beautiful"
+  },
+  "mirrormove": {
+    "num": 119,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Mirror Move",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "failencore": 1,
+      "nosleeptalk": 1,
+      "noassist": 1,
+      "failcopycat": 1,
+      "failmimic": 1,
+      "failinstruct": 1
+    },
+    "callsMove": true,
+    "secondary": null,
+    "target": "normal",
+    "type": "Flying",
+    "zMove": {
+      "boost": {
+        "atk": 2
+      }
+    },
+    "contestType": "Clever"
+  },
+  "mist": {
+    "num": 54,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Mist",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "sideCondition": "mist",
+    "condition": {
+      "duration": 5,
+      "onSideResidualOrder": 26,
+      "onSideResidualSubOrder": 4
+    },
+    "secondary": null,
+    "target": "allySide",
+    "type": "Ice",
+    "zMove": {
+      "effect": "heal"
+    },
+    "contestType": "Beautiful"
+  },
+  "mistball": {
+    "num": 296,
+    "accuracy": 100,
+    "basePower": 95,
+    "category": "Special",
+    "name": "Mist Ball",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "bullet": 1
+    },
+    "secondary": {
+      "chance": 50,
+      "boosts": {
+        "spa": -1
+      }
+    },
+    "target": "normal",
+    "type": "Psychic",
+    "contestType": "Clever"
+  },
+  "moonlight": {
+    "num": 236,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Moonlight",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "heal": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Fairy",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Beautiful"
+  },
+  "morningsun": {
+    "num": 234,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Morning Sun",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "heal": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Beautiful"
+  },
+  "mudshot": {
+    "num": 341,
+    "accuracy": 95,
+    "basePower": 55,
+    "category": "Special",
+    "name": "Mud Shot",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 100,
+      "boosts": {
+        "spe": -1
+      }
+    },
+    "target": "normal",
+    "type": "Ground",
+    "contestType": "Tough"
+  },
+  "mudslap": {
+    "num": 189,
+    "accuracy": 100,
+    "basePower": 20,
+    "category": "Special",
+    "name": "Mud-Slap",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 100,
+      "boosts": {
+        "accuracy": -1
+      }
+    },
+    "target": "normal",
+    "type": "Ground",
+    "contestType": "Cute"
+  },
+  "mudsport": {
+    "num": 300,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Mud Sport",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "nonsky": 1,
+      "metronome": 1
+    },
+    "pseudoWeather": "mudsport",
+    "condition": {
+      "duration": 5,
+      "onBasePowerPriority": 1,
+      "onFieldResidualOrder": 27,
+      "onFieldResidualSubOrder": 4
+    },
+    "secondary": null,
+    "target": "all",
+    "type": "Ground",
+    "zMove": {
+      "boost": {
+        "spd": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "muddywater": {
+    "num": 330,
+    "accuracy": 85,
+    "basePower": 90,
+    "category": "Special",
+    "name": "Muddy Water",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "nonsky": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "boosts": {
+        "accuracy": -1
+      }
+    },
+    "target": "allAdjacentFoes",
+    "type": "Water",
+    "contestType": "Tough"
+  },
+  "naturepower": {
+    "num": 267,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Nature Power",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "failencore": 1,
+      "nosleeptalk": 1,
+      "noassist": 1,
+      "failcopycat": 1,
+      "failmimic": 1,
+      "failinstruct": 1
+    },
+    "callsMove": true,
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Beautiful"
+  },
+  "needlearm": {
+    "num": 302,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Needle Arm",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "volatileStatus": "flinch"
+    },
+    "target": "normal",
+    "type": "Grass",
+    "contestType": "Clever"
+  },
+  "nightmare": {
+    "num": 171,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Nightmare",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "nightmare",
+    "condition": {
+      "noCopy": true,
+      "onResidualOrder": 11
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Ghost",
+    "zMove": {
+      "boost": {
+        "spa": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "nightshade": {
+    "num": 101,
+    "accuracy": 100,
+    "basePower": 0,
+    "damage": "level",
+    "category": "Special",
+    "name": "Night Shade",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Ghost",
+    "contestType": "Clever"
+  },
+  "octazooka": {
+    "num": 190,
+    "accuracy": 85,
+    "basePower": 65,
+    "category": "Special",
+    "isNonstandard": "Past",
+    "name": "Octazooka",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "bullet": 1
+    },
+    "secondary": {
+      "chance": 50,
+      "boosts": {
+        "accuracy": -1
+      }
+    },
+    "target": "normal",
+    "type": "Water",
+    "contestType": "Tough"
+  },
+  "odorsleuth": {
+    "num": 316,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Odor Sleuth",
+    "pp": 40,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "bypasssub": 1,
+      "allyanim": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "foresight",
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "atk": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "outrage": {
+    "num": 200,
+    "accuracy": 100,
+    "basePower": 120,
+    "category": "Physical",
+    "name": "Outrage",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "failinstruct": 1
+    },
+    "self": {
+      "volatileStatus": "lockedmove"
+    },
+    "secondary": null,
+    "target": "randomNormal",
+    "type": "Dragon",
+    "contestType": "Cool"
+  },
+  "overheat": {
+    "num": 315,
+    "accuracy": 90,
+    "basePower": 130,
+    "category": "Special",
+    "name": "Overheat",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "self": {
+      "boosts": {
+        "spa": -2
+      }
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Fire",
+    "contestType": "Beautiful"
+  },
+  "painsplit": {
+    "num": 220,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Pain Split",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "allyanim": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "def": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "payday": {
+    "num": 6,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Physical",
+    "name": "Pay Day",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Clever"
+  },
+  "peck": {
+    "num": 64,
+    "accuracy": 100,
+    "basePower": 35,
+    "category": "Physical",
+    "name": "Peck",
+    "pp": 35,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "distance": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "any",
+    "type": "Flying",
+    "contestType": "Cool"
+  },
+  "perishsong": {
+    "num": 195,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Perish Song",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "sound": 1,
+      "distance": 1,
+      "bypasssub": 1,
+      "metronome": 1
+    },
+    "condition": {
+      "duration": 4,
+      "onResidualOrder": 24
+    },
+    "secondary": null,
+    "target": "all",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Beautiful"
+  },
+  "petaldance": {
+    "num": 80,
+    "accuracy": 100,
+    "basePower": 120,
+    "category": "Special",
+    "name": "Petal Dance",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "dance": 1,
+      "metronome": 1,
+      "failinstruct": 1
+    },
+    "self": {
+      "volatileStatus": "lockedmove"
+    },
+    "secondary": null,
+    "target": "randomNormal",
+    "type": "Grass",
+    "contestType": "Beautiful"
+  },
+  "pinmissile": {
+    "num": 42,
+    "accuracy": 95,
+    "basePower": 25,
+    "category": "Physical",
+    "name": "Pin Missile",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "multihit": [
+      2,
+      5
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Bug",
+    "zMove": {
+      "basePower": 140
+    },
+    "maxMove": {
+      "basePower": 130
+    },
+    "contestType": "Cool"
+  },
+  "poisonfang": {
+    "num": 305,
+    "accuracy": 100,
+    "basePower": 50,
+    "category": "Physical",
+    "name": "Poison Fang",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "bite": 1
+    },
+    "secondary": {
+      "chance": 50,
+      "status": "tox"
+    },
+    "target": "normal",
+    "type": "Poison",
+    "contestType": "Clever"
+  },
+  "poisongas": {
+    "num": 139,
+    "accuracy": 90,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Poison Gas",
+    "pp": 40,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "status": "psn",
+    "secondary": null,
+    "target": "allAdjacentFoes",
+    "type": "Poison",
+    "zMove": {
+      "boost": {
+        "def": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "poisonpowder": {
+    "num": 77,
+    "accuracy": 75,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Poison Powder",
+    "pp": 35,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "powder": 1
+    },
+    "status": "psn",
+    "secondary": null,
+    "target": "normal",
+    "type": "Poison",
+    "zMove": {
+      "boost": {
+        "def": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "poisonsting": {
+    "num": 40,
+    "accuracy": 100,
+    "basePower": 15,
+    "category": "Physical",
+    "name": "Poison Sting",
+    "pp": 35,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "status": "psn"
+    },
+    "target": "normal",
+    "type": "Poison",
+    "contestType": "Clever"
+  },
+  "poisontail": {
+    "num": 342,
+    "accuracy": 100,
+    "basePower": 50,
+    "category": "Physical",
+    "name": "Poison Tail",
+    "pp": 25,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "critRatio": 2,
+    "secondary": {
+      "chance": 10,
+      "status": "psn"
+    },
+    "target": "normal",
+    "type": "Poison",
+    "contestType": "Clever"
+  },
+  "pound": {
+    "num": 1,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Physical",
+    "name": "Pound",
+    "pp": 35,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "powdersnow": {
+    "num": 181,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Special",
+    "name": "Powder Snow",
+    "pp": 25,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "status": "frz"
+    },
+    "target": "allAdjacentFoes",
+    "type": "Ice",
+    "contestType": "Beautiful"
+  },
+  "present": {
+    "num": 217,
+    "accuracy": 90,
+    "basePower": 0,
+    "category": "Physical",
+    "name": "Present",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cute"
+  },
+  "protect": {
+    "num": 182,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Protect",
+    "pp": 10,
+    "priority": 4,
+    "flags": {
+      "noassist": 1,
+      "failcopycat": 1
+    },
+    "stallingMove": true,
+    "volatileStatus": "protect",
+    "condition": {
+      "duration": 1,
+      "onTryHitPriority": 3
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Cute"
+  },
+  "psybeam": {
+    "num": 60,
+    "accuracy": 100,
+    "basePower": 65,
+    "category": "Special",
+    "name": "Psybeam",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "volatileStatus": "confusion"
+    },
+    "target": "normal",
+    "type": "Psychic",
+    "contestType": "Beautiful"
+  },
+  "psychup": {
+    "num": 244,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Psych Up",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "bypasssub": 1,
+      "allyanim": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "effect": "heal"
+    },
+    "contestType": "Clever"
+  },
+  "psychic": {
+    "num": 94,
+    "accuracy": 100,
+    "basePower": 90,
+    "category": "Special",
+    "name": "Psychic",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "boosts": {
+        "spd": -1
+      }
+    },
+    "target": "normal",
+    "type": "Psychic",
+    "contestType": "Clever"
+  },
+  "psychoboost": {
+    "num": 354,
+    "accuracy": 90,
+    "basePower": 140,
+    "category": "Special",
+    "name": "Psycho Boost",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "self": {
+      "boosts": {
+        "spa": -2
+      }
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Psychic",
+    "contestType": "Clever"
+  },
+  "psywave": {
+    "num": 149,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Special",
+    "isNonstandard": "Past",
+    "name": "Psywave",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Psychic",
+    "contestType": "Clever"
+  },
+  "pursuit": {
+    "num": 228,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Pursuit",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "condition": {
+      "duration": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Dark",
+    "contestType": "Clever"
+  },
+  "quickattack": {
+    "num": 98,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Physical",
+    "name": "Quick Attack",
+    "pp": 30,
+    "priority": 1,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cool"
+  },
+  "rage": {
+    "num": 99,
+    "accuracy": 100,
+    "basePower": 20,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Rage",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "self": {
+      "volatileStatus": "rage"
+    },
+    "condition": {
+      "onBeforeMovePriority": 100
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "raindance": {
+    "num": 240,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Rain Dance",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "metronome": 1
+    },
+    "weather": "RainDance",
+    "secondary": null,
+    "target": "all",
+    "type": "Water",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Beautiful"
+  },
+  "rapidspin": {
+    "num": 229,
+    "accuracy": 100,
+    "basePower": 50,
+    "category": "Physical",
+    "name": "Rapid Spin",
+    "pp": 40,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 100,
+      "self": {
+        "boosts": {
+          "spe": 1
+        }
+      }
+    },
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cool"
+  },
+  "razorleaf": {
+    "num": 75,
+    "accuracy": 95,
+    "basePower": 55,
+    "category": "Physical",
+    "name": "Razor Leaf",
+    "pp": 25,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "slicing": 1
+    },
+    "critRatio": 2,
+    "secondary": null,
+    "target": "allAdjacentFoes",
+    "type": "Grass",
+    "contestType": "Cool"
+  },
+  "razorwind": {
+    "num": 13,
+    "accuracy": 100,
+    "basePower": 80,
+    "category": "Special",
+    "isNonstandard": "Past",
+    "name": "Razor Wind",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "charge": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "nosleeptalk": 1,
+      "failinstruct": 1
+    },
+    "critRatio": 2,
+    "secondary": null,
+    "target": "allAdjacentFoes",
+    "type": "Normal",
+    "contestType": "Cool"
+  },
+  "recover": {
+    "num": 105,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Recover",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "heal": 1,
+      "metronome": 1
+    },
+    "heal": [
+      1,
+      2
+    ],
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Clever"
+  },
+  "recycle": {
+    "num": 278,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Recycle",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "spe": 2
+      }
+    },
+    "contestType": "Clever"
+  },
+  "reflect": {
+    "num": 115,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Reflect",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "sideCondition": "reflect",
+    "condition": {
+      "duration": 5,
+      "onSideResidualOrder": 26,
+      "onSideResidualSubOrder": 1
+    },
+    "secondary": null,
+    "target": "allySide",
+    "type": "Psychic",
+    "zMove": {
+      "boost": {
+        "def": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "refresh": {
+    "num": 287,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Refresh",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "heal"
+    },
+    "contestType": "Cute"
+  },
+  "rest": {
+    "num": 156,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Rest",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "heal": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Psychic",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Cute"
+  },
+  "return": {
+    "num": 216,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Return",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "basePower": 160
+    },
+    "maxMove": {
+      "basePower": 130
+    },
+    "contestType": "Cute"
+  },
+  "revenge": {
+    "num": 279,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Revenge",
+    "pp": 10,
+    "priority": -4,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "contestType": "Tough"
+  },
+  "reversal": {
+    "num": 179,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Physical",
+    "name": "Reversal",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "zMove": {
+      "basePower": 160
+    },
+    "contestType": "Cool"
+  },
+  "roar": {
+    "num": 46,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Roar",
+    "pp": 20,
+    "priority": -6,
+    "flags": {
+      "reflectable": 1,
+      "mirror": 1,
+      "sound": 1,
+      "bypasssub": 1,
+      "allyanim": 1,
+      "metronome": 1,
+      "noassist": 1,
+      "failcopycat": 1
+    },
+    "forceSwitch": true,
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "def": 1
+      }
+    },
+    "contestType": "Cool"
+  },
+  "rockblast": {
+    "num": 350,
+    "accuracy": 90,
+    "basePower": 25,
+    "category": "Physical",
+    "name": "Rock Blast",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "bullet": 1
+    },
+    "multihit": [
+      2,
+      5
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Rock",
+    "zMove": {
+      "basePower": 140
+    },
+    "maxMove": {
+      "basePower": 130
+    },
+    "contestType": "Tough"
+  },
+  "rockslide": {
+    "num": 157,
+    "accuracy": 90,
+    "basePower": 75,
+    "category": "Physical",
+    "name": "Rock Slide",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "volatileStatus": "flinch"
+    },
+    "target": "allAdjacentFoes",
+    "type": "Rock",
+    "contestType": "Tough"
+  },
+  "rocksmash": {
+    "num": 249,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Physical",
+    "name": "Rock Smash",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 50,
+      "boosts": {
+        "def": -1
+      }
+    },
+    "target": "normal",
+    "type": "Fighting",
+    "contestType": "Tough"
+  },
+  "rockthrow": {
+    "num": 88,
+    "accuracy": 90,
+    "basePower": 50,
+    "category": "Physical",
+    "name": "Rock Throw",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Rock",
+    "contestType": "Tough"
+  },
+  "rocktomb": {
+    "num": 317,
+    "accuracy": 95,
+    "basePower": 60,
+    "category": "Physical",
+    "name": "Rock Tomb",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 100,
+      "boosts": {
+        "spe": -1
+      }
+    },
+    "target": "normal",
+    "type": "Rock",
+    "contestType": "Clever"
+  },
+  "roleplay": {
+    "num": 272,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Role Play",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "bypasssub": 1,
+      "allyanim": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Psychic",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "rollingkick": {
+    "num": 27,
+    "accuracy": 85,
+    "basePower": 60,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Rolling Kick",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "volatileStatus": "flinch"
+    },
+    "target": "normal",
+    "type": "Fighting",
+    "contestType": "Cool"
+  },
+  "rollout": {
+    "num": 205,
+    "accuracy": 90,
+    "basePower": 30,
+    "category": "Physical",
+    "name": "Rollout",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "failinstruct": 1,
+      "noparentalbond": 1
+    },
+    "condition": {
+      "duration": 1,
+      "onLockMove": "rollout"
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Rock",
+    "contestType": "Cute"
+  },
+  "sacredfire": {
+    "num": 221,
+    "accuracy": 95,
+    "basePower": 100,
+    "category": "Physical",
+    "name": "Sacred Fire",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "defrost": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 50,
+      "status": "brn"
+    },
+    "target": "normal",
+    "type": "Fire",
+    "contestType": "Beautiful"
+  },
+  "safeguard": {
+    "num": 219,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Safeguard",
+    "pp": 25,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "sideCondition": "safeguard",
+    "condition": {
+      "duration": 5,
+      "onSideResidualOrder": 26,
+      "onSideResidualSubOrder": 3
+    },
+    "secondary": null,
+    "target": "allySide",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Beautiful"
+  },
+  "sandattack": {
+    "num": 28,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Sand Attack",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "accuracy": -1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Ground",
+    "zMove": {
+      "boost": {
+        "evasion": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "sandstorm": {
+    "num": 201,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Sandstorm",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "metronome": 1,
+      "wind": 1
+    },
+    "weather": "Sandstorm",
+    "secondary": null,
+    "target": "all",
+    "type": "Rock",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Tough"
+  },
+  "sandtomb": {
+    "num": 328,
+    "accuracy": 85,
+    "basePower": 35,
+    "category": "Physical",
+    "name": "Sand Tomb",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "partiallytrapped",
+    "secondary": null,
+    "target": "normal",
+    "type": "Ground",
+    "contestType": "Clever"
+  },
+  "scaryface": {
+    "num": 184,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Scary Face",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "allyanim": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "spe": -2
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Tough"
+  },
+  "scratch": {
+    "num": 10,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Physical",
+    "name": "Scratch",
+    "pp": 35,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "screech": {
+    "num": 103,
+    "accuracy": 85,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Screech",
+    "pp": 40,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "sound": 1,
+      "bypasssub": 1,
+      "allyanim": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "def": -2
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "atk": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "secretpower": {
+    "num": 290,
+    "accuracy": 100,
+    "basePower": 70,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Secret Power",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "status": "par"
+    },
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Clever"
+  },
+  "seismictoss": {
+    "num": 69,
+    "accuracy": 100,
+    "basePower": 0,
+    "damage": "level",
+    "category": "Physical",
+    "name": "Seismic Toss",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "nonsky": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "maxMove": {
+      "basePower": 75
+    },
+    "contestType": "Tough"
+  },
+  "selfdestruct": {
+    "num": 120,
+    "accuracy": 100,
+    "basePower": 200,
+    "category": "Physical",
+    "name": "Self-Destruct",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "noparentalbond": 1
+    },
+    "selfdestruct": "always",
+    "secondary": null,
+    "target": "allAdjacent",
+    "type": "Normal",
+    "contestType": "Beautiful"
+  },
+  "shadowball": {
+    "num": 247,
+    "accuracy": 100,
+    "basePower": 80,
+    "category": "Special",
+    "name": "Shadow Ball",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "bullet": 1
+    },
+    "secondary": {
+      "chance": 20,
+      "boosts": {
+        "spd": -1
+      }
+    },
+    "target": "normal",
+    "type": "Ghost",
+    "contestType": "Clever"
+  },
+  "shadowpunch": {
+    "num": 325,
+    "accuracy": true,
+    "basePower": 60,
+    "category": "Physical",
+    "name": "Shadow Punch",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "punch": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Ghost",
+    "contestType": "Clever"
+  },
+  "sharpen": {
+    "num": 159,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Sharpen",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "atk": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "atk": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "sheercold": {
+    "num": 329,
+    "accuracy": 30,
+    "basePower": 0,
+    "category": "Special",
+    "name": "Sheer Cold",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "ohko": "Ice",
+    "target": "normal",
+    "type": "Ice",
+    "zMove": {
+      "basePower": 180
+    },
+    "maxMove": {
+      "basePower": 130
+    },
+    "contestType": "Beautiful"
+  },
+  "shockwave": {
+    "num": 351,
+    "accuracy": true,
+    "basePower": 60,
+    "category": "Special",
+    "name": "Shock Wave",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Electric",
+    "contestType": "Cool"
+  },
+  "signalbeam": {
+    "num": 324,
+    "accuracy": 100,
+    "basePower": 75,
+    "category": "Special",
+    "isNonstandard": "Past",
+    "name": "Signal Beam",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "volatileStatus": "confusion"
+    },
+    "target": "normal",
+    "type": "Bug",
+    "contestType": "Beautiful"
+  },
+  "silverwind": {
+    "num": 318,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "isNonstandard": "Past",
+    "name": "Silver Wind",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "self": {
+        "boosts": {
+          "atk": 1,
+          "def": 1,
+          "spa": 1,
+          "spd": 1,
+          "spe": 1
+        }
+      }
+    },
+    "target": "normal",
+    "type": "Bug",
+    "contestType": "Beautiful"
+  },
+  "sing": {
+    "num": 47,
+    "accuracy": 55,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Sing",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "sound": 1,
+      "bypasssub": 1,
+      "metronome": 1
+    },
+    "status": "slp",
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "sketch": {
+    "num": 166,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Sketch",
+    "pp": 1,
+    "noPPBoosts": true,
+    "priority": 0,
+    "flags": {
+      "bypasssub": 1,
+      "allyanim": 1,
+      "failencore": 1,
+      "nosleeptalk": 1,
+      "noassist": 1,
+      "failcopycat": 1,
+      "failmimic": 1,
+      "failinstruct": 1,
+      "nosketch": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "atk": 1,
+        "def": 1,
+        "spa": 1,
+        "spd": 1,
+        "spe": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "skillswap": {
+    "num": 285,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Skill Swap",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "bypasssub": 1,
+      "allyanim": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Psychic",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "skullbash": {
+    "num": 130,
+    "accuracy": 100,
+    "basePower": 130,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Skull Bash",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "charge": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "nosleeptalk": 1,
+      "failinstruct": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "skyattack": {
+    "num": 143,
+    "accuracy": 90,
+    "basePower": 140,
+    "category": "Physical",
+    "name": "Sky Attack",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "charge": 1,
+      "protect": 1,
+      "mirror": 1,
+      "distance": 1,
+      "metronome": 1,
+      "nosleeptalk": 1,
+      "failinstruct": 1
+    },
+    "critRatio": 2,
+    "secondary": {
+      "chance": 30,
+      "volatileStatus": "flinch"
+    },
+    "target": "any",
+    "type": "Flying",
+    "contestType": "Cool"
+  },
+  "skyuppercut": {
+    "num": 327,
+    "accuracy": 90,
+    "basePower": 85,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Sky Uppercut",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "punch": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "contestType": "Cool"
+  },
+  "slackoff": {
+    "num": 303,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Slack Off",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "heal": 1,
+      "metronome": 1
+    },
+    "heal": [
+      1,
+      2
+    ],
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Cute"
+  },
+  "slam": {
+    "num": 21,
+    "accuracy": 75,
+    "basePower": 80,
+    "category": "Physical",
+    "name": "Slam",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "nonsky": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "slash": {
+    "num": 163,
+    "accuracy": 100,
+    "basePower": 70,
+    "category": "Physical",
+    "name": "Slash",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "slicing": 1
+    },
+    "critRatio": 2,
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cool"
+  },
+  "sleeppowder": {
+    "num": 79,
+    "accuracy": 75,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Sleep Powder",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "powder": 1
+    },
+    "status": "slp",
+    "secondary": null,
+    "target": "normal",
+    "type": "Grass",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "sleeptalk": {
+    "num": 214,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Sleep Talk",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "failencore": 1,
+      "nosleeptalk": 1,
+      "noassist": 1,
+      "failcopycat": 1,
+      "failmimic": 1,
+      "failinstruct": 1
+    },
+    "sleepUsable": true,
+    "callsMove": true,
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "crit2"
+    },
+    "contestType": "Cute"
+  },
+  "sludge": {
+    "num": 124,
+    "accuracy": 100,
+    "basePower": 65,
+    "category": "Special",
+    "name": "Sludge",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "status": "psn"
+    },
+    "target": "normal",
+    "type": "Poison",
+    "contestType": "Tough"
+  },
+  "sludgebomb": {
+    "num": 188,
+    "accuracy": 100,
+    "basePower": 90,
+    "category": "Special",
+    "name": "Sludge Bomb",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "bullet": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "status": "psn"
+    },
+    "target": "normal",
+    "type": "Poison",
+    "contestType": "Tough"
+  },
+  "smellingsalts": {
+    "num": 265,
+    "accuracy": 100,
+    "basePower": 70,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Smelling Salts",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "smog": {
+    "num": 123,
+    "accuracy": 70,
+    "basePower": 30,
+    "category": "Special",
+    "name": "Smog",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 40,
+      "status": "psn"
+    },
+    "target": "normal",
+    "type": "Poison",
+    "contestType": "Tough"
+  },
+  "smokescreen": {
+    "num": 108,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Smokescreen",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "accuracy": -1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "evasion": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "snatch": {
+    "num": 289,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Snatch",
+    "pp": 10,
+    "priority": 4,
+    "flags": {
+      "bypasssub": 1,
+      "mustpressure": 1,
+      "noassist": 1,
+      "failcopycat": 1
+    },
+    "volatileStatus": "snatch",
+    "condition": {
+      "duration": 1,
+      "onAnyPrepareHitPriority": -1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Dark",
+    "zMove": {
+      "boost": {
+        "spe": 2
+      }
+    },
+    "contestType": "Clever"
+  },
+  "snore": {
+    "num": 173,
+    "accuracy": 100,
+    "basePower": 50,
+    "category": "Special",
+    "name": "Snore",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "sound": 1,
+      "bypasssub": 1
+    },
+    "sleepUsable": true,
+    "secondary": {
+      "chance": 30,
+      "volatileStatus": "flinch"
+    },
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cute"
+  },
+  "softboiled": {
+    "num": 135,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Soft-Boiled",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "heal": 1,
+      "metronome": 1
+    },
+    "heal": [
+      1,
+      2
+    ],
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Cute"
+  },
+  "solarbeam": {
+    "num": 76,
+    "accuracy": 100,
+    "basePower": 120,
+    "category": "Special",
+    "name": "Solar Beam",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "charge": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "nosleeptalk": 1,
+      "failinstruct": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Grass",
+    "contestType": "Cool"
+  },
+  "sonicboom": {
+    "num": 49,
+    "accuracy": 90,
+    "basePower": 0,
+    "damage": 20,
+    "category": "Special",
+    "isNonstandard": "Past",
+    "name": "Sonic Boom",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Cool"
+  },
+  "spark": {
+    "num": 209,
+    "accuracy": 100,
+    "basePower": 65,
+    "category": "Physical",
+    "name": "Spark",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "status": "par"
+    },
+    "target": "normal",
+    "type": "Electric",
+    "contestType": "Cool"
+  },
+  "spiderweb": {
+    "num": 169,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Spider Web",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Bug",
+    "zMove": {
+      "boost": {
+        "def": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "spikecannon": {
+    "num": 131,
+    "accuracy": 100,
+    "basePower": 20,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Spike Cannon",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "multihit": [
+      2,
+      5
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "maxMove": {
+      "basePower": 120
+    },
+    "contestType": "Cool"
+  },
+  "spikes": {
+    "num": 191,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Spikes",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "reflectable": 1,
+      "nonsky": 1,
+      "metronome": 1,
+      "mustpressure": 1
+    },
+    "sideCondition": "spikes",
+    "condition": {},
+    "secondary": null,
+    "target": "foeSide",
+    "type": "Ground",
+    "zMove": {
+      "boost": {
+        "def": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "spitup": {
+    "num": 255,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Special",
+    "name": "Spit Up",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "spite": {
+    "num": 180,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Spite",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "bypasssub": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Ghost",
+    "zMove": {
+      "effect": "heal"
+    },
+    "contestType": "Tough"
+  },
+  "splash": {
+    "num": 150,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Splash",
+    "pp": 40,
+    "priority": 0,
+    "flags": {
+      "gravity": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "atk": 3
+      }
+    },
+    "contestType": "Cute"
+  },
+  "spore": {
+    "num": 147,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Spore",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "powder": 1
+    },
+    "status": "slp",
+    "secondary": null,
+    "target": "normal",
+    "type": "Grass",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Beautiful"
+  },
+  "steelwing": {
+    "num": 211,
+    "accuracy": 90,
+    "basePower": 70,
+    "category": "Physical",
+    "name": "Steel Wing",
+    "pp": 25,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "self": {
+        "boosts": {
+          "def": 1
+        }
+      }
+    },
+    "target": "normal",
+    "type": "Steel",
+    "contestType": "Cool"
+  },
+  "stockpile": {
+    "num": 254,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Stockpile",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "stockpile",
+    "condition": {
+      "noCopy": true
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "heal"
+    },
+    "contestType": "Tough"
+  },
+  "stomp": {
+    "num": 23,
+    "accuracy": 100,
+    "basePower": 65,
+    "category": "Physical",
+    "name": "Stomp",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "nonsky": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "volatileStatus": "flinch"
+    },
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "strength": {
+    "num": 70,
+    "accuracy": 100,
+    "basePower": 80,
+    "category": "Physical",
+    "name": "Strength",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "stringshot": {
+    "num": 81,
+    "accuracy": 95,
+    "basePower": 0,
+    "category": "Status",
+    "name": "String Shot",
+    "pp": 40,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "spe": -2
+    },
+    "secondary": null,
+    "target": "allAdjacentFoes",
+    "type": "Bug",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "struggle": {
+    "num": 165,
+    "accuracy": true,
+    "basePower": 50,
+    "category": "Physical",
+    "name": "Struggle",
+    "pp": 1,
+    "noPPBoosts": true,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "failencore": 1,
+      "failmefirst": 1,
+      "nosleeptalk": 1,
+      "noassist": 1,
+      "failcopycat": 1,
+      "failmimic": 1,
+      "failinstruct": 1,
+      "nosketch": 1
+    },
+    "struggleRecoil": true,
+    "secondary": null,
+    "target": "randomNormal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "stunspore": {
+    "num": 78,
+    "accuracy": 75,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Stun Spore",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "powder": 1
+    },
+    "status": "par",
+    "secondary": null,
+    "target": "normal",
+    "type": "Grass",
+    "zMove": {
+      "boost": {
+        "spd": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "submission": {
+    "num": 66,
+    "accuracy": 80,
+    "basePower": 80,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Submission",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "recoil": [
+      1,
+      4
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "contestType": "Cool"
+  },
+  "substitute": {
+    "num": 164,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Substitute",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "nonsky": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "substitute",
+    "condition": {
+      "onTryPrimaryHitPriority": -1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Cute"
+  },
+  "sunnyday": {
+    "num": 241,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Sunny Day",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "metronome": 1
+    },
+    "weather": "sunnyday",
+    "secondary": null,
+    "target": "all",
+    "type": "Fire",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Beautiful"
+  },
+  "superfang": {
+    "num": 162,
+    "accuracy": 90,
+    "basePower": 0,
+    "category": "Physical",
+    "name": "Super Fang",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "superpower": {
+    "num": 276,
+    "accuracy": 100,
+    "basePower": 120,
+    "category": "Physical",
+    "name": "Superpower",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "self": {
+      "boosts": {
+        "atk": -1,
+        "def": -1
+      }
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "contestType": "Tough"
+  },
+  "supersonic": {
+    "num": 48,
+    "accuracy": 55,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Supersonic",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "sound": 1,
+      "bypasssub": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "confusion",
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "surf": {
+    "num": 57,
+    "accuracy": 100,
+    "basePower": 90,
+    "category": "Special",
+    "name": "Surf",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "nonsky": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "allAdjacent",
+    "type": "Water",
+    "contestType": "Beautiful"
+  },
+  "swagger": {
+    "num": 207,
+    "accuracy": 85,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Swagger",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "allyanim": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "confusion",
+    "boosts": {
+      "atk": 2
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Cute"
+  },
+  "swallow": {
+    "num": 256,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Swallow",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "heal": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Tough"
+  },
+  "sweetkiss": {
+    "num": 186,
+    "accuracy": 75,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Sweet Kiss",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "confusion",
+    "secondary": null,
+    "target": "normal",
+    "type": "Fairy",
+    "zMove": {
+      "boost": {
+        "spa": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "sweetscent": {
+    "num": 230,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Sweet Scent",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "evasion": -2
+    },
+    "secondary": null,
+    "target": "allAdjacentFoes",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "accuracy": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "swift": {
+    "num": 129,
+    "accuracy": true,
+    "basePower": 60,
+    "category": "Special",
+    "name": "Swift",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "allAdjacentFoes",
+    "type": "Normal",
+    "contestType": "Cool"
+  },
+  "swordsdance": {
+    "num": 14,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Swords Dance",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "dance": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "atk": 2
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Beautiful"
+  },
+  "synthesis": {
+    "num": 235,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Synthesis",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "heal": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Grass",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Clever"
+  },
+  "tackle": {
+    "num": 33,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Physical",
+    "name": "Tackle",
+    "pp": 35,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "tailglow": {
+    "num": 294,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Tail Glow",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "spa": 3
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Bug",
+    "zMove": {
+      "effect": "clearnegativeboost"
+    },
+    "contestType": "Beautiful"
+  },
+  "tailwhip": {
+    "num": 39,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Tail Whip",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "def": -1
+    },
+    "secondary": null,
+    "target": "allAdjacentFoes",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "atk": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "takedown": {
+    "num": 36,
+    "accuracy": 85,
+    "basePower": 90,
+    "category": "Physical",
+    "name": "Take Down",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "recoil": [
+      1,
+      4
+    ],
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "taunt": {
+    "num": 269,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Taunt",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "bypasssub": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "taunt",
+    "condition": {
+      "duration": 3,
+      "onResidualOrder": 15,
+      "onBeforeMovePriority": 5
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Dark",
+    "zMove": {
+      "boost": {
+        "atk": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "teeterdance": {
+    "num": 298,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Teeter Dance",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "dance": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "confusion",
+    "secondary": null,
+    "target": "allAdjacent",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "spa": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "teleport": {
+    "num": 100,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Teleport",
+    "pp": 20,
+    "priority": -6,
+    "flags": {
+      "metronome": 1
+    },
+    "selfSwitch": true,
+    "secondary": null,
+    "target": "self",
+    "type": "Psychic",
+    "zMove": {
+      "effect": "heal"
+    },
+    "contestType": "Cool"
+  },
+  "thief": {
+    "num": 168,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Physical",
+    "name": "Thief",
+    "pp": 25,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "failmefirst": 1,
+      "noassist": 1,
+      "failcopycat": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Dark",
+    "contestType": "Tough"
+  },
+  "thrash": {
+    "num": 37,
+    "accuracy": 100,
+    "basePower": 120,
+    "category": "Physical",
+    "name": "Thrash",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "failinstruct": 1
+    },
+    "self": {
+      "volatileStatus": "lockedmove"
+    },
+    "secondary": null,
+    "target": "randomNormal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "thunder": {
+    "num": 87,
+    "accuracy": 70,
+    "basePower": 110,
+    "category": "Special",
+    "name": "Thunder",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 30,
+      "status": "par"
+    },
+    "target": "normal",
+    "type": "Electric",
+    "contestType": "Cool"
+  },
+  "thunderbolt": {
+    "num": 85,
+    "accuracy": 100,
+    "basePower": 90,
+    "category": "Special",
+    "name": "Thunderbolt",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "status": "par"
+    },
+    "target": "normal",
+    "type": "Electric",
+    "contestType": "Cool"
+  },
+  "thunderpunch": {
+    "num": 9,
+    "accuracy": 100,
+    "basePower": 75,
+    "category": "Physical",
+    "name": "Thunder Punch",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "punch": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "status": "par"
+    },
+    "target": "normal",
+    "type": "Electric",
+    "contestType": "Cool"
+  },
+  "thundershock": {
+    "num": 84,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Special",
+    "name": "Thunder Shock",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "status": "par"
+    },
+    "target": "normal",
+    "type": "Electric",
+    "contestType": "Cool"
+  },
+  "thunderwave": {
+    "num": 86,
+    "accuracy": 90,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Thunder Wave",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "status": "par",
+    "ignoreImmunity": false,
+    "secondary": null,
+    "target": "normal",
+    "type": "Electric",
+    "zMove": {
+      "boost": {
+        "spd": 1
+      }
+    },
+    "contestType": "Cool"
+  },
+  "tickle": {
+    "num": 321,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Tickle",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "allyanim": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "atk": -1,
+      "def": -1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "def": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "torment": {
+    "num": 259,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Torment",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "bypasssub": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "torment",
+    "condition": {
+      "noCopy": true
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Dark",
+    "zMove": {
+      "boost": {
+        "def": 1
+      }
+    },
+    "contestType": "Tough"
+  },
+  "toxic": {
+    "num": 92,
+    "accuracy": 90,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Toxic",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "status": "tox",
+    "secondary": null,
+    "target": "normal",
+    "type": "Poison",
+    "zMove": {
+      "boost": {
+        "def": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "transform": {
+    "num": 144,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Transform",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "allyanim": 1,
+      "failencore": 1,
+      "noassist": 1,
+      "failcopycat": 1,
+      "failmimic": 1,
+      "failinstruct": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "effect": "heal"
+    },
+    "contestType": "Clever"
+  },
+  "triattack": {
+    "num": 161,
+    "accuracy": 100,
+    "basePower": 80,
+    "category": "Special",
+    "name": "Tri Attack",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 20
+    },
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Beautiful"
+  },
+  "trick": {
+    "num": 271,
+    "accuracy": 100,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Trick",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "allyanim": 1,
+      "noassist": 1,
+      "failcopycat": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Psychic",
+    "zMove": {
+      "boost": {
+        "spe": 2
+      }
+    },
+    "contestType": "Clever"
+  },
+  "triplekick": {
+    "num": 167,
+    "accuracy": 90,
+    "basePower": 10,
+    "category": "Physical",
+    "name": "Triple Kick",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "multihit": 3,
+    "multiaccuracy": true,
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "zMove": {
+      "basePower": 120
+    },
+    "maxMove": {
+      "basePower": 80
+    },
+    "contestType": "Cool"
+  },
+  "twineedle": {
+    "num": 41,
+    "accuracy": 100,
+    "basePower": 25,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Twineedle",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "multihit": 2,
+    "secondary": {
+      "chance": 20,
+      "status": "psn"
+    },
+    "target": "normal",
+    "type": "Bug",
+    "maxMove": {
+      "basePower": 100
+    },
+    "contestType": "Cool"
+  },
+  "twister": {
+    "num": 239,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Special",
+    "name": "Twister",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "wind": 1
+    },
+    "secondary": {
+      "chance": 20,
+      "volatileStatus": "flinch"
+    },
+    "target": "allAdjacentFoes",
+    "type": "Dragon",
+    "contestType": "Cool"
+  },
+  "uproar": {
+    "num": 253,
+    "accuracy": 100,
+    "basePower": 90,
+    "category": "Special",
+    "name": "Uproar",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "sound": 1,
+      "bypasssub": 1,
+      "metronome": 1,
+      "nosleeptalk": 1,
+      "failinstruct": 1
+    },
+    "self": {
+      "volatileStatus": "uproar"
+    },
+    "condition": {
+      "duration": 3,
+      "onResidualOrder": 28,
+      "onResidualSubOrder": 1,
+      "onLockMove": "uproar"
+    },
+    "secondary": null,
+    "target": "randomNormal",
+    "type": "Normal",
+    "contestType": "Cute"
+  },
+  "vinewhip": {
+    "num": 22,
+    "accuracy": 100,
+    "basePower": 45,
+    "category": "Physical",
+    "name": "Vine Whip",
+    "pp": 25,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Grass",
+    "contestType": "Cool"
+  },
+  "visegrip": {
+    "num": 11,
+    "accuracy": 100,
+    "basePower": 55,
+    "category": "Physical",
+    "name": "Vise Grip",
+    "pp": 30,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "vitalthrow": {
+    "num": 233,
+    "accuracy": true,
+    "basePower": 70,
+    "category": "Physical",
+    "isNonstandard": "Past",
+    "name": "Vital Throw",
+    "pp": 10,
+    "priority": -1,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Fighting",
+    "contestType": "Cool"
+  },
+  "volttackle": {
+    "num": 344,
+    "accuracy": 100,
+    "basePower": 120,
+    "category": "Physical",
+    "name": "Volt Tackle",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "recoil": [
+      33,
+      100
+    ],
+    "secondary": {
+      "chance": 10,
+      "status": "par"
+    },
+    "target": "normal",
+    "type": "Electric",
+    "contestType": "Cool"
+  },
+  "waterfall": {
+    "num": 127,
+    "accuracy": 100,
+    "basePower": 80,
+    "category": "Physical",
+    "name": "Waterfall",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": {
+      "chance": 20,
+      "volatileStatus": "flinch"
+    },
+    "target": "normal",
+    "type": "Water",
+    "contestType": "Tough"
+  },
+  "watergun": {
+    "num": 55,
+    "accuracy": 100,
+    "basePower": 40,
+    "category": "Special",
+    "name": "Water Gun",
+    "pp": 25,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Water",
+    "contestType": "Cute"
+  },
+  "waterpulse": {
+    "num": 352,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Special",
+    "name": "Water Pulse",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "distance": 1,
+      "metronome": 1,
+      "pulse": 1
+    },
+    "secondary": {
+      "chance": 20,
+      "volatileStatus": "confusion"
+    },
+    "target": "any",
+    "type": "Water",
+    "contestType": "Beautiful"
+  },
+  "watersport": {
+    "num": 346,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "isNonstandard": "Past",
+    "name": "Water Sport",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "nonsky": 1,
+      "metronome": 1
+    },
+    "pseudoWeather": "watersport",
+    "condition": {
+      "duration": 5,
+      "onBasePowerPriority": 1,
+      "onFieldResidualOrder": 27,
+      "onFieldResidualSubOrder": 3
+    },
+    "secondary": null,
+    "target": "all",
+    "type": "Water",
+    "zMove": {
+      "boost": {
+        "spd": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "waterspout": {
+    "num": 323,
+    "accuracy": 100,
+    "basePower": 150,
+    "category": "Special",
+    "name": "Water Spout",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "allAdjacentFoes",
+    "type": "Water",
+    "contestType": "Beautiful"
+  },
+  "weatherball": {
+    "num": 311,
+    "accuracy": 100,
+    "basePower": 50,
+    "category": "Special",
+    "name": "Weather Ball",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "bullet": 1
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "basePower": 160
+    },
+    "maxMove": {
+      "basePower": 130
+    },
+    "contestType": "Beautiful"
+  },
+  "whirlpool": {
+    "num": 250,
+    "accuracy": 85,
+    "basePower": 35,
+    "category": "Special",
+    "name": "Whirlpool",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "partiallytrapped",
+    "secondary": null,
+    "target": "normal",
+    "type": "Water",
+    "contestType": "Beautiful"
+  },
+  "whirlwind": {
+    "num": 18,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Whirlwind",
+    "pp": 20,
+    "priority": -6,
+    "flags": {
+      "reflectable": 1,
+      "mirror": 1,
+      "bypasssub": 1,
+      "allyanim": 1,
+      "metronome": 1,
+      "noassist": 1,
+      "failcopycat": 1,
+      "wind": 1
+    },
+    "forceSwitch": true,
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "spd": 1
+      }
+    },
+    "contestType": "Clever"
+  },
+  "willowisp": {
+    "num": 261,
+    "accuracy": 85,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Will-O-Wisp",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "status": "brn",
+    "secondary": null,
+    "target": "normal",
+    "type": "Fire",
+    "zMove": {
+      "boost": {
+        "atk": 1
+      }
+    },
+    "contestType": "Beautiful"
+  },
+  "wingattack": {
+    "num": 17,
+    "accuracy": 100,
+    "basePower": 60,
+    "category": "Physical",
+    "name": "Wing Attack",
+    "pp": 35,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "distance": 1,
+      "metronome": 1
+    },
+    "secondary": null,
+    "target": "any",
+    "type": "Flying",
+    "contestType": "Cool"
+  },
+  "wish": {
+    "num": 273,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Wish",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "heal": 1,
+      "metronome": 1
+    },
+    "slotCondition": "Wish",
+    "condition": {
+      "onResidualOrder": 4
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "spd": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "withdraw": {
+    "num": 110,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Withdraw",
+    "pp": 40,
+    "priority": 0,
+    "flags": {
+      "snatch": 1,
+      "metronome": 1
+    },
+    "boosts": {
+      "def": 1
+    },
+    "secondary": null,
+    "target": "self",
+    "type": "Water",
+    "zMove": {
+      "boost": {
+        "def": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "wrap": {
+    "num": 35,
+    "accuracy": 90,
+    "basePower": 15,
+    "category": "Physical",
+    "name": "Wrap",
+    "pp": 20,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "partiallytrapped",
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "contestType": "Tough"
+  },
+  "yawn": {
+    "num": 281,
+    "accuracy": true,
+    "basePower": 0,
+    "category": "Status",
+    "name": "Yawn",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "reflectable": 1,
+      "mirror": 1,
+      "metronome": 1
+    },
+    "volatileStatus": "yawn",
+    "condition": {
+      "noCopy": true,
+      "duration": 2,
+      "onResidualOrder": 23
+    },
+    "secondary": null,
+    "target": "normal",
+    "type": "Normal",
+    "zMove": {
+      "boost": {
+        "spe": 1
+      }
+    },
+    "contestType": "Cute"
+  },
+  "zapcannon": {
+    "num": 192,
+    "accuracy": 50,
+    "basePower": 120,
+    "category": "Special",
+    "name": "Zap Cannon",
+    "pp": 5,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "metronome": 1,
+      "bullet": 1
+    },
+    "secondary": {
+      "chance": 100,
+      "status": "par"
+    },
+    "target": "normal",
+    "type": "Electric",
+    "contestType": "Cool"
+  },
+  "paleowave": {
+    "num": -1,
+    "accuracy": 100,
+    "basePower": 85,
+    "category": "Special",
+    "isNonstandard": "CAP",
+    "name": "Paleo Wave",
+    "pp": 15,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": {
+      "chance": 20,
+      "boosts": {
+        "atk": -1
+      }
+    },
+    "target": "normal",
+    "type": "Rock",
+    "contestType": "Beautiful"
+  },
+  "shadowstrike": {
+    "num": -2,
+    "accuracy": 95,
+    "basePower": 80,
+    "category": "Physical",
+    "isNonstandard": "CAP",
+    "name": "Shadow Strike",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "contact": 1,
+      "protect": 1,
+      "mirror": 1
+    },
+    "secondary": {
+      "chance": 50,
+      "boosts": {
+        "def": -1
+      }
+    },
+    "target": "normal",
+    "type": "Ghost",
+    "contestType": "Clever"
+  },
+  "polarflare": {
+    "num": -3,
+    "accuracy": 100,
+    "basePower": 75,
+    "category": "Special",
+    "isNonstandard": "CAP",
+    "name": "Polar Flare",
+    "pp": 10,
+    "priority": 0,
+    "flags": {
+      "protect": 1,
+      "mirror": 1,
+      "defrost": 1,
+      "nosketch": 1
+    },
+    "secondary": {
+      "chance": 10,
+      "status": "frz"
+    },
+    "target": "allAdjacentFoes",
+    "type": "Fire",
+    "contestType": "Beautiful"
+  }
+}

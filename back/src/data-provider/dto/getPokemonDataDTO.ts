@@ -23,6 +23,7 @@ export class GetPokemonDataDTO {
 }
 
 export interface PokemonDataParsed {
+  moveset: MoveData[];
   stats: {
     hp: StatBattleData;
     defense: StatBattleData;
@@ -42,4 +43,14 @@ export interface PokemonDataParsed {
 interface StatBattleData {
   base_value: number;
   actual_value: number;
+}
+
+interface MoveData {
+  name: string;
+  power: number;
+  pp: number;
+  priority: number;
+  accuracy: number;
+  damage_class: 'physical' | 'status' | 'special';
+  type: string;
 }

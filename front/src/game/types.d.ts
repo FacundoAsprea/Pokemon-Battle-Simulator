@@ -1,8 +1,8 @@
 export interface GlobalBattleState {
-  usersdata: UserBattleState[]
+  usersdata: UserBattleState[];
   battledata: {
-    turn: string
-  }
+    turn: string;
+  };
 }
 export interface UserBattleState {
   team: PokemonBattleData[];
@@ -10,13 +10,14 @@ export interface UserBattleState {
   uid: string;
 }
 export interface PokemonBattleData {
+  moveset: MoveData[];
   stats: {
-    hp: StatBattleData,
-    defense: StatBattleData,
-    special_defence: StatBattleData,
-    attack: StatBattleData,
-    special_attack: StatBattleData,
-    speed: StatBattleData
+    hp: StatBattleData;
+    defense: StatBattleData;
+    special_defence: StatBattleData;
+    attack: StatBattleData;
+    special_attack: StatBattleData;
+    speed: StatBattleData;
   };
   types: TypeBattleData[];
   weight: number;
@@ -29,13 +30,13 @@ export interface PokemonBattleData {
     gif_default: string;
     gif_back: string;
   };
-  selected: boolean
+  selected: boolean;
 }
 
 //ACCIONES
 export type Action = Attack | Swap;
 export interface Attack {
-  type: 'attack';
+  type: "attack";
   origin: string;
   message: string;
   damage: number;
@@ -43,7 +44,7 @@ export interface Attack {
 }
 
 export interface Swap {
-  type: 'swap';
+  type: "swap";
   origin: string;
   message: string;
   from: string;
@@ -69,3 +70,33 @@ export interface DamageRelations {
   no_damage_from: string[];
   no_damage_to: string[];
 }
+
+interface MoveData {
+  name: string;
+  power: number;
+  pp: number;
+  priority: number;
+  accuracy: number;
+  damage_class: "physical" | "status" | "special";
+  type: Type;
+}
+
+export type Type =
+  | "grass"
+  | "fire"
+  | "water"
+  | "ground"
+  | "rock"
+  | "normal"
+  | "fighting"
+  | "flying"
+  | "poison"
+  | "bug"
+  | "ghost"
+  | "steel"
+  | "electric"
+  | "psychic"
+  | "ice"
+  | "dragon"
+  | "fairy"
+  | "dark";

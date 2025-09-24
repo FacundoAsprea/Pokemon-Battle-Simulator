@@ -66,7 +66,7 @@ export class BattleGateway {
     }
   }
 
-  //ACCIONESasdasdasd
+  //ACCIONESasd
   @SubscribeMessage('action')
   onAction(@MessageBody() action: Action) {
     console.log('SE REGISTRO UNA ACCION', action);

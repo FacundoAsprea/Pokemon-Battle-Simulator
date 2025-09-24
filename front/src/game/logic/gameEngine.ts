@@ -12,12 +12,13 @@ import { useUserHasPlayed } from "@/states/userHasPlayed/userHasPlayedState";
 class Game {
   async runGame() {
     const turn = await webSocket.waitForTurn();
+    console.log("TURN SE RESOLVIO: ", turn)
 
-    const { uiUpdate, newBattleState } = turn;
+    const { uiUpdate } = turn;
     console.log("LAS 2 UPDATES: ", uiUpdate);
-    this.applyUiUpdate(uiUpdate[0])
-      .then(() => this.applyUiUpdate(uiUpdate[1]))
-      .then(() => this.runGame());
+    await this.applyUiUpdate(uiUpdate[0]);
+    await this.applyUiUpdate(uiUpdate[1]);
+    await this.runGame();
   }
 
   async applyUiUpdate(update: uiUpdates) {
@@ -25,13 +26,19 @@ class Game {
     return new Promise((resolve) => {
       setTimeout(() => {
         if (update.type === "swap") {
-          const user = getUserById(update.user, useGlobalBattleState.getState().globalBattleState);
-          const selectedPokemon = getSelectedPokemonByUserId(user.uid, useGlobalBattleState.getState().globalBattleState);
+          const user = getUserById(
+            update.user,
+            useGlobalBattleState.getState().globalBattleState
+          );
+          const selectedPokemon = getSelectedPokemonByUserId(
+            user.uid,
+            useGlobalBattleState.getState().globalBattleState
+          );
           const newSelectedPokemon = getPokemonByName(
             user,
             (update as swapUiUpdate).newSelected
           );
-          useBattleText.setState({ battleText: update.message})
+          useBattleText.setState({ battleText: update.message });
 
           //Creo una version con los cambios aplicados
           const newTeam = user.team.map((pokemon) => {
@@ -43,7 +50,7 @@ class Game {
             }
             return pokemon;
           });
-          console.log("NUEVA VERSION DEL EQUIPO: ", newTeam)
+          console.log("NUEVA VERSION DEL EQUIPO: ", newTeam);
 
           //Aplico los cambios al estado
           useGlobalBattleState.setState((state) => ({
@@ -56,8 +63,8 @@ class Game {
               ),
             },
           }));
-          
-          useUserHasPlayed.setState({ userHasPlayed: false })
+
+          useUserHasPlayed.setState({ userHasPlayed: false });
 
           resolve(true);
         }

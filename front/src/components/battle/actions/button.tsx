@@ -1,16 +1,7 @@
 import { useState } from "react";
 
 //ui
-import {
-  Drawer,
-  DrawerTrigger,
-  DrawerContent,
-  DrawerTitle,
-  DrawerHeader,
-  DrawerFooter,
-  DrawerDescription,
-  DrawerClose,
-} from "@/components/ui/drawer";
+import { Drawer, DrawerTrigger, DrawerContent } from "@/components/ui/drawer";
 import Selector from "./selector";
 
 //funcs
@@ -20,23 +11,26 @@ import type { PokemonBattleData } from "@/game/types";
 import { useBattleText } from "@/states/battleTextContext/battleTextContext";
 import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 import { useUserHasPlayed } from "@/states/userHasPlayed/userHasPlayedState";
+import MovesSelector from "./moveButton";
 
 interface props {
   variant: "ATACAR" | "CAMBIAR";
 }
-const ActionsButton = ({variant }: props) => {
+const ActionsButton = ({ variant }: props) => {
   const [open, setOpen] = useState(false);
-  const { userHasPlayed, setUserHasPlayed } = useUserHasPlayed()
-  const {setBattleText} = useBattleText();
+  const { userHasPlayed, setUserHasPlayed } = useUserHasPlayed();
+  const { setBattleText } = useBattleText();
 
-  const playerData = useGlobalBattleState(state => getPlayerData(state.globalBattleState))
+  const playerData = useGlobalBattleState((state) =>
+    getPlayerData(state.globalBattleState)
+  );
   if (!playerData) return "ERROR AL OBTENER PLAYERDATA";
 
   const handleSwap = (pokemon: PokemonBattleData) => {
     if (swapPokemon(pokemon.name)) {
       setUserHasPlayed(true);
       setOpen(false);
-      setBattleText("Esperando al rival...")
+      setBattleText("Esperando al rival...");
     }
   };
 
@@ -53,15 +47,7 @@ const ActionsButton = ({variant }: props) => {
             </button>
           </DrawerTrigger>
           <DrawerContent>
-            <DrawerHeader>
-              <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-              <DrawerDescription>
-                This action cannot be undone.
-              </DrawerDescription>
-            </DrawerHeader>
-            <DrawerFooter>
-              <DrawerClose></DrawerClose>
-            </DrawerFooter>
+            <MovesSelector />
           </DrawerContent>
         </>
       ) : (
