@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { BattleStateService } from './battleState.service';
-import type { Action, uiUpdates, UserBattleState } from './types';
+import type { Action, Attack, Swap, uiUpdates, UserBattleState } from './types';
 
 @Injectable()
 export class BattleService {
@@ -10,10 +10,10 @@ export class BattleService {
 
   constructor(private battleStateService: BattleStateService) {}
 
-  getUserFromAction = (action: Action): UserBattleState => {
+  getUserFromAction = (action: Action, user: "player" | "rival"): UserBattleState => {
     return this.battleStateService
       .getState()
-      .usersdata.find((user) => user.uid == action.origin) as UserBattleState;
+      .usersdata.find((userdata) => user == "player" ? userdata.uid == action.origin : userdata.uid != action.origin) as UserBattleState;
   };
 
   getPokemonFromName = (name: string, userRef: UserBattleState) => {
@@ -43,26 +43,51 @@ export class BattleService {
 
   executeAction(action: Action) {
     console.log('SE ESTA EJECUTANDO LA SIGUIENTE ACCION: ', action);
-    const player = this.getUserFromAction(action);
 
     if (action.type == 'swap') {
-      const selected = this.getPokemonFromName(action.from, player);
-      const swapped = this.getPokemonFromName(action.to, player);
-
-      if (!selected || !swapped) {
-        return new Error('Error al obtener datos de un pokemon');
-      }
-
-      selected.selected = false;
-      swapped.selected = true;
-
-      this.movesThisTurn += 1;
-      this.uiUpdate.push({
-        user: player.uid,
-        message: action.message,
-        type: 'swap',
-        newSelected: action.to,
-      });
+      this.executeSwap(action);
+    } else {
+      this.executeAttack(action);
     }
+  }
+
+  executeSwap(swap: Swap) {
+    const player = this.getUserFromAction(swap, "player");
+    const selected = this.getPokemonFromName(swap.from, player);
+    const swapped = this.getPokemonFromName(swap.to, player);
+
+    if (!selected || !swapped) {
+      return new Error('Error al obtener datos de un pokemon');
+    }
+
+    selected.selected = false;
+    swapped.selected = true;
+
+    this.movesThisTurn += 1;
+    this.uiUpdate.push({
+      user: player.uid,
+      message: swap.message,
+      type: 'swap',
+      newSelected: swap.to,
+    });
+  }
+
+  executeAttack(attack: Attack) {
+    const player = this.getUserFromAction(attack, "player")
+
+    const moveData = attack.move
+    this.attackExecutions[moveData.damage_class](attack)
+  }
+
+  attackExecutions = {
+    "physical": (attack: Attack) => {
+      const rival = this.getUserFromAction(attack, "rival")
+    },
+    "status": (attack: Attack) => {
+
+    },
+    "special": (attack: Attack) => {
+
+    },
   }
 }

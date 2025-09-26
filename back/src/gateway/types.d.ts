@@ -51,6 +51,16 @@ interface MoveData {
   accuracy: number;
   damage_class: 'physical' | 'status' | 'special';
   type: string;
+  boosts?: Boosts
+  target?: "normal" | "self"
+}
+
+interface Boosts {
+  atk: number
+  spe: number
+  def: number
+  spd: number
+  spa: number
 }
 
 //datos

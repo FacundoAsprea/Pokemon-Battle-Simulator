@@ -77,8 +77,18 @@ interface MoveData {
   pp: number;
   priority: number;
   accuracy: number;
-  damage_class: "physical" | "status" | "special";
-  type: Type;
+  damage_class: 'physical' | 'status' | 'special';
+  type: type;
+  boosts?: Boosts
+  target?: "normal" | "self"
+}
+
+interface Boosts {
+  atk: number
+  spe: number
+  def: number
+  spd: number
+  spa: number
 }
 
 export type Type =
