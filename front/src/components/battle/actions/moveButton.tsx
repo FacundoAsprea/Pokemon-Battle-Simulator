@@ -1,4 +1,5 @@
 import { getSelectedPokemon } from "@/game/functions/getters";
+import { executeAttack } from "@/game/logic/executeAttack";
 import type { MoveData, Type } from "@/game/types";
 import { useRef } from "react";
 
@@ -30,6 +31,7 @@ const MoveButton = ({ moveData }: props) => {
   const maxPPs = useRef(moveData.pp);
   return (
     <div
+      onClick={() => executeAttack(moveData)}
       style={{ backgroundColor: color[moveData.type] }}
       className="w-full h-full p-3 flex flex-col items-center justify-center rounded-sm hover:opacity-75 cursor-pointer"
     >

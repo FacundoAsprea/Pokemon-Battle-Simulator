@@ -8,6 +8,7 @@ export class AttackService {
     private dataService: DataService,
     private battleStateService: BattleStateService,
   ) {}
+  
   private attackExecutions = {
     physical: (attack: Attack) => this.useAttack(attack),
     status: (attack: Attack) => this.useAttack(attack),

@@ -1,0 +1,26 @@
+{
+  // Evita que VSCode indexe miles de archivos innecesarios
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true
+  },
+
+  // Que TypeScript ignore también esas carpetas
+  "typescript.tsserver.exclude": [
+    "**/node_modules",
+    "**/dist",
+    "**/build"
+  ],
+
+  // ESLint solo corre al guardar (no en cada tecla que tocas)
+  "eslint.run": "onSave",
+
+  // Asigna más memoria al servidor de TypeScript
+  "typescript.tsserver.maxTsServerMemory": 4092
+}

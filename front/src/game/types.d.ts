@@ -39,8 +39,7 @@ export interface Attack {
   type: "attack";
   origin: string;
   message: string;
-  damage: number;
-  objective: string;
+  move: MoveData;
 }
 
 export interface Swap {
@@ -78,7 +77,7 @@ interface MoveData {
   priority: number;
   accuracy: number;
   damage_class: 'physical' | 'status' | 'special';
-  type: type;
+  type: Type;
   boosts?: Boosts
   target?: "normal" | "self"
 }

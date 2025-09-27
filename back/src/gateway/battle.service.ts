@@ -66,6 +66,15 @@ export class BattleService {
   }
 
   executeAttack(attack: Attack) {
+    const player = this.dataService.getUserFromAction(attack, 'player');
+
     this.attackService.executeAttack(attack);
+    this.movesThisTurn += 1;
+    this.uiUpdate.push({
+      user: player.uid,
+      message: attack.message,
+      type: 'attack',
+      animation: attack.move.type,
+    });
   }
 }

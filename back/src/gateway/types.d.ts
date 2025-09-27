@@ -22,7 +22,7 @@ export interface swapUiUpdate extends uiUpdate {
   newSelected: string;
 }
 export interface attackUiUpdate extends uiUpdate {
-  objective: string;
+  animation: Type;
 }
 
 //Datos del pokemon
@@ -94,7 +94,7 @@ interface MoveData {
   priority: number;
   accuracy: number;
   damage_class: 'physical' | 'status' | 'special';
-  type: string;
+  type: Type;
   boosts?: Boosts;
   target?: 'normal' | 'self';
 }
