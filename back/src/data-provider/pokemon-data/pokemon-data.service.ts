@@ -6,7 +6,7 @@ import { TypeData } from './types';
 import types from './data/types.json';
 import movesets from './data/movesets.json';
 import movelist from './data/moves.json';
-import { MoveData } from 'src/gateway/types';
+import { MoveData } from '../dto/getPokemonDataDTO';
 
 @Injectable()
 export class PokemonDataService {

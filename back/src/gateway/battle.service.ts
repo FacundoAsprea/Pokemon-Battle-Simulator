@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { BattleStateService } from './battleState.service';
-import type { Action, Attack, Swap, uiUpdates, UserBattleState } from './types';
+import type { Action, Attack, Swap, uiUpdates } from './types';
+import { AttackService } from './attack.service';
+import { DataService } from './data.service';
 
 @Injectable()
 export class BattleService {
@@ -8,18 +9,10 @@ export class BattleService {
   movesQueue: Action[] = [];
   uiUpdate: uiUpdates[] = [];
 
-  constructor(private battleStateService: BattleStateService) {}
-
-  getUserFromAction = (action: Action, user: "player" | "rival"): UserBattleState => {
-    return this.battleStateService
-      .getState()
-      .usersdata.find((userdata) => user == "player" ? userdata.uid == action.origin : userdata.uid != action.origin) as UserBattleState;
-  };
-
-  getPokemonFromName = (name: string, userRef: UserBattleState) => {
-    const pokemon = userRef.team.find((pokemon) => pokemon.name == name);
-    return pokemon ? pokemon : null;
-  };
+  constructor(
+    private dataService: DataService,
+    private attackService: AttackService,
+  ) {}
 
   //MANEJO DE ACCIONES
   handleAction(action: Action) {
@@ -52,9 +45,9 @@ export class BattleService {
   }
 
   executeSwap(swap: Swap) {
-    const player = this.getUserFromAction(swap, "player");
-    const selected = this.getPokemonFromName(swap.from, player);
-    const swapped = this.getPokemonFromName(swap.to, player);
+    const player = this.dataService.getUserFromAction(swap, 'player');
+    const selected = this.dataService.getPokemonFromName(swap.from, player);
+    const swapped = this.dataService.getPokemonFromName(swap.to, player);
 
     if (!selected || !swapped) {
       return new Error('Error al obtener datos de un pokemon');
@@ -73,21 +66,6 @@ export class BattleService {
   }
 
   executeAttack(attack: Attack) {
-    const player = this.getUserFromAction(attack, "player")
-
-    const moveData = attack.move
-    this.attackExecutions[moveData.damage_class](attack)
-  }
-
-  attackExecutions = {
-    "physical": (attack: Attack) => {
-      const rival = this.getUserFromAction(attack, "rival")
-    },
-    "status": (attack: Attack) => {
-
-    },
-    "special": (attack: Attack) => {
-
-    },
+    this.attackService.executeAttack(attack);
   }
 }

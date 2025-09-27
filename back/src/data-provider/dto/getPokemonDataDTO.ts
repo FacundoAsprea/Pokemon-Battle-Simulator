@@ -45,7 +45,7 @@ interface StatBattleData {
   actual_value: number;
 }
 
-interface MoveData {
+export interface MoveData {
   name: string;
   power: number;
   pp: number;
