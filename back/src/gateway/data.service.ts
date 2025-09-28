@@ -39,9 +39,13 @@ export class DataService {
   };
 
   getDefensiveTypeChart(pokemon: PokemonBattleData) {
-    return pokemon.types.map(
-      (type) => new DefensiveDamageRelation(type.damages_relations),
-    );
+    return pokemon.types.map((type) => {
+      console.log(
+        'CREANDO UNA DefensiveDamageRelation con: ',
+        type.damage_relations,
+      );
+      return new DefensiveDamageRelation(type.damage_relations);
+    });
   }
 
   getMoveFromName(pokemon: PokemonBattleData, moveName: string) {
@@ -57,6 +61,7 @@ class DefensiveDamageRelation {
   no_damage_from: Type[];
 
   constructor(damageRelation: DamageRelations) {
+    console.log('DAMAGERELATION DEL CONSTRUCTOR: ', damageRelation);
     const { double_damage_from, half_damage_from, no_damage_from } =
       damageRelation;
     Object.assign(this, {

@@ -54,7 +54,7 @@ interface StatBattleData {
 }
 
 export interface TypeBattleData {
-  damages_relations: DamageRelations;
+  damage_relations: DamageRelations;
   name: string;
   id: number;
 }

@@ -40,6 +40,7 @@ export class BattleService {
     if (action.type == 'swap') {
       this.executeSwap(action);
     } else {
+      console.log('SE EJECUTARA UN ATAQUE');
       this.executeAttack(action);
     }
   }
