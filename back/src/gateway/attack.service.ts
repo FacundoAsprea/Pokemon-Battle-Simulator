@@ -8,7 +8,7 @@ export class AttackService {
     private dataService: DataService,
     private battleStateService: BattleStateService,
   ) {}
-  
+
   private attackExecutions = {
     physical: (attack: Attack) => this.useAttack(attack),
     status: (attack: Attack) => this.useAttack(attack),
@@ -23,7 +23,10 @@ export class AttackService {
       attack.move.name,
     );
 
-    if (!this.checkAccuracy(attack)) return false;
+    if (!this.checkAccuracy(attack)) {
+      console.log('ERRO EL ATAQUE');
+      return false;
+    }
     rivalPokemon.stats.hp.actual_value -= this.calculateDamage(attack);
     move.pp -= 1;
 
@@ -60,11 +63,24 @@ export class AttackService {
     const STAB = this.calculateSTAB(playerPokemon, attack);
     const effectiveness = this.calculateEffectiveness(rivalPokemon, attack);
 
-    const damage =
-      ((22 * ((power * playerPokemonAttack) / rivalPokemonDefense)) / 50 + 2) *
-      STAB *
-      effectiveness;
-    return damage;
+    return this.getDamage(
+      power,
+      playerPokemonAttack,
+      rivalPokemonDefense,
+      STAB,
+      effectiveness,
+    );
+  }
+
+  private getDamage(
+    power: number,
+    attackStat: number,
+    defenseStat: number,
+    STAB: number,
+    effectiveness: number,
+  ) {
+    const basePower = (22 * (power / attackStat / defenseStat)) / 50 + 2;
+    return basePower * STAB * effectiveness;
   }
 
   private getAttack(

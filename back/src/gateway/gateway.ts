@@ -73,7 +73,7 @@ export class BattleGateway {
 
     const actionsWereExecuted = this.battleService.handleAction(action);
     if (actionsWereExecuted) {
-      console.log('EMITIENDO UN TURN');
+      console.log('EMITIENDO UN TURN: ', this.battleStateService.getState());
       this.server.emit('turn', {
         uiUpdate: this.battleService.uiUpdate,
         newBattleState: this.battleStateService.getState(),
