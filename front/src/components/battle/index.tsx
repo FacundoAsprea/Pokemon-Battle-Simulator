@@ -24,7 +24,7 @@ const BattleWrapper = () => {
   return (
     <div className="h-screen w-screen flex items-center justify-center">
       <nav className="h-screen w-[15%] flex flex-col items-center justify-center gap-2 p-2">
-        {playerData!.team.map((pokemon) => (
+        {playerData.team.map((pokemon) => (
           <Minicard pokemon={pokemon}></Minicard>
         ))}
       </nav>
@@ -41,7 +41,7 @@ const BattleWrapper = () => {
         <ActionsMenu />
       </main>
       <nav className="h-screen w-[15%] flex flex-col items-center justify-center gap-2 p-2">
-        {rivalData!.team.map((pokemon) => (
+        {rivalData.team.map((pokemon) => (
           <Minicard pokemon={pokemon}></Minicard>
         ))}
       </nav>

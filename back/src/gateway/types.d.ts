@@ -23,6 +23,8 @@ export interface swapUiUpdate extends uiUpdate {
 }
 export interface attackUiUpdate extends uiUpdate {
   animation: Type;
+  damage: number;
+  moveName: string;
 }
 
 //Datos del pokemon
@@ -50,7 +52,7 @@ export interface PokemonBattleData {
 
 interface StatBattleData {
   base_value: number;
-  actual_value: number;
+  current_value: number;
 }
 
 export interface TypeBattleData {
@@ -70,8 +72,9 @@ export interface DamageRelations {
 
 //Movimientos
 export type Action = Attack | Swap;
+type AttackPriority = -6 | -5 | -1 | 0 | 1 | 2 | 3 | 4;
 export interface Attack {
-  priority: number;
+  priority: AttackPriority;
   type: 'attack';
   origin: userUID;
   message: string;
@@ -79,7 +82,7 @@ export interface Attack {
 }
 
 export interface Swap {
-  priority: 999;
+  priority: 0.5;
   type: 'swap';
   origin: userUID;
   message: string;

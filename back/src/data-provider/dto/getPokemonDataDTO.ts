@@ -42,7 +42,7 @@ export interface PokemonDataParsed {
 
 interface StatBattleData {
   base_value: number;
-  actual_value: number;
+  current_value: number;
 }
 
 export interface MoveData {

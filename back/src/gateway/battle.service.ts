@@ -28,9 +28,24 @@ export class BattleService {
     return false;
   }
 
-  executeAllActions() {
-    this.movesQueue.sort((a, b) => b.priority - a.priority);
+  sortActionsByPriority() {
+    const firtsActionPriority = this.movesQueue[0].priority;
 
+    //si ambos ataques tienen la misma prioridad, usar las stats de velocidad
+    const priorityTie = this.movesQueue.every(
+      (move) => move.priority == firtsActionPriority,
+    );
+    if (priorityTie && firtsActionPriority != 0.5) {
+      console.log('ORDEN ANTES DEL EMPATE');
+      this.attackService.handlePriorityTie(this.movesQueue);
+      console.log('ORDEN DESPUES DEL EMPATE');
+    }
+
+    this.movesQueue.sort((a, b) => b.priority - a.priority);
+  }
+
+  executeAllActions() {
+    this.sortActionsByPriority();
     this.movesQueue.forEach((move) => this.executeAction(move));
   }
 
@@ -69,13 +84,15 @@ export class BattleService {
   executeAttack(attack: Attack) {
     const player = this.dataService.getUserFromAction(attack, 'player');
 
-    this.attackService.executeAttack(attack);
+    const damage = this.attackService.executeAttack(attack);
     this.movesThisTurn += 1;
     this.uiUpdate.push({
       user: player.uid,
       message: attack.message,
       type: 'attack',
       animation: attack.move.type,
+      damage: damage,
+      moveName: attack.move.name,
     });
   }
 }

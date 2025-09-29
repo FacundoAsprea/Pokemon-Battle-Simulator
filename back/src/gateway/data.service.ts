@@ -12,7 +12,7 @@ import { BattleStateService } from './battleState.service';
 export class DataService {
   constructor(private battleStateService: BattleStateService) {}
 
-  getUserFromAction = (action: Action, user: 'player' | 'rival') => {
+  getUserFromAction(action: Action, user: 'player' | 'rival') {
     const userData = this.battleStateService
       .getState()
       .usersdata.find((userdata) =>
@@ -20,35 +20,55 @@ export class DataService {
           ? userdata.uid == action.origin
           : userdata.uid != action.origin,
       );
-    if (!userData) throw new Error('Error obteniendo datos del usuario');
+    if (!userData)
+      throw new Error('Error obteniendo datos del usuario (getUserFromAction)');
     return userData;
-  };
+  }
 
-  getSelectedPokemon = (action: Action, user: 'player' | 'rival') => {
+  getUserFromUID(uid: string) {
+    const userData = this.battleStateService
+      .getState()
+      .usersdata.find((user) => user.uid == uid);
+
+    if (!userData)
+      throw new Error('Error obteniendo datos del usuario (getUserFromUID)');
+    return userData;
+  }
+
+  getSelectedPokemon(action: Action, user: 'player' | 'rival') {
     const userData = this.getUserFromAction(action, user);
     const selectedPokemon = userData.team.find((pokemon) => pokemon.selected);
     if (!selectedPokemon)
-      throw new Error('Error obteniendo datos del pokemon seleccionado');
+      throw new Error(
+        'Error obteniendo datos del pokemon seleccionado (getSelectedPokemon)',
+      );
     return selectedPokemon;
-  };
+  }
 
-  getPokemonFromName = (name: string, userRef: UserBattleState) => {
+  getSelectedPokemonFromUser(user: UserBattleState) {
+    const selected = user.team.find((pokemon) => pokemon.selected);
+    if (!selected)
+      throw new Error(
+        'Error obteniendo datos del pokemon seleccionado (getSelectedPokemonFromUser)',
+      );
+    return selected;
+  }
+
+  getPokemonFromName(name: string, userRef: UserBattleState) {
     const pokemon = userRef.team.find((pokemon) => pokemon.name == name);
     if (!pokemon) throw new Error('Error obteniendo datos del pokemon');
     return pokemon;
-  };
+  }
 
   getDefensiveTypeChart(pokemon: PokemonBattleData) {
     return pokemon.types.map((type) => {
-      console.log(
-        'CREANDO UNA DefensiveDamageRelation con: ',
-        type.damage_relations,
-      );
       return new DefensiveDamageRelation(type.damage_relations);
     });
   }
 
   getMoveFromName(pokemon: PokemonBattleData, moveName: string) {
+    console.log('MOVENAME: ', moveName);
+    console.log('MOVESET: ', pokemon.moveset);
     const move = pokemon.moveset.find((move) => move.name == moveName);
     if (!move) throw new Error('Error obteniendo datos del ataque');
     return move;
@@ -61,7 +81,6 @@ class DefensiveDamageRelation {
   no_damage_from: Type[];
 
   constructor(damageRelation: DamageRelations) {
-    console.log('DAMAGERELATION DEL CONSTRUCTOR: ', damageRelation);
     const { double_damage_from, half_damage_from, no_damage_from } =
       damageRelation;
     Object.assign(this, {

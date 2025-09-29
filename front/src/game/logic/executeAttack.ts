@@ -5,17 +5,21 @@ import { getSelectedPokemon } from "../functions/getters";
 import { capitalize } from "@/utils/functions";
 import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 
-export const executeAttack = (
-  attack: MoveData
-) => {
-  const player = getPlayerData(useGlobalBattleState.getState().globalBattleState)
-  const selectedPokemon = getSelectedPokemon("player");
+export const executeAttack = (attack: MoveData) => {
+  const player = getPlayerData(
+    useGlobalBattleState.getState().globalBattleState
+  );
+  const selectedPokemon = getSelectedPokemon(
+    "player",
+    useGlobalBattleState.getState().globalBattleState
+  );
 
-  const action: Attack= {
+  const action: Attack = {
+    priority: attack.priority,
     type: "attack",
     origin: player.uid,
     message: `${capitalize(selectedPokemon.name)} va a usar ${attack.name}`,
-    move: attack
+    move: attack,
   };
-  webSocket.sendAction(action)
+  webSocket.sendAction(action);
 };

@@ -1,7 +1,7 @@
 import { webSocket } from "@/services/websocket.service";
 import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 import { useBattleText } from "@/states/battleTextContext/battleTextContext";
-import type { swapUiUpdate, uiUpdates } from "@/types";
+import type { attackUiUpdate, swapUiUpdate, uiUpdates } from "@/types";
 import {
   getPokemonByName,
   getSelectedPokemonByUserId,
@@ -12,7 +12,7 @@ import { useUserHasPlayed } from "@/states/userHasPlayed/userHasPlayedState";
 class Game {
   async runGame() {
     const turn = await webSocket.waitForTurn();
-    console.log("TURN SE RESOLVIO: ", turn)
+    console.log("TURN SE RESOLVIO: ", turn);
 
     const { uiUpdate } = turn;
     console.log("LAS 2 UPDATES: ", uiUpdate);
@@ -21,19 +21,14 @@ class Game {
     await this.runGame();
   }
 
+  //sabe dios quien creo esta aberracion humana
   async applyUiUpdate(update: uiUpdates) {
     console.log("UPDATE: ", update);
     return new Promise((resolve) => {
       setTimeout(() => {
+        const user = getUserById(update.user);
+        const selectedPokemon = getSelectedPokemonByUserId(user.uid);
         if (update.type === "swap") {
-          const user = getUserById(
-            update.user,
-            useGlobalBattleState.getState().globalBattleState
-          );
-          const selectedPokemon = getSelectedPokemonByUserId(
-            user.uid,
-            useGlobalBattleState.getState().globalBattleState
-          );
           const newSelectedPokemon = getPokemonByName(
             user,
             (update as swapUiUpdate).newSelected
@@ -63,11 +58,58 @@ class Game {
               ),
             },
           }));
+        } else {
+          const rival = getUserById(update.user, true);
+          const rivalSelectedPokemon = getSelectedPokemonByUserId(rival.uid);
 
-          useUserHasPlayed.setState({ userHasPlayed: false });
+          useBattleText.setState({ battleText: update.message });
 
-          resolve(true);
+          //Aplico el daño a la vida del pokemon rival
+          const rivalNewTeam = rival.team.map((pokemon) =>
+            pokemon.name == rivalSelectedPokemon.name
+              ? {
+                  ...pokemon,
+                  stats: {
+                    ...pokemon.stats,
+                    hp: {
+                      ...pokemon.stats.hp,
+                      current_value:
+                        pokemon.stats.hp.current_value -
+                        (update as attackUiUpdate).damage,
+                    },
+                  },
+                }
+              : { ...pokemon }
+          );
+          console.log("NUEVA VERSION DEL EQUIPO RIVAL: ", rivalNewTeam);
+
+          const playerNewTeam = user.team.map((pokemon) =>
+            pokemon.name == selectedPokemon.name
+              ? {
+                  ...pokemon,
+                  moveset: pokemon.moveset.map((move) =>
+                    move.name == (update as attackUiUpdate).moveName
+                      ? { ...move, pp: move.pp - 1 }
+                      : { ...move }
+                  ),
+                }
+              : { ...pokemon }
+          );
+
+          //Aplico los cambios al estado
+          useGlobalBattleState.setState((state) => ({
+            globalBattleState: {
+              ...state.globalBattleState,
+              usersdata: [
+                { ...user, team: playerNewTeam },
+                { ...rival, team: rivalNewTeam },
+              ],
+            },
+          }));
         }
+
+        useUserHasPlayed.setState({ userHasPlayed: false });
+        resolve(true);
       }, 3500);
     });
   }

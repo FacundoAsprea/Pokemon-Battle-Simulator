@@ -2,6 +2,7 @@ import { getSelectedPokemon } from "@/game/functions/getters";
 import { capitalize } from "@/utils/functions";
 
 import { Progress } from "../ui/progress";
+import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 
 interface props {
   user: "player" | "rival";
@@ -21,9 +22,11 @@ const Healthbar = ({ user }: props) => {
       borderWidth: "3px 3px 3px 0px",
     },
   };
-  const selectedPokemon = getSelectedPokemon(user);
+  const selectedPokemon = useGlobalBattleState((state) =>
+    getSelectedPokemon(user, state.globalBattleState)
+  );
   const healthPercentage =
-    (selectedPokemon.stats.hp.actual_value /
+    (selectedPokemon.stats.hp.current_value /
       selectedPokemon.stats.hp.base_stat) *
     100;
 
@@ -39,7 +42,7 @@ const Healthbar = ({ user }: props) => {
     >
       <div className="flex flex-col bg-[#303030] p-3">
         <div className="text-gray-100 flex">
-            {capitalize(selectedPokemon.name)}
+          {capitalize(selectedPokemon.name)}
         </div>
         <Progress value={healthPercentage} />
       </div>

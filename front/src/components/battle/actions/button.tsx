@@ -9,9 +9,9 @@ import { getPlayerData } from "@/game/functions/getters";
 import { swapPokemon } from "@/game/logic/swapPokemon";
 import type { PokemonBattleData } from "@/game/types";
 import { useBattleText } from "@/states/battleTextContext/battleTextContext";
-import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 import { useUserHasPlayed } from "@/states/userHasPlayed/userHasPlayedState";
 import MovesSelector from "./moveButton";
+import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 
 interface props {
   variant: "ATACAR" | "CAMBIAR";

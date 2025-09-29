@@ -1,20 +1,22 @@
-import type { GlobalBattleState } from "./game/types";
+import type { GlobalBattleState, Type } from "./game/types";
 
 export interface TurnResponse {
-  uiUpdate: uiUpdates[],
-  newBattleState: GlobalBattleState
+  uiUpdate: uiUpdates[];
+  newBattleState: GlobalBattleState;
 }
 export type uiUpdates = swapUiUpdate | attackUiUpdate;
 interface uiUpdate {
   user: string;
   message: string;
-  type: 'swap' | 'attack' | 'status';
+  type: "swap" | "attack";
 }
 export interface swapUiUpdate extends uiUpdate {
   newSelected: string;
 }
 export interface attackUiUpdate extends uiUpdate {
-  objective: string;
+  damage: number;
+  animation: Type;
+  moveName: string;
 }
 
 export interface SpriteData {
@@ -28,5 +30,5 @@ export interface SpriteData {
 }
 
 export interface PlayerData {
-  name: string
+  name: string;
 }

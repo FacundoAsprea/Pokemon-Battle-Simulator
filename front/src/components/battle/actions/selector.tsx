@@ -8,7 +8,7 @@ interface props {
 
 const Selector = ({ pokemon, onClickHandler }: props) => {
   const healthPercentage =
-    (pokemon.stats.hp.actual_value / pokemon.stats.hp.base_stat) * 100;
+    (pokemon.stats.hp.current_value / pokemon.stats.hp.base_stat) * 100;
   return (
     <div onClick={onClickHandler} className="flex flex-row border-1 border-gray-500 rounded-sm px-5 hover:bg-[#303030] cursor-pointer">
       <div className="h-full w-1/2 flex justify-center">
@@ -21,7 +21,7 @@ const Selector = ({ pokemon, onClickHandler }: props) => {
         <h3 className="text-white">{capitalize(pokemon.name)}</h3>
         <div className="w-full flex flex-col px-2 pb-2 rounded-md bg-[#181818]">
           <h5 className="text-white text-sm mt-2">
-            HP {pokemon.stats.hp.actual_value}/{pokemon.stats.hp.base_stat}
+            HP {pokemon.stats.hp.current_value}/{pokemon.stats.hp.base_stat}
           </h5>
           <Progress value={healthPercentage} className="w-full" />
         </div>

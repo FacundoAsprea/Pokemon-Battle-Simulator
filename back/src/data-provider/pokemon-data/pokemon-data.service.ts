@@ -39,10 +39,9 @@ export class PokemonDataService {
       speed: {},
     };
     rawData.stats.forEach((stat) => {
-      console.log('NOMBRE DE LA STAT: ', stat.stat.name);
       parsedStats[stat.stat.name.replace('-', '_')] = {
         base_stat: stat.base_stat,
-        actual_value: stat.base_stat,
+        current_value: stat.base_stat,
       };
     });
 

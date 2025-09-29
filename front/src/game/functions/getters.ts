@@ -1,49 +1,61 @@
 import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 import type {
   GlobalBattleState,
-  PokemonBattleData,
   UserBattleState,
 } from "../types";
 
-export const getUserById = (id: string, globalBattleState: GlobalBattleState) => {
-  return globalBattleState.usersdata.find(
-    (user) => user.uid == id
-  ) as UserBattleState;
+export const getUserById = (id: string, getRival?: boolean) => {
+  const { globalBattleState } = useGlobalBattleState.getState();
+  const user = globalBattleState.usersdata.find((user) => getRival ? user.uid != id : user.uid == id);
+  if (!user) throw new Error("ERROR EN getUserById");
+  return user;
 };
 
-export const getSelectedPokemonByUserId = (id: string, globalBattleState: GlobalBattleState) => {
-  return getUserById(id, globalBattleState).team.find(
+export const getSelectedPokemonByUserId = (id: string) => {
+  const pokemon = getUserById(id).team.find(
     (pokemon) => pokemon.selected == true
-  ) as PokemonBattleData;
+  );
+  if (!pokemon) throw new Error(`ERROR EN getSelectedPokemonByUserId`);
+  return pokemon;
 };
 
 export const getPokemonByName = (
   userRef: UserBattleState,
-  pokemonName: string,
+  pokemonName: string
 ) => {
-  return userRef.team.find(
-    (pokemon) => pokemon.name == pokemonName
-  ) as PokemonBattleData;
+  const pokemon = userRef.team.find((pokemon) => pokemon.name == pokemonName);
+  if (!pokemon) throw new Error("ERROR EN getPokemonByName");
+  return pokemon;
 };
 
 export const getPlayerData = (globalBattleState: GlobalBattleState) => {
   const playerUID = localStorage.getItem("uid");
-  return globalBattleState.usersdata.find(
+  console.log("EJECUTANDO PLAYERDATA: ", playerUID)
+  console.log("ESTADO GLOBAL: ", globalBattleState)
+  const player = globalBattleState.usersdata.find(
     (user) => user.uid == playerUID
-  ) as UserBattleState;
+  );
+  if (!player) throw new Error("ERROR EN getPlayerData");
+  return player;
 };
 
 export const getRivalData = (globalBattleState: GlobalBattleState) => {
   const playerUID = localStorage.getItem("uid");
-  return globalBattleState.usersdata.find(
+  const rival = globalBattleState.usersdata.find(
     (user) => user.uid != playerUID
-  ) as UserBattleState;
+  );
+  if (!rival) throw new Error("ERROR EN getRivalData");
+  return rival
 };
 
-export const getSelectedPokemon = (user: "player" | "rival") => {
-  const { globalBattleState } = useGlobalBattleState.getState()
-
-  const userData = user == "player" ? getPlayerData(globalBattleState) : getRivalData(globalBattleState)
+export const getSelectedPokemon = (
+  user: "player" | "rival",
+  globalBattleState: GlobalBattleState
+) => {
+  const userData =
+    user == "player"
+      ? getPlayerData(globalBattleState)
+      : getRivalData(globalBattleState);
 
   const selectedPokemon = userData.team.find(
     (pokemon) => pokemon.selected == true

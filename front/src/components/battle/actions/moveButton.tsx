@@ -1,6 +1,7 @@
 import { getSelectedPokemon } from "@/game/functions/getters";
 import { executeAttack } from "@/game/logic/executeAttack";
 import type { MoveData, Type } from "@/game/types";
+import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 import { useRef } from "react";
 
 interface props {
@@ -44,7 +45,9 @@ const MoveButton = ({ moveData }: props) => {
 };
 
 const MovesSelector = () => {
-  const selectedPokemon = getSelectedPokemon("player");
+  const selectedPokemon = useGlobalBattleState((state) =>
+    getSelectedPokemon("player", state.globalBattleState)
+  );
   return (
     <div className="h-[40dvh] grid grid-cols-2 grid-rows-2 gap-2 p-2">
       {selectedPokemon.moveset.map((move) => (

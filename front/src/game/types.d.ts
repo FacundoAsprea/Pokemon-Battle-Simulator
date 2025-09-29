@@ -35,7 +35,9 @@ export interface PokemonBattleData {
 
 //ACCIONES
 export type Action = Attack | Swap;
+type AttackPriority = -6 | -5 | -1 | 0 | 1 | 2 | 3 | 4
 export interface Attack {
+  priority: AttackPriority
   type: "attack";
   origin: string;
   message: string;
@@ -43,6 +45,7 @@ export interface Attack {
 }
 
 export interface Swap {
+  priority: 0.5;
   type: "swap";
   origin: string;
   message: string;
@@ -52,7 +55,7 @@ export interface Swap {
 
 interface StatBattleData {
   base_stat: number;
-  actual_value: number;
+  current_value: number;
 }
 
 export interface TypeBattleData {
@@ -74,7 +77,7 @@ interface MoveData {
   name: string;
   power: number;
   pp: number;
-  priority: number;
+  priority: AttackPriority;
   accuracy: number;
   damage_class: 'physical' | 'status' | 'special';
   type: Type;
