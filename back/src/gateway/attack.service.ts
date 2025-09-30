@@ -81,7 +81,7 @@ export class AttackService {
     effectiveness: number,
   ) {
     const basePower = (22 * ((power * attackStat) / defenseStat)) / 50 + 2;
-    return basePower * STAB * effectiveness;
+    return Math.floor(basePower * STAB * effectiveness);
   }
 
   private getAttack(

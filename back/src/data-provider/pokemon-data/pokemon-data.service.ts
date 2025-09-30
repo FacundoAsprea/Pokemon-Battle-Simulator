@@ -39,9 +39,14 @@ export class PokemonDataService {
       speed: {},
     };
     rawData.stats.forEach((stat) => {
+      const level = 50;
+      const leveledStat =
+        stat.stat.name == 'hp'
+          ? (2 * stat.base_stat * level) / 100 + level + 5
+          : (2 * stat.base_stat * level) / 100 + 5;
       parsedStats[stat.stat.name.replace('-', '_')] = {
-        base_stat: stat.base_stat,
-        current_value: stat.base_stat,
+        base_stat: leveledStat,
+        current_value: leveledStat,
       };
     });
 

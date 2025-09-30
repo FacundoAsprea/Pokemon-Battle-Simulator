@@ -1,39 +1,20 @@
 import { getSelectedPokemon } from "@/game/functions/getters";
 import { executeAttack } from "@/game/logic/executeAttack";
-import type { MoveData, Type } from "@/game/types";
+import type { MoveData } from "@/game/types";
 import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 import { useRef } from "react";
+import { TypeUICollection } from "@/assets/typeSprites";
 
 interface props {
   moveData: MoveData;
 }
 
 const MoveButton = ({ moveData }: props) => {
-  const color: Record<Type, string> = {
-    grass: "#7BB243",
-    fire: "#BD370C",
-    water: "#217BCB",
-    ground: "#57423F",
-    electric: "#F8D63A",
-    rock: "#887A77",
-    normal: "#DBD2CF",
-    fighting: "#511011",
-    flying: "#B2B2B3",
-    poison: "#472172",
-    bug: "#7B731B",
-    ghost: "#301A8E",
-    steel: "#2E3B41",
-    psychic: "#B11E54",
-    ice: "#5F93BB",
-    dragon: "#1B0931",
-    fairy: "#EEA5BF",
-    dark: "#2B2A2A",
-  };
   const maxPPs = useRef(moveData.pp);
   return (
     <div
       onClick={() => executeAttack(moveData)}
-      style={{ backgroundColor: color[moveData.type] }}
+      style={{ backgroundColor: TypeUICollection[moveData.type].color }}
       className="w-full h-full p-3 flex flex-col items-center justify-center rounded-sm hover:opacity-75 cursor-pointer"
     >
       <p className="text-gray-200">{moveData.name}</p>
