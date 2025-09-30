@@ -1,4 +1,10 @@
 import type { PokemonBattleData } from "@/game/types";
+import {
+  HoverCardTrigger,
+  HoverCard,
+  HoverCardContent,
+} from "../ui/hover-card";
+import PokemonInfoDiplayer from "./pokemonInfoDisplayer";
 
 interface props {
   pokemon: PokemonBattleData;
@@ -7,12 +13,19 @@ interface props {
 const Minicard = ({ pokemon }: props) => {
   const opacity = pokemon.selected ? "" : "50%";
   return (
-    <div
-      style={{ opacity: opacity }}
-      className="w-full h-[100px] bg-[#303030] rounded-sm border-[#505050] grid place-items-center"
-    >
-      <img src={pokemon.sprites.front_default}></img>
-    </div>
+    <HoverCard>
+      <HoverCardTrigger>
+        <div
+          style={{ opacity: opacity }}
+          className="w-full h-[100px] bg-[#303030] rounded-sm border-[#505050] grid place-items-center"
+        >
+          <img src={pokemon.sprites.front_default}></img>
+        </div>
+      </HoverCardTrigger>
+      <HoverCardContent asChild>
+        <PokemonInfoDiplayer pokemonData={pokemon} />
+      </HoverCardContent>
+    </HoverCard>
   );
 };
 

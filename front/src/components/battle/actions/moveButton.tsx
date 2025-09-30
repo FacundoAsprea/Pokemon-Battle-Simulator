@@ -21,6 +21,7 @@ const MoveButton = ({ moveData }: props) => {
       <p className="text-gray-200">
         {moveData.pp} / {maxPPs.current}
       </p>
+      <img className="object-contain" src={TypeUICollection[moveData.type].sprite} />
     </div>
   );
 };

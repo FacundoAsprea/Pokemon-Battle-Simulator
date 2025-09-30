@@ -1,15 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { BattleStateService } from './battleState.service';
 import { DataService } from './data.service';
 import { Action, Attack, PokemonBattleData } from './types';
 import { randomInt } from 'crypto';
 
 @Injectable()
 export class AttackService {
-  constructor(
-    private dataService: DataService,
-    private battleStateService: BattleStateService,
-  ) {}
+  constructor(private dataService: DataService) {}
 
   private attackExecutions = {
     physical: (attack: Attack) => this.useAttack(attack),

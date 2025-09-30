@@ -21,7 +21,7 @@ class Game {
     await this.runGame();
   }
 
-  //sabe dios quien creo esta aberracion humana
+  //es la cosa mas horrenda que hice en mi vida pero funca
   async applyUiUpdate(update: uiUpdates) {
     console.log("UPDATE: ", update);
     return new Promise((resolve) => {

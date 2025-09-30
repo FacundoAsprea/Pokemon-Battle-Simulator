@@ -14,7 +14,7 @@ export interface PokemonBattleData {
   stats: {
     hp: StatBattleData;
     defense: StatBattleData;
-    special_defence: StatBattleData;
+    special_defense: StatBattleData;
     attack: StatBattleData;
     special_attack: StatBattleData;
     speed: StatBattleData;
