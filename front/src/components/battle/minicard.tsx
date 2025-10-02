@@ -17,12 +17,12 @@ const Minicard = ({ pokemon }: props) => {
       <HoverCardTrigger>
         <div
           style={{ opacity: opacity }}
-          className="w-full h-[100px] bg-[#303030] rounded-sm border-[#505050] grid place-items-center"
+          className="w-full h-[100px] bg-[#303030] rounded-sm border-[#505050] grid place-items-center !z-200"
         >
           <img src={pokemon.sprites.front_default}></img>
         </div>
       </HoverCardTrigger>
-      <HoverCardContent asChild>
+      <HoverCardContent className="!z-200" asChild>
         <PokemonInfoDiplayer pokemonData={pokemon} />
       </HoverCardContent>
     </HoverCard>

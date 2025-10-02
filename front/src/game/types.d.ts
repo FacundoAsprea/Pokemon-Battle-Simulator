@@ -56,21 +56,22 @@ export interface Swap {
 interface StatBattleData {
   base_stat: number;
   current_value: number;
+  boost?: number
 }
 
 export interface TypeBattleData {
-  damages_relations: DamageRelations;
+  damage_relations: DamageRelations;
   name: Type;
   id: number;
 }
 
 export interface DamageRelations {
-  double_damage_from: string[];
-  double_damage_to: string[];
-  half_damage_from: string[];
-  half_damage_to: string[];
-  no_damage_from: string[];
-  no_damage_to: string[];
+  double_damage_from: Type[];
+  double_damage_to: Type[];
+  half_damage_from: Type[];
+  half_damage_to: Type[];
+  no_damage_from: Type[];
+  no_damage_to: Type[];
 }
 
 interface MoveData {

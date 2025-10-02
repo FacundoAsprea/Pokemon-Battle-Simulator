@@ -53,6 +53,7 @@ export interface PokemonBattleData {
 interface StatBattleData {
   base_value: number;
   current_value: number;
+  boost?: number;
 }
 
 export interface TypeBattleData {
@@ -98,8 +99,8 @@ interface MoveData {
   accuracy: number;
   damage_class: 'physical' | 'status' | 'special';
   type: Type;
-  boosts?: Boosts;
-  target?: 'normal' | 'self';
+  boosts: Boosts;
+  target: 'normal' | 'self';
 }
 
 interface Boosts {

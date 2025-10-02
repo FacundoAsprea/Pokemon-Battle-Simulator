@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { DataService } from './data.service';
-import { Action, Attack, PokemonBattleData } from './types';
+import { Action, Attack, Boosts, PokemonBattleData } from './types';
 import { randomInt } from 'crypto';
 
 @Injectable()
@@ -9,7 +9,7 @@ export class AttackService {
 
   private attackExecutions = {
     physical: (attack: Attack) => this.useAttack(attack),
-    status: () => 0,
+    status: (attack: Attack) => this.useBoost(attack),
     special: (attack: Attack) => this.useAttack(attack),
   };
 
@@ -18,6 +18,25 @@ export class AttackService {
     half_damage_from: 0.5,
     no_damage_from: 0,
   };
+
+  private boostStatChart: Record<keyof Boosts, string> = {
+    atk: 'attack',
+    spe: 'speed',
+    spd: 'special_defense',
+    spa: 'special_attack',
+    def: 'defense',
+  };
+
+  private useBoost(attack: Attack) {
+    const boostedPokemon =
+      attack.move.target == 'self'
+        ? this.dataService.getSelectedPokemon(attack, 'player')
+        : this.dataService.getSelectedPokemon(attack, 'rival');
+
+    for (const [key, value] of Object.values(attack.move.boosts)) {
+
+    }
+  }
 
   private useAttack(attack: Attack) {
     const playerPokemon = this.dataService.getSelectedPokemon(attack, 'player');

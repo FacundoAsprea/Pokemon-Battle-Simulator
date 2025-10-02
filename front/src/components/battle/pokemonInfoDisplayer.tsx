@@ -1,5 +1,6 @@
 import type { PokemonBattleData } from "@/game/types";
 import { capitalize } from "@/utils/functions";
+import { TypeUICollection } from "@/assets/typeSprites";
 
 interface props {
   pokemonData: PokemonBattleData;
@@ -10,9 +11,10 @@ const StatDisplayer = ({ stat }: { stat: number }) => {
 const PokemonInfoDiplayer = ({ pokemonData }: props) => {
   const { name, stats } = pokemonData;
   return (
-    <div className="flex ">
-      <div className="text-gray-400 flex flex-col h-full border-r-1 border-white p-3 gap-y-2 rounded-lg bg-[#202020]">
+    <div className="flex !z-200 rounded-lg bg-[#202020] text-gray-400">
+      <div className="flex flex-col h-full border-r-1 border-white p-3 gap-y-2">
         <p>{capitalize(name)}</p>
+        <p className="flex gap-2">Tipos: {pokemonData.types.map(type =><img className="object-contain" src={TypeUICollection[type.name].sprite}></img>)}</p>
         <ul>
           <li>
             HP: <StatDisplayer stat={stats.hp.current_value} />
@@ -36,7 +38,13 @@ const PokemonInfoDiplayer = ({ pokemonData }: props) => {
           </li>
         </ul>
       </div>
-      <div className="flex flex-col h-full p-3"></div>
+      <div className="flex flex-col h-full items-center justify-center p-3">
+        {pokemonData.types.map(type =>
+        <div className="flex flex-col gap-2 h-full">
+          <p className="flex gap-x-2">Debilidades de <img className="object-fit" src={TypeUICollection[type.name].sprite}></img></p>
+          <div className="flex flex-wrap w-full">{type.damage_relations.double_damage_from.map(weakness => <img className="object-fit" src={TypeUICollection[weakness].sprite}></img>)}</div>
+      </div>)}
+      </div>
     </div>
   );
 };
