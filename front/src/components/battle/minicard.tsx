@@ -22,7 +22,7 @@ const Minicard = ({ pokemon }: props) => {
           <img src={pokemon.sprites.front_default}></img>
         </div>
       </HoverCardTrigger>
-      <HoverCardContent className="!z-200" asChild>
+      <HoverCardContent>
         <PokemonInfoDiplayer pokemonData={pokemon} />
       </HoverCardContent>
     </HoverCard>

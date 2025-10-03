@@ -11,10 +11,18 @@ const StatDisplayer = ({ stat }: { stat: number }) => {
 const PokemonInfoDiplayer = ({ pokemonData }: props) => {
   const { name, stats } = pokemonData;
   return (
-    <div className="flex !z-200 rounded-lg bg-[#202020] text-gray-400">
-      <div className="flex flex-col h-full border-r-1 border-white p-3 gap-y-2">
+    <div className="flex !z-200 rounded-lg bg-[#202020] text-gray-400 w-full border-1 border-gray-500">
+      <div className="flex flex-col h-full border-r-1 border-gray-500 my-3 p-2 gap-y-2">
         <p>{capitalize(name)}</p>
-        <p className="flex gap-2">Tipos: {pokemonData.types.map(type =><img className="object-contain" src={TypeUICollection[type.name].sprite}></img>)}</p>
+        <p className="flex gap-2">
+          Tipos:{" "}
+          {pokemonData.types.map((type) => (
+            <img
+              className="object-contain"
+              src={TypeUICollection[type.name].sprite}
+            ></img>
+          ))}
+        </p>
         <ul>
           <li>
             HP: <StatDisplayer stat={stats.hp.current_value} />
@@ -38,12 +46,22 @@ const PokemonInfoDiplayer = ({ pokemonData }: props) => {
           </li>
         </ul>
       </div>
-      <div className="flex flex-col h-full items-center justify-center p-3">
-        {pokemonData.types.map(type =>
-        <div className="flex flex-col gap-2 h-full">
-          <p className="flex gap-x-2">Debilidades de <img className="object-fit" src={TypeUICollection[type.name].sprite}></img></p>
-          <div className="flex flex-wrap w-full">{type.damage_relations.double_damage_from.map(weakness => <img className="object-fit" src={TypeUICollection[weakness].sprite}></img>)}</div>
-      </div>)}
+      <div className="flex flex-col h-full justify-center items-center p-3">
+        {pokemonData.types.map((type) => (
+          <div className="flex flex-col h-1/2 mb-10">
+            <p className="flex text-xs gap-1">
+              Debilidades de {capitalize(type.name)}
+            </p>
+            <div className="flex flex-wrap w-full">
+              {type.damage_relations.double_damage_from.map((weakness) => (
+                <img
+                  className="object-fit"
+                  src={TypeUICollection[weakness].sprite}
+                ></img>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

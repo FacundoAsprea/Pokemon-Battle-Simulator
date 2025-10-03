@@ -33,9 +33,7 @@ export class AttackService {
         ? this.dataService.getSelectedPokemon(attack, 'player')
         : this.dataService.getSelectedPokemon(attack, 'rival');
 
-    for (const [key, value] of Object.values(attack.move.boosts)) {
-
-    }
+    return 1;
   }
 
   private useAttack(attack: Attack) {
