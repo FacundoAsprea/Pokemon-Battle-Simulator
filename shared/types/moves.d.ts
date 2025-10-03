@@ -12,7 +12,25 @@ export interface MoveData {
   target?: "normal" | "self"
 }
 
+export type Action = Attack | Swap;
 type AttackPriority = -6 | -5 | -1 | 0 | 1 | 2 | 3 | 4;
+
+export interface Attack {
+  priority: AttackPriority;
+  type: 'attack';
+  origin: string;
+  message: string;
+  move: MoveData;
+}
+
+export interface Swap {
+  priority: 0.5;
+  type: 'swap';
+  origin: string;
+  message: string;
+  from: string;
+  to: string;
+}
 
 interface Boosts {
   atk: number;

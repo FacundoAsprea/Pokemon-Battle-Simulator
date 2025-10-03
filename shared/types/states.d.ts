@@ -6,6 +6,7 @@ export interface GlobalBattleState {
     turn: string;
   };
 }
+
 export interface UserBattleState {
   team: PokemonBattleData[];
   name: string;

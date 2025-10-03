@@ -1,24 +1,6 @@
 
 
 //ACCIONES
-export type Action = Attack | Swap;
-type AttackPriority = -6 | -5 | -1 | 0 | 1 | 2 | 3 | 4
-export interface Attack {
-  priority: AttackPriority
-  type: "attack";
-  origin: string;
-  message: string;
-  move: MoveData;
-}
-
-export interface Swap {
-  priority: 0.5;
-  type: "swap";
-  origin: string;
-  message: string;
-  from: string;
-  to: string;
-}
 
 
 
@@ -27,20 +9,7 @@ export interface TurnResponse {
   uiUpdate: uiUpdates[];
   newBattleState: GlobalBattleState;
 }
-export type uiUpdates = swapUiUpdate | attackUiUpdate;
-interface uiUpdate {
-  user: string;
-  message: string;
-  type: "swap" | "attack";
-}
-export interface swapUiUpdate extends uiUpdate {
-  newSelected: string;
-}
-export interface attackUiUpdate extends uiUpdate {
-  damage: number;
-  animation: Type;
-  moveName: string;
-}
+
 
 export interface SpriteData {
   id: number;
@@ -62,55 +31,16 @@ export interface PlayerData {
 
 //BACK
 
-//Objeto para actualizar el front
-export type uiUpdates = swapUiUpdate | attackUiUpdate;
-interface uiUpdate {
-  user: string;
-  message: string;
-  type: 'swap' | 'attack';
-}
-export interface swapUiUpdate extends uiUpdate {
-  newSelected: string;
-}
-export interface attackUiUpdate extends uiUpdate {
-  animation: Type;
-  damage: number;
-  moveName: string;
-}
 
 //Datos del pokemon
 
 
 
 //Movimientos
-export type Action = Attack | Swap;
-type AttackPriority = -6 | -5 | -1 | 0 | 1 | 2 | 3 | 4;
-export interface Attack {
-  priority: AttackPriority;
-  type: 'attack';
-  origin: userUID;
-  message: string;
-  move: MoveData;
-}
-
-export interface Swap {
-  priority: 0.5;
-  type: 'swap';
-  origin: userUID;
-  message: string;
-  from: pokemonName;
-  to: pokemonName;
-}
 
 
 type userUID = string;
 type pokemonName = string;
-
-export interface TypeData {
-  name: string;
-  id: number;
-  damage_relations: DamageRelationObject;
-}
 
 export interface DamageRelationObject {
   double_damage_from: string[];
