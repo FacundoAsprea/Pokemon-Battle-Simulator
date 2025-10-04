@@ -1,6 +1,6 @@
 import type { MoveData } from "./moves";
 export interface PokemonBattleData {
-  moveset: MoveData;
+  moveset: MoveData[];
   stats: {
     hp: StatBattleData;
     defense: StatBattleData;

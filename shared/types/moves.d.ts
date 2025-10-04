@@ -18,7 +18,7 @@ type AttackPriority = -6 | -5 | -1 | 0 | 1 | 2 | 3 | 4;
 export interface Attack {
   priority: AttackPriority;
   type: 'attack';
-  origin: string;
+  origin: userUID;
   message: string;
   move: MoveData;
 }
@@ -26,10 +26,10 @@ export interface Attack {
 export interface Swap {
   priority: 0.5;
   type: 'swap';
-  origin: string;
+  origin: userUID;
   message: string;
-  from: string;
-  to: string;
+  from: pokemonName;
+  to: pokemonName;
 }
 
 interface Boosts {
@@ -39,3 +39,6 @@ interface Boosts {
   spd: number;
   spa: number;
 }
+
+type userUID = string;
+type pokemonName = string;
