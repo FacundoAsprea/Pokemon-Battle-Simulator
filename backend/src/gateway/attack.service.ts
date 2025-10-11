@@ -10,7 +10,7 @@ export class AttackService {
 
   private attackExecutions = {
     physical: (attack: Attack) => this.useAttack(attack),
-    status: (attack: Attack) => this.useBoost(attack),
+    status: (attack: Attack) => this.useStatusAttack(attack),
     special: (attack: Attack) => this.useAttack(attack),
   };
 
@@ -20,7 +20,10 @@ export class AttackService {
     no_damage_from: 0,
   };
 
-  private boostStatChart: Record<keyof Boosts, string> = {
+  private boostStatChart: Record<
+    keyof Boosts,
+    keyof PokemonBattleData['stats']
+  > = {
     atk: 'attack',
     spe: 'speed',
     spd: 'special_defense',
@@ -28,8 +31,24 @@ export class AttackService {
     def: 'defense',
   };
 
-  private useBoost(attack: Attack) {
-    return 1;
+  private useStatusAttack(attack: Attack) {
+    const { move } = attack;
+    if (move.boosts) {
+      const target = move.target == 'self' ? 'player' : 'rival';
+      const targetedPokemon = this.dataService.getSelectedPokemon(
+        attack,
+        target,
+      );
+
+      for (const [stat, boost] of Object.entries(move.boosts) as [
+        keyof Boosts,
+        number,
+      ][]) {
+        const statIndex = this.boostStatChart[stat];
+        targetedPokemon.stats[statIndex].multiplier += boost;
+      }
+    }
+    return 0;
   }
 
   private useAttack(attack: Attack) {
@@ -46,6 +65,7 @@ export class AttackService {
     }
 
     const damage = this.calculateDamage(attack);
+    console.log('DAMAGE: ', damage);
     rivalPokemon.stats.hp.current_value -= damage;
     move.pp -= 1;
 
@@ -89,6 +109,7 @@ export class AttackService {
     STAB: number,
     effectiveness: number,
   ) {
+    console.log(power, attackStat, defenseStat, STAB, effectiveness);
     const basePower = (22 * ((power * attackStat) / defenseStat)) / 50 + 2;
     return Math.floor(basePower * STAB * effectiveness);
   }
@@ -97,18 +118,22 @@ export class AttackService {
     pokemon: PokemonBattleData,
     damageClass: 'physical' | 'special' | 'status',
   ) {
-    return damageClass == 'physical'
-      ? pokemon.stats.attack.current_value
-      : pokemon.stats.defense.current_value;
+    const attackStat =
+      damageClass == 'physical'
+        ? pokemon.stats.attack
+        : pokemon.stats.special_attack;
+    return attackStat.current_value * attackStat.multiplier;
   }
 
   private getDefense(
     pokemon: PokemonBattleData,
     damageClass: 'physical' | 'special' | 'status',
   ) {
-    return damageClass == 'physical'
-      ? pokemon.stats.defense.current_value
-      : pokemon.stats.special_defense.current_value;
+    const defenseStat =
+      damageClass == 'physical'
+        ? pokemon.stats.defense
+        : pokemon.stats.special_defense;
+    return defenseStat.current_value * defenseStat.multiplier;
   }
 
   private calculateSTAB(pokemon: PokemonBattleData, attack: Attack) {
@@ -143,8 +168,12 @@ export class AttackService {
       this.dataService.getUserFromUID(movesQueue[1].origin),
     );
 
-    const firstSpeed = firstAttackPokemon.stats.speed.current_value;
-    const secondSpeed = secondAttackPokemon.stats.speed.current_value;
+    const firstSpeed =
+      firstAttackPokemon.stats.speed.current_value *
+      firstAttackPokemon.stats.speed.multiplier;
+    const secondSpeed =
+      secondAttackPokemon.stats.speed.current_value *
+      secondAttackPokemon.stats.speed.multiplier;
 
     if (secondSpeed == firstSpeed) this.handleSpeedTie(movesQueue);
     if (secondSpeed > firstSpeed) movesQueue.reverse();

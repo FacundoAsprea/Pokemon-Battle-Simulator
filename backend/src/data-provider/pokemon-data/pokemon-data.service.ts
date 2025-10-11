@@ -2,16 +2,18 @@ import { Injectable } from '@nestjs/common';
 import axios from 'axios';
 import { plainToInstance } from 'class-transformer';
 import { GetPokemonDataDTO, PokemonDataParsed } from '../dto/getPokemonDataDTO';
-import { TypeBattleData } from '@shared/types/battledata';
+import { Type, TypeBattleData } from '@shared/types/battledata';
 import typesData from './data/types.json';
 import movesets from './data/movesets.json';
-import movelist from './data/moves.json';
-import { MoveData } from '../dto/getPokemonDataDTO';
+import moves from './data/moves.json';
+import { DamageCategory, MoveData } from '@shared/types/moves';
+import { movesjson } from './types';
 
 @Injectable()
 export class PokemonDataService {
   private types = typesData as TypeBattleData[];
   private pokeapiPokemonsURL = 'https://pokeapi.co/api/v2/pokemon/';
+  private moveList = moves as Record<string, movesjson>;
 
   //Info x tipo
   getType(typeName: string): TypeBattleData {
@@ -48,6 +50,7 @@ export class PokemonDataService {
       parsedStats[stat.stat.name.replace('-', '_')] = {
         base_stat: leveledStat,
         current_value: leveledStat,
+        multiplier: 1,
       };
     });
 
@@ -55,18 +58,17 @@ export class PokemonDataService {
     const movenames: string[] = movesets[rawData.name.toLowerCase()];
     const moveset: MoveData[] = [];
     for (let i = 0; i != 4; i++) {
-      const move = movelist[movenames[i] as keyof typeof movelist];
+      const move = this.moveList[movenames[i]];
       const parsedMove: MoveData = {
         priority: move.priority,
         accuracy: typeof move.accuracy == 'boolean' ? 100 : move.accuracy,
         name: move.name,
         power: move.basePower,
         pp: move.pp,
-        damage_class: move.category.toLowerCase() as
-          | 'physical'
-          | 'status'
-          | 'special',
-        type: move.type.toLowerCase(),
+        damage_class: move.category.toLowerCase() as DamageCategory,
+        type: move.type.toLowerCase() as Type,
+        target: move.target,
+        boosts: move.boosts ?? undefined,
       };
 
       moveset.push(parsedMove);

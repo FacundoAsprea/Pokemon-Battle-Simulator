@@ -49,4 +49,5 @@ export interface MoveData {
   accuracy: number;
   damage_class: 'physical' | 'status' | 'special';
   type: string;
+  target: string;
 }

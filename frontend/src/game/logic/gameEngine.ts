@@ -14,10 +14,12 @@ class Game {
     const turn = await webSocket.waitForTurn();
     console.log("TURN SE RESOLVIO: ", turn);
 
-    const { uiUpdate } = turn;
+    const { uiUpdate, newBattleState } = turn;
     console.log("LAS 2 UPDATES: ", uiUpdate);
     await this.applyUiUpdate(uiUpdate[0]);
     await this.applyUiUpdate(uiUpdate[1]);
+    console.log("NEWBATTLESTATE: ", newBattleState)
+    useGlobalBattleState.setState({ globalBattleState: newBattleState })
     await this.runGame();
   }
 

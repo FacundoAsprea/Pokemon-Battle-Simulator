@@ -7,7 +7,6 @@ import Selector from "./selector";
 //funcs
 import { getPlayerData } from "@/game/functions/getters";
 import { swapPokemon } from "@/game/logic/swapPokemon";
-import type { PokemonBattleData } from "@shared/types/battledata";
 import { useBattleText } from "@/states/battleTextContext/battleTextContext";
 import { useUserHasPlayed } from "@/states/userHasPlayed/userHasPlayedState";
 import MovesSelector from "./moveButton";
@@ -26,13 +25,11 @@ const ActionsButton = ({ variant }: props) => {
   );
   if (!playerData) return "ERROR AL OBTENER PLAYERDATA";
 
-  const handleSwap = (pokemon: PokemonBattleData) => {
-    if (swapPokemon(pokemon.name)) {
+  const waitForOpponent = () => {
       setUserHasPlayed(true);
       setOpen(false);
       setBattleText("Esperando al rival...");
-    }
-  };
+  }
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
@@ -47,7 +44,7 @@ const ActionsButton = ({ variant }: props) => {
             </button>
           </DrawerTrigger>
           <DrawerContent>
-            <MovesSelector />
+            <MovesSelector onClickHandler={waitForOpponent}/>
           </DrawerContent>
         </>
       ) : (
@@ -65,7 +62,9 @@ const ActionsButton = ({ variant }: props) => {
               {playerData.team.map((pokemon) => (
                 <Selector
                   pokemon={pokemon}
-                  onClickHandler={() => handleSwap(pokemon)}
+                  onClickHandler={() => {
+                    if(swapPokemon(pokemon.name)) waitForOpponent()
+                    }}
                 />
               ))}
             </div>

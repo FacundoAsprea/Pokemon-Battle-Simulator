@@ -5,15 +5,22 @@ import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 import { useRef } from "react";
 import { TypeUICollection } from "@/assets/typeSprites";
 
-interface props {
+interface MoveButtonProps {
   moveData: MoveData;
+  onClick: () => void
+}
+interface MovesSelectorProps {
+  onClickHandler: () => void
 }
 
-const MoveButton = ({ moveData }: props) => {
+const MoveButton = ({ moveData, onClick }: MoveButtonProps) => {
   const maxPPs = useRef(moveData.pp);
   return (
     <div
-      onClick={() => executeAttack(moveData)}
+      onClick={() => {
+        onClick()
+        executeAttack(moveData)
+      }}
       style={{ backgroundColor: TypeUICollection[moveData.type].color }}
       className="w-full h-full p-3 flex flex-col items-center justify-center rounded-sm hover:opacity-75 cursor-pointer"
     >
@@ -26,14 +33,14 @@ const MoveButton = ({ moveData }: props) => {
   );
 };
 
-const MovesSelector = () => {
+const MovesSelector = ({ onClickHandler }: MovesSelectorProps) => {
   const selectedPokemon = useGlobalBattleState((state) =>
     getSelectedPokemon("player", state.globalBattleState)
   );
   return (
     <div className="h-[40dvh] grid grid-cols-2 grid-rows-2 gap-2 p-2">
       {selectedPokemon.moveset.map((move) => (
-        <MoveButton moveData={move} />
+        <MoveButton moveData={move} onClick={onClickHandler}/>
       ))}
     </div>
   );

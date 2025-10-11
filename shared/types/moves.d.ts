@@ -6,18 +6,26 @@ export interface MoveData {
   pp: number;
   priority: AttackPriority;
   accuracy: number;
-  damage_class: 'physical' | 'status' | 'special';
+  damage_class: DamageCategory;
   type: Type;
-  boosts?: Boosts
-  target?: "normal" | "self"
+  boosts?: Boosts;
+  target:
+    | "normal"
+    | "self"
+    | "any"
+    | "allAdjacentFoes"
+    | "allAdjacent"
+    | "allyTeam"
+    | "scripted";
 }
 
 export type Action = Attack | Swap;
-type AttackPriority = -6 | -5 | -1 | 0 | 1 | 2 | 3 | 4;
+export type AttackPriority = -6 | -5 | -1 | 0 | 1 | 2 | 3 | 4;
+export type DamageCategory = "physical" | "status" | "special";
 
 export interface Attack {
   priority: AttackPriority;
-  type: 'attack';
+  type: "attack";
   origin: userUID;
   message: string;
   move: MoveData;
@@ -25,7 +33,7 @@ export interface Attack {
 
 export interface Swap {
   priority: 0.5;
-  type: 'swap';
+  type: "swap";
   origin: userUID;
   message: string;
   from: pokemonName;
@@ -33,11 +41,11 @@ export interface Swap {
 }
 
 interface Boosts {
-  atk: number;
-  spe: number;
-  def: number;
-  spd: number;
-  spa: number;
+  atk?: number;
+  spe?: number;
+  def?: number;
+  spd?: number;
+  spa?: number;
 }
 
 type userUID = string;

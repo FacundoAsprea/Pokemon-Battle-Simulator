@@ -32,7 +32,7 @@ export interface TypeBattleData {
 export interface StatBattleData {
   base_stat: number;
   current_value: number;
-  boost?: number;
+  multiplier: number;
 }
 
 export interface DamageRelations {
