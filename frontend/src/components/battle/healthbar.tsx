@@ -5,7 +5,7 @@ import { Progress } from "../ui/progress";
 import { TypeUICollection } from "@/assets/typeSprites";
 import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 
-type FlexDirection = "row-reverse" | "row"
+type FlexDirection = "row-reverse" | "row";
 interface props {
   user: "player" | "rival";
 }
@@ -36,6 +36,12 @@ const Healthbar = ({ user }: props) => {
       selectedPokemon.stats.hp.base_stat) *
     100;
 
+  const modifiedStats = [];
+  for (const [statName, statValue] of Object.entries(selectedPokemon.stats)) {
+    if (statValue.multiplier != 1)
+      modifiedStats.push({ name: statName, multiplier: statValue.multiplier });
+  }
+
   return (
     <div
       style={{
@@ -52,7 +58,7 @@ const Healthbar = ({ user }: props) => {
           className="text-gray-100 flex flex-col"
         >
           <p
-            style={{ flexDirection: viewStyle[user].flexDirection}}
+            style={{ flexDirection: viewStyle[user].flexDirection }}
             className="flex gap-2"
           >
             {capitalize(selectedPokemon.name)}{" "}
@@ -63,10 +69,18 @@ const Healthbar = ({ user }: props) => {
               ></img>
             ))}
           </p>
-          <p className="text-sm">
+          <div className="text-sm">
+            {modifiedStats.map((modifiedStat) => (
+              <p
+                className="text-center text-xs text-blue-500 bg-[#252525] rounded-sm p-0.5 mb-0.5"
+              >
+                {modifiedStat.name.slice(0, 3)} x{""}
+                {modifiedStat.multiplier}
+              </p>
+            ))}
             {selectedPokemon.stats.hp.current_value} /{" "}
             {selectedPokemon.stats.hp.base_stat}
-          </p>
+          </div>
         </div>
         <Progress value={healthPercentage} />
       </div>
@@ -75,3 +89,4 @@ const Healthbar = ({ user }: props) => {
 };
 
 export default Healthbar;
+
