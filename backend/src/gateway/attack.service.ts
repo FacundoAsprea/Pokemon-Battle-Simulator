@@ -66,7 +66,7 @@ export class AttackService {
 
     const damage = this.calculateDamage(attack);
     console.log('DAMAGE: ', damage);
-    rivalPokemon.stats.hp.current_value -= damage;
+    this.applyDamage(rivalPokemon, damage);
     move.pp -= 1;
 
     return damage;
@@ -74,9 +74,15 @@ export class AttackService {
 
   executeAttack(attack: Attack) {
     const { move } = attack;
+    const playerPokemon = this.dataService.getSelectedPokemon(attack, 'player');
+
+    if (playerPokemon.stats.hp.current_value <= 0) {
+      return 0;
+    }
     return this.attackExecutions[move.damage_class](attack);
   }
 
+  //Utils
   private checkAccuracy(attack: Attack) {
     const random = randomInt(0, 100);
     return attack.move.accuracy >= random;
@@ -158,6 +164,13 @@ export class AttackService {
       }
     });
     return multiplier;
+  }
+
+  private applyDamage(pokemon: PokemonBattleData, damage: number) {
+    const { hp } = pokemon.stats;
+    hp.current_value -= damage;
+
+    if (hp.current_value < 0) hp.current_value = 0;
   }
 
   handlePriorityTie(movesQueue: Action[]) {

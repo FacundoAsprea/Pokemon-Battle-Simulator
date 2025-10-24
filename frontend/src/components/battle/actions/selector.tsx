@@ -3,14 +3,20 @@ import type { PokemonBattleData } from "@shared/types/battledata";
 import { capitalize } from "@/utils/functions";
 interface props {
   pokemon: PokemonBattleData;
-  onClickHandler: () => void
+  onClickHandler: () => void;
 }
 
 const Selector = ({ pokemon, onClickHandler }: props) => {
   const healthPercentage =
     (pokemon.stats.hp.current_value / pokemon.stats.hp.base_stat) * 100;
+  const pokemonIsAlive = healthPercentage > 1 ? true : false;
+
   return (
-    <div onClick={onClickHandler} className="flex flex-row border-1 border-gray-500 rounded-sm px-5 hover:bg-[#303030] cursor-pointer">
+    <div
+      style={{ opacity: pokemonIsAlive ? 1 : 0.25 }}
+      onClick={pokemonIsAlive ? onClickHandler : () => false}
+      className="flex flex-row border-1 border-gray-500 rounded-sm px-5 hover:bg-[#303030] cursor-pointer"
+    >
       <div className="h-full w-1/2 flex justify-center">
         <img
           className="object-cover h-full"
