@@ -52,12 +52,8 @@ export class AttackService {
   }
 
   private useAttack(attack: Attack) {
-    const playerPokemon = this.dataService.getSelectedPokemon(attack, 'player');
     const rivalPokemon = this.dataService.getSelectedPokemon(attack, 'rival');
-    const move = this.dataService.getMoveFromName(
-      playerPokemon,
-      attack.move.name,
-    );
+    const { move } = attack;
 
     if (!this.checkAccuracy(attack)) {
       console.log('ERRO EL ATAQUE');
