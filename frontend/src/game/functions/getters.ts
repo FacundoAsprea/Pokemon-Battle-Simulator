@@ -4,6 +4,12 @@ import type {
   UserBattleState,
 } from "@shared/types/states";
 
+export const getId = () => {
+  const id = localStorage.getItem("uid")
+  if (!id) throw new Error("USERUID DOESNT EXIST")
+  return id
+}
+
 export const getUserById = (id: string, getRival?: boolean) => {
   const { globalBattleState } = useGlobalBattleState.getState();
   const user = globalBattleState.usersdata.find((user) => getRival ? user.uid != id : user.uid == id);
@@ -30,8 +36,6 @@ export const getPokemonByName = (
 
 export const getPlayerData = (globalBattleState: GlobalBattleState) => {
   const playerUID = localStorage.getItem("uid");
-  console.log("EJECUTANDO PLAYERDATA: ", playerUID)
-  console.log("ESTADO GLOBAL: ", globalBattleState)
   const player = globalBattleState.usersdata.find(
     (user) => user.uid == playerUID
   );

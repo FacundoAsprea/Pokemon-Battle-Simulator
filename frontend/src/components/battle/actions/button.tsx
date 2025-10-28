@@ -5,7 +5,10 @@ import { Drawer, DrawerTrigger, DrawerContent } from "@/components/ui/drawer";
 import Selector from "./selector";
 
 //funcs
-import { getPlayerData } from "@/game/functions/getters";
+import {
+  getPlayerData,
+  getSelectedPokemonByUserId,
+} from "@/game/functions/getters";
 import { swapPokemon } from "@/game/logic/swapPokemon";
 import { useBattleText } from "@/states/battleTextContext/battleTextContext";
 import { useUserHasPlayed } from "@/states/userHasPlayed/userHasPlayedState";
@@ -24,12 +27,13 @@ const ActionsButton = ({ variant }: props) => {
     getPlayerData(state.globalBattleState)
   );
   if (!playerData) return "ERROR AL OBTENER PLAYERDATA";
+  const selectedPokemon = getSelectedPokemonByUserId(playerData.uid);
 
   const waitForOpponent = () => {
-      setUserHasPlayed(true);
-      setOpen(false);
-      setBattleText("Esperando al rival...");
-  }
+    setUserHasPlayed(true);
+    setOpen(false);
+    setBattleText("Esperando al rival...");
+  };
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
@@ -37,14 +41,14 @@ const ActionsButton = ({ variant }: props) => {
         <>
           <DrawerTrigger asChild>
             <button
-              disabled={userHasPlayed}
+              disabled={userHasPlayed || selectedPokemon.stats.hp.current_value <= 0}
               className="w-full h-full border-1 border-[#202020] text-xl text-center text-white cursor-pointer hover:bg-[#303030]"
             >
               ATACAR
             </button>
           </DrawerTrigger>
           <DrawerContent>
-            <MovesSelector onClickHandler={waitForOpponent}/>
+            <MovesSelector onClickHandler={waitForOpponent} />
           </DrawerContent>
         </>
       ) : (
@@ -63,8 +67,8 @@ const ActionsButton = ({ variant }: props) => {
                 <Selector
                   pokemon={pokemon}
                   onClickHandler={() => {
-                    if(swapPokemon(pokemon.name)) waitForOpponent()
-                    }}
+                    if (swapPokemon(pokemon.name)) waitForOpponent();
+                  }}
                 />
               ))}
             </div>

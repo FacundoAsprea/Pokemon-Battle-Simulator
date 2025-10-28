@@ -53,7 +53,6 @@ export class AttackService {
 
   private useAttack(attack: Attack) {
     const rivalPokemon = this.dataService.getSelectedPokemon(attack, 'rival');
-    const { move } = attack;
 
     if (!this.checkAccuracy(attack)) {
       console.log('ERRO EL ATAQUE');
@@ -63,7 +62,6 @@ export class AttackService {
     const damage = this.calculateDamage(attack);
     console.log('DAMAGE: ', damage);
     this.applyDamage(rivalPokemon, damage);
-    move.pp -= 1;
 
     return damage;
   }
@@ -71,10 +69,12 @@ export class AttackService {
   executeAttack(attack: Attack) {
     const { move } = attack;
     const playerPokemon = this.dataService.getSelectedPokemon(attack, 'player');
+    const moveRef = this.dataService.getMoveFromName(playerPokemon, move.name);
 
     if (playerPokemon.stats.hp.current_value <= 0) {
       return 0;
     }
+    moveRef.pp -= 1;
     return this.attackExecutions[move.damage_class](attack);
   }
 

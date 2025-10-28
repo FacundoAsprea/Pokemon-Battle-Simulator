@@ -1,25 +1,30 @@
 import { webSocket } from "@/services/websocket.service";
 import { useGlobalBattleState } from "@/states/battleContext/globalBattleState";
 import { useBattleText } from "@/states/battleTextContext/battleTextContext";
-import type { attackUiUpdate, swapUiUpdate, uiUpdates } from "@shared/types/uiUpdate";
+import type {
+  attackUiUpdate,
+  swapUiUpdate,
+  uiUpdates,
+} from "@shared/types/uiUpdate";
 import {
+  getId,
   getPokemonByName,
+  getSelectedPokemon,
   getSelectedPokemonByUserId,
   getUserById,
 } from "../functions/getters";
 import { useUserHasPlayed } from "@/states/userHasPlayed/userHasPlayedState";
+import { capitalize } from "@/utils/functions";
 
 class Game {
   async runGame() {
     const turn = await webSocket.waitForTurn();
-    console.log("TURN SE RESOLVIO: ", turn);
 
     const { uiUpdate, newBattleState } = turn;
-    console.log("LAS 2 UPDATES: ", uiUpdate);
     await this.applyUiUpdate(uiUpdate[0]);
     await this.applyUiUpdate(uiUpdate[1]);
-    console.log("NEWBATTLESTATE: ", newBattleState)
-    useGlobalBattleState.setState({ globalBattleState: newBattleState })
+    useGlobalBattleState.setState({ globalBattleState: newBattleState });
+    await this.checkForPokemonFaint();
     await this.runGame();
   }
 
@@ -114,6 +119,47 @@ class Game {
         resolve(true);
       }, 3500);
     });
+  }
+
+  checkForPokemonFaint() {
+    const rivalSelectedPokemon = getSelectedPokemon(
+      "rival",
+      useGlobalBattleState.getState().globalBattleState
+    );
+    const playerSelectedPokemon = getSelectedPokemon(
+      "player",
+      useGlobalBattleState.getState().globalBattleState
+    );
+
+    if (playerSelectedPokemon.stats.hp.current_value <= 0) {
+      const { setBattleText } = useBattleText.getState();
+      setBattleText(
+        `${capitalize(
+          playerSelectedPokemon.name
+        )} ya no puede luchar, debes cambiar de Pokemon`
+      );
+    } else if (rivalSelectedPokemon.stats.hp.current_value <= 0) {
+      console.log("EL POKEMON DEL RIVAL CAGO FUEGO, ENVIANDO UN TURN VACIO");
+      const { setUserHasPlayed } = useUserHasPlayed.getState();
+      setUserHasPlayed(true);
+      //Accion sin cambios
+      webSocket.sendAction({
+        priority: 1,
+        type: "attack",
+        message: "",
+        origin: getId(),
+        move: {
+          name: "",
+          power: 0,
+          pp: 0,
+          priority: 1,
+          accuracy: 0,
+          damage_class: "physical",
+          type: "normal",
+          target: "self"
+        }
+      });
+    }
   }
 }
 

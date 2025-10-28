@@ -31,16 +31,18 @@ const Healthbar = ({ user }: props) => {
   const selectedPokemon = useGlobalBattleState((state) =>
     getSelectedPokemon(user, state.globalBattleState)
   );
-  const healthPercentage =
-    (selectedPokemon.stats.hp.current_value /
-      selectedPokemon.stats.hp.base_stat) *
-    100;
 
   const modifiedStats = [];
   for (const [statName, statValue] of Object.entries(selectedPokemon.stats)) {
     if (statValue.multiplier != 1)
       modifiedStats.push({ name: statName, multiplier: statValue.multiplier });
   }
+
+  const healthPercentage =
+    (selectedPokemon.stats.hp.current_value /
+      selectedPokemon.stats.hp.base_stat) *
+    100;
+  const healthbarColor = healthPercentage > 50  ? "#3ee121" : "#ffcd36"
 
   return (
     <div
@@ -71,22 +73,19 @@ const Healthbar = ({ user }: props) => {
           </p>
           <div className="text-sm">
             {modifiedStats.map((modifiedStat) => (
-              <p
-                className="text-center text-xs text-blue-500 bg-[#252525] rounded-sm p-0.5 mb-0.5"
-              >
+              <p className="text-center text-xs text-blue-500 bg-[#252525] rounded-sm p-0.5 mb-0.5">
                 {modifiedStat.name.slice(0, 3)} x{""}
                 {modifiedStat.multiplier}
               </p>
             ))}
-            {selectedPokemon.stats.hp.current_value} /{" "}
+            <strong className="text-green-500">{selectedPokemon.stats.hp.current_value}</strong> /{" "}
             {selectedPokemon.stats.hp.base_stat}
           </div>
         </div>
-        <Progress value={healthPercentage} />
+        <Progress value={healthPercentage} color={healthbarColor} />
       </div>
     </div>
   );
 };
 
 export default Healthbar;
-
