@@ -68,6 +68,8 @@ export class AttackService {
 
   executeAttack(attack: Attack) {
     const { move } = attack;
+    if (move.name == 'skipTurn') return 0;
+
     const playerPokemon = this.dataService.getSelectedPokemon(attack, 'player');
     const moveRef = this.dataService.getMoveFromName(playerPokemon, move.name);
 

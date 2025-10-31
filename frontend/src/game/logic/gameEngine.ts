@@ -15,6 +15,7 @@ import {
 } from "../functions/getters";
 import { useUserHasPlayed } from "@/states/userHasPlayed/userHasPlayedState";
 import { capitalize } from "@/utils/functions";
+import type { Attack } from "@shared/types/moves";
 
 class Game {
   async runGame() {
@@ -121,6 +122,23 @@ class Game {
     });
   }
 
+  skipTurnTemplate: Attack = {
+    priority: 1,
+    type: "attack",
+    message: "",
+    origin: getId(),
+    move: {
+      name: "skipTurn",
+      power: 0,
+      pp: 0,
+      priority: 1,
+      accuracy: 0,
+      damage_class: "physical",
+      type: "normal",
+      target: "self",
+    },
+  };
+
   checkForPokemonFaint() {
     const rivalSelectedPokemon = getSelectedPokemon(
       "rival",
@@ -143,22 +161,7 @@ class Game {
       const { setUserHasPlayed } = useUserHasPlayed.getState();
       setUserHasPlayed(true);
       //Accion sin cambios
-      webSocket.sendAction({
-        priority: 1,
-        type: "attack",
-        message: "",
-        origin: getId(),
-        move: {
-          name: "",
-          power: 0,
-          pp: 0,
-          priority: 1,
-          accuracy: 0,
-          damage_class: "physical",
-          type: "normal",
-          target: "self"
-        }
-      });
+      webSocket.sendAction(this.skipTurnTemplate);
     }
   }
 }
